@@ -1,15 +1,42 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "Ross Furniture Transport",
-  description: "Premium Furniture Transport Australia",
+  metadataBase: new URL("https://rossfurnituretransport.com.au"),
+
+  title: "Ross Furniture Transport | Australia",
+  description:
+    "Professional furniture transport services for furniture stores, retailers and businesses across Australia.",
+
+  openGraph: {
+    title: "Ross Furniture Transport",
+    description:
+      "Reliable furniture transport services for businesses across Australia.",
+    url: "https://rossfurnituretransport.com.au",
+    siteName: "Ross Furniture Transport",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ross Furniture Transport",
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ross Furniture Transport",
+    description:
+      "Reliable furniture transport services for businesses across Australia.",
+    images: ["/opengraph-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -18,10 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>
-        {children}
-      </body>
+    <html lang="en-AU">
+      <body>{children}</body>
     </html>
   );
 }
