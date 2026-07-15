@@ -1,0 +1,885 @@
+/* =========================
+   DELIVERY SOLUTIONS
+========================= */
+
+.ross-delivery-solutions {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f7f8fa;
+  color: #09172b;
+}
+
+.ross-delivery-solutions-container {
+  width: min(100% - 120px, 1440px);
+  margin: 0 auto;
+}
+
+/* =========================
+   INTRO HEADER
+========================= */
+
+.ross-delivery-solutions-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
+  gap: clamp(54px, 6vw, 110px);
+  align-items: end;
+
+  padding: 88px 0 72px;
+}
+
+.ross-delivery-solutions-heading-column {
+  min-width: 0;
+}
+
+.ross-delivery-solutions-eyebrow {
+  position: relative;
+  display: inline-block;
+
+  margin: 0 0 26px;
+  padding: 0 0 16px;
+
+  color: #c62828;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ross-delivery-solutions-eyebrow::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 44px;
+  height: 2px;
+
+  background: #c62828;
+
+  content: "";
+}
+
+.ross-delivery-solutions-title {
+  max-width: 720px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: clamp(44px, 4.15vw, 68px);
+  font-weight: 700;
+  line-height: 1.01;
+  letter-spacing: -0.05em;
+}
+
+.ross-delivery-solutions-title span {
+  display: block;
+}
+
+.ross-delivery-solutions-title i {
+  color: #c62828;
+  font-style: normal;
+}
+
+.ross-delivery-solutions-intro-column {
+  padding-bottom: 4px;
+}
+
+.ross-delivery-solutions-intro {
+  max-width: 540px;
+  margin: 0;
+
+  color: #536075;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.68;
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   ASSURANCES
+========================= */
+
+.ross-delivery-solutions-assurances {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-top: 36px;
+}
+
+.ross-delivery-assurance {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+  padding: 0 18px;
+
+  border-left: 1px solid #d6dee8;
+}
+
+.ross-delivery-assurance:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.ross-delivery-assurance:last-child {
+  padding-right: 0;
+}
+
+.ross-delivery-assurance-mark {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(198, 40, 40, 0.34);
+  border-radius: 50%;
+
+  color: #c62828;
+
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.ross-delivery-assurance-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  color: #0f2d5c;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ross-delivery-assurance-text strong {
+  font: inherit;
+}
+
+/* =========================
+   SERVICE LIST
+========================= */
+
+.ross-delivery-solutions-list {
+  width: min(100% - 120px, 1440px);
+  margin: 0 auto 88px;
+
+  overflow: hidden;
+
+  border: 1px solid #dce2e9;
+  border-radius: 2px;
+
+  background: #ffffff;
+}
+
+.ross-delivery-solution {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+
+  min-height: 410px;
+
+  border-bottom: 1px solid #dce2e9;
+  background: #ffffff;
+}
+
+.ross-delivery-solution:last-child {
+  border-bottom: 0;
+}
+
+.ross-delivery-solution--reverse {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.ross-delivery-solution--reverse .ross-delivery-solution-image {
+  order: 2;
+}
+
+.ross-delivery-solution--reverse .ross-delivery-solution-content {
+  order: 1;
+}
+
+/* =========================
+   SERVICE IMAGE
+========================= */
+
+.ross-delivery-solution-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 410px;
+  overflow: hidden;
+
+  background-color: #09172b;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  isolation: isolate;
+}
+
+.ross-delivery-solution-image::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 45, 92, 0.12),
+      rgba(9, 23, 43, 0.5)
+    );
+
+  content: "";
+}
+
+.ross-delivery-solution-image::after {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 74% 25%,
+      rgba(255, 255, 255, 0.1),
+      transparent 34%
+    ),
+    linear-gradient(145deg, #16365e 0%, #09172b 68%);
+
+  content: "";
+}
+
+/*
+  FUTURE IMAGE LOCATION:
+
+  public/
+  └── images/
+      └── delivery-solutions/
+          ├── retail-delivery.webp
+          ├── warehouse-distribution.webp
+          └── interstate-transport.webp
+*/
+
+.ross-delivery-solution-image--retail {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(9, 23, 43, 0.08),
+      rgba(9, 23, 43, 0.28)
+    ),
+    url("/images/retail-delivery.webp");
+}
+
+.ross-delivery-solution-image--warehouse {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(9, 23, 43, 0.1),
+      rgba(9, 23, 43, 0.3)
+    ),
+    url("/images/warehouse-distribution.webp");
+}
+
+.ross-delivery-solution-image--interstate {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(9, 23, 43, 0.08),
+      rgba(9, 23, 43, 0.3)
+    ),
+    url("/images/interstate-furniture-transport.webp");
+}
+
+.ross-delivery-solution-image-placeholder {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+
+  background: rgba(9, 23, 43, 0.22);
+  backdrop-filter: blur(10px);
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   SERVICE CONTENT
+========================= */
+
+.ross-delivery-solution-content {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+  padding: clamp(46px, 4.5vw, 72px);
+
+  background: #ffffff;
+}
+
+.ross-delivery-solution-content-inner {
+  width: min(100%, 530px);
+}
+
+.ross-delivery-solution-number {
+  display: block;
+
+  margin: 0 0 14px;
+
+  color: #c62828;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.ross-delivery-solution-line {
+  display: block;
+
+  width: 34px;
+  height: 2px;
+  margin: 0 0 24px;
+
+  background: #c62828;
+}
+
+.ross-delivery-solution-title {
+  max-width: 520px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: clamp(31px, 2.55vw, 45px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.ross-delivery-solution-description {
+  max-width: 480px;
+  margin: 20px 0 0;
+
+  color: #596579;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* =========================
+   LEARN MORE — NO ARROWS
+========================= */
+
+.ross-delivery-solution-link {
+  position: relative;
+
+  display: inline-block;
+
+  margin-top: 27px;
+  padding-bottom: 7px;
+
+  color: #c62828;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.ross-delivery-solution-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 1px;
+
+  background: currentColor;
+
+  content: "";
+  transform: scaleX(0.32);
+  transform-origin: left center;
+  transition: transform 280ms ease;
+}
+
+.ross-delivery-solution-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hide SVG arrows if they still exist in TSX */
+
+.ross-delivery-solution-link svg,
+.ross-delivery-solutions-button svg {
+  display: none;
+}
+
+/* =========================
+   SECTION FOOTER CTA
+========================= */
+
+.ross-delivery-solutions-footer {
+  background: #0f2d5c;
+}
+
+.ross-delivery-solutions-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+
+  width: min(100% - 120px, 1440px);
+  margin: 0 auto;
+  padding: 68px 0;
+}
+
+.ross-delivery-solutions-footer-eyebrow {
+  margin: 0 0 12px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ross-delivery-solutions-footer-title {
+  max-width: 690px;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(30px, 2.7vw, 46px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.ross-delivery-solutions-button {
+  position: relative;
+
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 56px;
+  padding: 0 26px;
+
+  border: 1px solid #c62828;
+  border-radius: 3px;
+
+  background: #c62828;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    background-color 240ms ease,
+    border-color 240ms ease;
+}
+
+.ross-delivery-solutions-button:hover {
+  border-color: #a82022;
+  background: #a82022;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1600px) {
+  .ross-delivery-solutions-container,
+  .ross-delivery-solutions-list,
+  .ross-delivery-solutions-footer-inner {
+    width: min(100% - 160px, 1540px);
+  }
+
+  .ross-delivery-solutions-header {
+    padding: 98px 0 78px;
+  }
+
+  .ross-delivery-solution {
+    min-height: 440px;
+  }
+
+  .ross-delivery-solution-image {
+    min-height: 440px;
+  }
+}
+
+/* =========================
+   DESKTOP / TABLET
+========================= */
+
+@media (max-width: 1180px) {
+  .ross-delivery-solutions-container,
+  .ross-delivery-solutions-list,
+  .ross-delivery-solutions-footer-inner {
+    width: min(100% - 64px, 1080px);
+  }
+
+  .ross-delivery-solutions-header {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.75fr);
+    gap: 50px;
+
+    padding: 78px 0 64px;
+  }
+
+  .ross-delivery-solutions-title {
+    font-size: clamp(44px, 5vw, 62px);
+  }
+
+  .ross-delivery-solution,
+  .ross-delivery-solution--reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ross-delivery-solution,
+  .ross-delivery-solution-image {
+    min-height: 380px;
+  }
+
+  .ross-delivery-solution-content {
+    padding: 44px 38px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .ross-delivery-solutions-container,
+  .ross-delivery-solutions-list,
+  .ross-delivery-solutions-footer-inner {
+    width: min(100% - 48px, 820px);
+  }
+
+  .ross-delivery-solutions-header {
+    grid-template-columns: 1fr;
+    gap: 38px;
+
+    padding: 72px 0 58px;
+  }
+
+  .ross-delivery-solutions-title {
+    max-width: 720px;
+  }
+
+  .ross-delivery-solutions-intro {
+    max-width: 680px;
+  }
+
+  .ross-delivery-solutions-assurances {
+    max-width: 680px;
+  }
+
+  .ross-delivery-solutions-list {
+    margin-bottom: 72px;
+  }
+
+  .ross-delivery-solution,
+  .ross-delivery-solution--reverse {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+  }
+
+  .ross-delivery-solution-image,
+  .ross-delivery-solution--reverse .ross-delivery-solution-image {
+    order: 1;
+
+    min-height: 340px;
+  }
+
+  .ross-delivery-solution-content,
+  .ross-delivery-solution--reverse .ross-delivery-solution-content {
+    order: 2;
+
+    padding: 48px 42px 54px;
+  }
+
+  .ross-delivery-solutions-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 60px 0;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 620px) {
+  .ross-delivery-solutions-container,
+  .ross-delivery-solutions-list,
+  .ross-delivery-solutions-footer-inner {
+    width: min(100% - 32px, 560px);
+  }
+
+  .ross-delivery-solutions-header {
+    gap: 28px;
+    padding: 48px 0 40px;
+  }
+
+  .ross-delivery-solutions-eyebrow {
+    margin-bottom: 20px;
+    padding-bottom: 13px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ross-delivery-solutions-eyebrow::after {
+    width: 34px;
+  }
+
+  .ross-delivery-solutions-title {
+    max-width: 100%;
+
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+  }
+
+  .ross-delivery-solutions-title span {
+    display: block;
+  }
+
+  .ross-delivery-solutions-intro {
+    max-width: 100%;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* =========================
+     MOBILE ASSURANCES
+  ========================= */
+
+  .ross-delivery-solutions-assurances {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .ross-delivery-assurance,
+  .ross-delivery-assurance:first-child,
+  .ross-delivery-assurance:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+
+    min-width: 0;
+    padding: 0;
+
+    border: 0;
+  }
+
+  .ross-delivery-assurance-mark {
+    width: 38px;
+    height: 38px;
+
+    font-size: 9px;
+  }
+
+  .ross-delivery-assurance-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 8px;
+    line-height: 1.3;
+    letter-spacing: 0.055em;
+  }
+
+  .ross-delivery-assurance-text strong {
+    display: block;
+  }
+
+  /* =========================
+     SERVICE LIST
+  ========================= */
+
+  .ross-delivery-solutions-list {
+    margin-bottom: 58px;
+  }
+
+  .ross-delivery-solution-image,
+  .ross-delivery-solution--reverse .ross-delivery-solution-image {
+    min-height: 230px;
+  }
+
+  .ross-delivery-solution-content,
+  .ross-delivery-solution--reverse .ross-delivery-solution-content {
+    padding: 36px 22px 42px;
+  }
+
+  .ross-delivery-solution-number {
+    margin-bottom: 10px;
+
+    font-size: 12px;
+  }
+
+  .ross-delivery-solution-line {
+    width: 30px;
+    margin-bottom: 16px;
+  }
+
+.ross-delivery-solution-title {
+  max-width: 100%;
+
+  font-size: clamp(26px, 7.2vw, 32px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+  .ross-delivery-solution-description {
+    margin-top: 17px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-delivery-solution-link {
+    margin-top: 23px;
+  }
+
+  /* =========================
+     FOOTER CTA
+  ========================= */
+
+  .ross-delivery-solutions-footer-inner {
+    gap: 30px;
+    padding: 52px 0;
+  }
+
+  .ross-delivery-solutions-footer-title {
+    font-size: 31px;
+  }
+
+  .ross-delivery-solutions-button {
+    width: 100%;
+    min-height: 54px;
+    padding: 0 20px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .ross-delivery-solutions-container,
+  .ross-delivery-solutions-list,
+  .ross-delivery-solutions-footer-inner {
+    width: min(100% - 26px, 360px);
+  }
+
+  .ross-delivery-solutions-header {
+    gap: 24px;
+    padding: 42px 0 36px;
+  }
+
+  .ross-delivery-solutions-title {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  .ross-delivery-solutions-intro {
+    font-size: 14px;
+  }
+
+  .ross-delivery-solutions-assurances {
+    gap: 7px;
+    margin-top: 24px;
+  }
+
+  .ross-delivery-assurance {
+    gap: 8px;
+  }
+
+  .ross-delivery-assurance-mark {
+    width: 34px;
+    height: 34px;
+
+    font-size: 8px;
+  }
+
+  .ross-delivery-assurance-text {
+    font-size: 7px;
+    letter-spacing: 0.04em;
+  }
+
+  .ross-delivery-solution-image,
+  .ross-delivery-solution--reverse .ross-delivery-solution-image {
+    min-height: 210px;
+  }
+
+  .ross-delivery-solution-content,
+  .ross-delivery-solution--reverse .ross-delivery-solution-content {
+    padding: 32px 19px 38px;
+  }
+
+.ross-delivery-solution-title {
+  font-size: 26px;
+  line-height: 1.08;
+}
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ross-delivery-solution-link::after,
+  .ross-delivery-solutions-button {
+    transition: none;
+  }
+}

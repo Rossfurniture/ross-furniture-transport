@@ -1,0 +1,714 @@
+/* =========================
+   COMMERCIAL WORKFLOW
+========================= */
+
+.ross-workflow {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  background: #f7f8fa;
+  color: #09172b;
+}
+
+.ross-workflow-container {
+  width: min(100% - 140px, 1500px);
+  margin: 0 auto;
+  padding: 104px 0;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.ross-workflow-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.72fr);
+  gap: clamp(70px, 7vw, 130px);
+  align-items: end;
+
+  margin-bottom: 72px;
+}
+
+.ross-workflow-heading-column,
+.ross-workflow-intro-column {
+  min-width: 0;
+}
+
+.ross-workflow-eyebrow {
+  position: relative;
+
+  display: inline-block;
+
+  margin: 0 0 25px;
+  padding: 0 0 15px;
+
+  color: #c62828;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ross-workflow-eyebrow::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 42px;
+  height: 2px;
+
+  background: #c62828;
+
+  content: "";
+}
+
+.ross-workflow-title {
+  max-width: 700px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: clamp(48px, 4.3vw, 70px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.052em;
+}
+
+.ross-workflow-title span {
+  display: block;
+}
+
+.ross-workflow-title i {
+  color: #c62828;
+  font-style: normal;
+}
+
+.ross-workflow-intro-column {
+  padding-bottom: 4px;
+}
+
+.ross-workflow-intro {
+  max-width: 570px;
+  margin: 0;
+
+  color: #596579;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: -0.008em;
+}
+
+.ross-workflow-intro + .ross-workflow-intro {
+  margin-top: 17px;
+}
+
+/* =========================
+   WORKFLOW JOURNEY
+========================= */
+
+.ross-workflow-journey {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+
+  padding: 32px 12px 46px;
+}
+
+.ross-workflow-track {
+  position: absolute;
+  top: 101px;
+  right: 9%;
+  left: 9%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(198, 40, 40, 0.24),
+      #c62828 20%,
+      #c62828 80%,
+      rgba(198, 40, 40, 0.24)
+    );
+}
+
+.ross-workflow-step {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+
+  text-align: center;
+}
+
+.ross-workflow-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 32px;
+  height: 32px;
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: #c62828;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ross-workflow-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 22px;
+
+  border: 1px solid #d6dee8;
+  border-radius: 50%;
+
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(9, 23, 43, 0.07);
+
+  color: #0f2d5c;
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+
+  transition:
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    transform 260ms ease;
+}
+
+.ross-workflow-step-title {
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.018em;
+}
+
+.ross-workflow-step-description {
+  max-width: 245px;
+  margin: 10px auto 0;
+
+  color: #667286;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+.ross-workflow-step:hover .ross-workflow-marker {
+  border-color: rgba(198, 40, 40, 0.45);
+  box-shadow: 0 19px 40px rgba(9, 23, 43, 0.1);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   BENEFIT STRIP
+========================= */
+
+.ross-workflow-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #0f2d5c 0%, #09172b 100%);
+}
+
+.ross-workflow-benefit {
+  position: relative;
+
+  min-width: 0;
+  padding: 34px 30px 32px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ross-workflow-benefit:first-child {
+  border-left: 0;
+}
+
+.ross-workflow-benefit-line {
+  display: block;
+
+  width: 30px;
+  height: 2px;
+  margin-bottom: 19px;
+
+  background: #c62828;
+}
+
+.ross-workflow-benefit-title {
+  max-width: 220px;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+}
+
+.ross-workflow-benefit-description {
+  max-width: 245px;
+  margin: 10px 0 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1601px) {
+  .ross-workflow-container {
+    width: min(100% - 160px, 1540px);
+    padding: 112px 0;
+  }
+
+  .ross-workflow-header {
+    margin-bottom: 82px;
+  }
+
+  .ross-workflow-marker {
+    width: 116px;
+    height: 116px;
+  }
+
+  .ross-workflow-track {
+    top: 107px;
+  }
+}
+
+/* =========================
+   MACBOOK / COMPACT LAPTOP
+========================= */
+
+@media (min-width: 901px) and (max-width: 1600px) {
+  .ross-workflow-container {
+    width: min(100% - 80px, 1440px);
+    padding: 52px 0 56px;
+  }
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .ross-workflow-header {
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.72fr);
+    gap: 70px;
+    align-items: center;
+
+    margin-bottom: 34px;
+  }
+
+  .ross-workflow-eyebrow {
+    margin-bottom: 20px;
+    padding-bottom: 13px;
+
+    font-size: 11px;
+  }
+
+  .ross-workflow-eyebrow::after {
+    width: 38px;
+  }
+
+  .ross-workflow-title {
+    max-width: 600px;
+
+    font-size: clamp(44px, 4vw, 60px);
+    line-height: 1;
+  }
+
+  .ross-workflow-intro-column {
+    padding: 0;
+  }
+
+  .ross-workflow-intro {
+    max-width: 550px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-workflow-intro + .ross-workflow-intro {
+    margin-top: 14px;
+  }
+
+  /* =========================
+     WORKFLOW
+  ========================= */
+
+  .ross-workflow-journey {
+    gap: 24px;
+    padding: 16px 0 34px;
+  }
+
+  .ross-workflow-track {
+    top: 91px;
+    right: 9%;
+    left: 9%;
+  }
+
+  .ross-workflow-step-number {
+    min-width: 28px;
+    height: 28px;
+    margin-bottom: 9px;
+
+    font-size: 9px;
+  }
+
+  .ross-workflow-marker {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 16px;
+
+    font-size: 19px;
+  }
+
+  .ross-workflow-step-title {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .ross-workflow-step-description {
+    max-width: 225px;
+    margin-top: 7px;
+
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* =========================
+     BENEFIT STRIP
+  ========================= */
+
+  .ross-workflow-benefits {
+    margin-top: 0;
+  }
+
+  .ross-workflow-benefit {
+    padding: 22px 26px 21px;
+  }
+
+  .ross-workflow-benefit-line {
+    width: 26px;
+    margin-bottom: 13px;
+  }
+
+  .ross-workflow-benefit-title {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .ross-workflow-benefit-description {
+    margin-top: 7px;
+
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .ross-workflow-container {
+    width: min(100% - 48px, 820px);
+    padding: 70px 0;
+  }
+
+  .ross-workflow-header {
+    grid-template-columns: 1fr;
+    gap: 34px;
+
+    margin-bottom: 50px;
+  }
+
+  .ross-workflow-title {
+    max-width: 680px;
+
+    font-size: clamp(42px, 7vw, 58px);
+  }
+
+  .ross-workflow-intro-column {
+    padding: 0;
+  }
+
+  .ross-workflow-intro {
+    max-width: 680px;
+  }
+
+  .ross-workflow-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    padding: 16px 0 44px;
+  }
+
+  .ross-workflow-track {
+    display: none;
+  }
+
+  .ross-workflow-step {
+    padding: 27px 22px;
+
+    border: 1px solid #d6dee8;
+
+    background: #ffffff;
+  }
+
+  .ross-workflow-marker {
+    width: 86px;
+    height: 86px;
+  }
+
+  .ross-workflow-step-description {
+    max-width: 285px;
+  }
+
+  .ross-workflow-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ross-workflow-benefit {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .ross-workflow-benefit:nth-child(1),
+  .ross-workflow-benefit:nth-child(2) {
+    border-top: 0;
+  }
+
+  .ross-workflow-benefit:nth-child(odd) {
+    border-left: 0;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 620px) {
+  .ross-workflow-container {
+    width: min(100% - 32px, 560px);
+    padding: 54px 0;
+  }
+
+  .ross-workflow-header {
+    gap: 27px;
+    margin-bottom: 39px;
+  }
+
+  .ross-workflow-eyebrow {
+    margin-bottom: 19px;
+    padding-bottom: 13px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ross-workflow-eyebrow::after {
+    width: 34px;
+  }
+
+  .ross-workflow-title {
+    font-size: clamp(35px, 9.3vw, 43px);
+    line-height: 1.04;
+  }
+
+  .ross-workflow-intro {
+    font-size: 14px;
+    line-height: 1.64;
+  }
+
+  .ross-workflow-intro + .ross-workflow-intro {
+    margin-top: 14px;
+  }
+
+  .ross-workflow-journey {
+    grid-template-columns: 1fr;
+    gap: 13px;
+
+    padding: 0 0 39px;
+  }
+
+  .ross-workflow-step {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    column-gap: 15px;
+    align-items: center;
+
+    padding: 19px 50px 19px 18px;
+
+    text-align: left;
+  }
+
+  .ross-workflow-step-number {
+    position: absolute;
+    top: 18px;
+    right: 17px;
+
+    min-width: 29px;
+    height: 29px;
+    margin: 0;
+
+    font-size: 9px;
+  }
+
+  .ross-workflow-marker {
+    grid-row: 1 / span 2;
+
+    width: 58px;
+    height: 58px;
+    margin: 0;
+
+    font-size: 15px;
+  }
+
+  .ross-workflow-step-title {
+    align-self: end;
+
+    margin: 0;
+
+    font-size: 16px;
+  }
+
+  .ross-workflow-step-description {
+    max-width: none;
+    margin: 5px 0 0;
+
+    font-size: 12px;
+    line-height: 1.56;
+  }
+
+  .ross-workflow-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .ross-workflow-benefit,
+  .ross-workflow-benefit:first-child,
+  .ross-workflow-benefit:nth-child(odd) {
+    padding: 23px 21px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-left: 0;
+  }
+
+  .ross-workflow-benefit:first-child {
+    border-top: 0;
+  }
+
+  .ross-workflow-benefit-line {
+    margin-bottom: 15px;
+  }
+
+  .ross-workflow-benefit-title {
+    max-width: none;
+
+    font-size: 15px;
+  }
+
+  .ross-workflow-benefit-description {
+    max-width: 420px;
+    margin-top: 7px;
+
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .ross-workflow-container {
+    width: min(100% - 26px, 360px);
+    padding: 47px 0;
+  }
+
+  .ross-workflow-title {
+    font-size: 32px;
+  }
+
+  .ross-workflow-step {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 12px;
+
+    padding: 17px 44px 17px 15px;
+  }
+
+  .ross-workflow-step-number {
+    top: 16px;
+    right: 14px;
+
+    min-width: 27px;
+    height: 27px;
+
+    font-size: 8px;
+  }
+
+  .ross-workflow-marker {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ross-workflow-step-title {
+    font-size: 15px;
+  }
+
+  .ross-workflow-step-description {
+    font-size: 11px;
+  }
+
+  .ross-workflow-benefit {
+    padding: 21px 18px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ross-workflow-marker {
+    transition: none;
+  }
+}

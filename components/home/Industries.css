@@ -1,0 +1,658 @@
+/* =========================
+   INDUSTRIES
+========================= */
+
+.ross-industries {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+  color: #09172b;
+}
+
+.ross-industries-container {
+  display: grid;
+  grid-template-columns: minmax(380px, 0.78fr) minmax(620px, 1.22fr);
+  gap: clamp(60px, 7vw, 118px);
+  align-items: start;
+
+  width: min(100% - 120px, 1440px);
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.ross-industries-introduction {
+  position: sticky;
+  top: 130px;
+
+  min-width: 0;
+  min-height: 720px;
+
+  isolation: isolate;
+}
+
+/* Subtle warehouse and Ross truck watermark */
+
+.ross-industries-introduction::before {
+  content: "";
+
+  position: absolute;
+  z-index: 0;
+
+  left: -220px;
+  bottom: -220px;
+
+  width: 1800px;
+  height: 1100px;
+
+  background: url("/backgrounds/workflow-blueprint.webp")
+    no-repeat left bottom;
+
+  background-size: contain;
+
+  opacity: 0.12;
+
+  pointer-events: none;
+}
+
+/* Keeps all wording above the watermark */
+
+.ross-industries-introduction > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ross-industries-eyebrow {
+  position: relative;
+
+  display: inline-block;
+
+  margin: 0 0 27px;
+  padding: 0 0 16px;
+
+  color: #c62828;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ross-industries-eyebrow::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 42px;
+  height: 2px;
+
+  background: #c62828;
+
+  content: "";
+}
+
+.ross-industries-title {
+  max-width: 620px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: clamp(46px, 4vw, 66px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.052em;
+}
+
+.ross-industries-title span {
+  display: block;
+}
+
+.ross-industries-title i {
+  color: #c62828;
+  font-style: normal;
+}
+
+.ross-industries-copy {
+  max-width: 570px;
+  margin: 32px 0 0;
+
+  color: #596579;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: -0.008em;
+}
+
+.ross-industries-statement {
+  margin-top: 40px;
+  padding: 4px 0 4px 26px;
+
+  border-left: 3px solid #c62828;
+}
+
+.ross-industries-statement p,
+.ross-industries-statement strong {
+  display: block;
+
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.ross-industries-statement p {
+  color: #0f2d5c;
+  font-weight: 600;
+}
+
+.ross-industries-statement strong {
+  margin-top: 2px;
+
+  color: #c62828;
+  font-weight: 700;
+}
+
+/* =========================
+   INDUSTRY LIST
+========================= */
+
+.ross-industries-list {
+  overflow: hidden;
+
+  border: 1px solid #d6dee8;
+  border-radius: 5px;
+
+  background: #ffffff;
+  box-shadow: 0 22px 65px rgba(9, 23, 43, 0.08);
+}
+
+.ross-industry-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr) 34px;
+  gap: 28px;
+  align-items: center;
+
+  min-height: 145px;
+  padding: 30px 34px;
+
+  border-top: 1px solid #d6dee8;
+
+  background: #ffffff;
+
+  transition:
+    background-color 260ms ease,
+    transform 260ms ease;
+}
+
+.ross-industry-item:first-child {
+  border-top: 0;
+}
+
+.ross-industry-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 82px;
+  height: 82px;
+
+  border: 1px solid #d6dee8;
+  border-radius: 4px;
+
+  background: #f7f8fa;
+
+  color: #0f2d5c;
+
+  transition:
+    border-color 260ms ease,
+    background-color 260ms ease,
+    color 260ms ease;
+}
+
+.ross-industry-icon svg {
+  display: block;
+
+  width: 50px;
+  height: 50px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ross-industry-content {
+  min-width: 0;
+}
+
+.ross-industry-title {
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.ross-industry-description {
+  max-width: 610px;
+  margin: 8px 0 0;
+
+  color: #667286;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.62;
+}
+
+.ross-industry-accent {
+  justify-self: end;
+
+  display: block;
+
+  width: 26px;
+  height: 2px;
+
+  background: #c62828;
+
+  transition: width 260ms ease;
+}
+
+.ross-industry-item:hover {
+  background: #f8fafc;
+}
+
+.ross-industry-item:hover .ross-industry-icon {
+  border-color: rgba(198, 40, 40, 0.4);
+
+  background: #ffffff;
+  color: #c62828;
+}
+
+.ross-industry-item:hover .ross-industry-accent {
+  width: 34px;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1601px) {
+  .ross-industries-container {
+    width: min(100% - 160px, 1540px);
+    padding: 112px 0;
+  }
+
+  .ross-industry-item {
+    min-height: 154px;
+    padding: 34px 38px;
+  }
+}
+
+/* =========================
+   MACBOOK / LAPTOP
+========================= */
+
+@media (min-width: 901px) and (max-width: 1600px) {
+  .ross-industries-container {
+    grid-template-columns: minmax(350px, 0.72fr) minmax(560px, 1.28fr);
+    gap: 58px;
+
+    width: min(100% - 80px, 1440px);
+    padding: 64px 0;
+  }
+
+.ross-industries-introduction {
+  top: 110px;
+  min-height: 650px;
+}
+
+.ross-industries-introduction::before {
+  right: auto;
+  bottom: -35px;
+  left: -90px;
+
+  width: 790px;
+  height: 500px;
+
+  background-size: contain;
+
+  opacity: 0.48;
+
+  transform: scale(1.55);
+  transform-origin: left bottom;
+}
+
+  .ross-industries-eyebrow {
+    margin-bottom: 21px;
+    padding-bottom: 13px;
+
+    font-size: 10px;
+  }
+
+  .ross-industries-title {
+    max-width: 530px;
+
+    font-size: clamp(40px, 3.4vw, 54px);
+  }
+
+  .ross-industries-copy {
+    max-width: 510px;
+    margin-top: 24px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-industries-statement {
+    margin-top: 30px;
+  }
+
+  .ross-industries-statement p,
+  .ross-industries-statement strong {
+    font-size: 14px;
+  }
+
+  .ross-industry-item {
+    grid-template-columns: 76px minmax(0, 1fr) 28px;
+    gap: 22px;
+
+    min-height: 112px;
+    padding: 22px 26px;
+  }
+
+  .ross-industry-icon {
+    width: 66px;
+    height: 66px;
+  }
+
+  .ross-industry-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ross-industry-title {
+    font-size: 18px;
+  }
+
+  .ross-industry-description {
+    margin-top: 6px;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .ross-industry-accent {
+    width: 22px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .ross-industries-container {
+    grid-template-columns: 1fr;
+    gap: 52px;
+
+    width: min(100% - 48px, 820px);
+    padding: 74px 0;
+  }
+
+  .ross-industries-introduction {
+    position: static;
+  }
+
+.ross-industries-introduction::before {
+  display: block;
+}
+
+  .ross-industries-title {
+    max-width: 680px;
+
+    font-size: clamp(42px, 7vw, 58px);
+  }
+
+  .ross-industries-copy {
+    max-width: 680px;
+  }
+
+  .ross-industries-list {
+    box-shadow: 0 18px 48px rgba(9, 23, 43, 0.07);
+  }
+
+  .ross-industry-item {
+    grid-template-columns: 80px minmax(0, 1fr) 28px;
+    gap: 24px;
+
+    min-height: 124px;
+    padding: 26px 28px;
+  }
+
+  .ross-industry-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .ross-industry-icon svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ross-industry-title {
+    font-size: 19px;
+  }
+
+  .ross-industry-description {
+    max-width: 560px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 620px) {
+  .ross-industries-container {
+    gap: 36px;
+    width: min(100% - 32px, 560px);
+    padding: 56px 0;
+  }
+
+  .ross-industries-introduction {
+    position: relative;
+    top: auto;
+
+    min-height: 720px;
+    isolation: isolate;
+  }
+
+.ross-industries-introduction::before {
+  content: "";
+
+  position: absolute;
+  z-index: 0;
+
+  left: -180px;
+  bottom: -170px;   /* moved down */
+
+  width: 980px;
+  height: 640px;
+
+  background: url("/backgrounds/workflow-blueprint.webp")
+    no-repeat left bottom;
+
+  background-size: contain;
+
+  opacity: 0.55;
+
+  pointer-events: none;
+
+  transform: scale(1.45);
+  transform-origin: left bottom;
+}
+
+  .ross-industries-introduction > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .ross-industries-eyebrow {
+    margin-bottom: 19px;
+    padding-bottom: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ross-industries-eyebrow::after {
+    width: 34px;
+  }
+
+  .ross-industries-title {
+    max-width: 100%;
+
+    font-size: clamp(34px, 9.2vw, 42px);
+    line-height: 1.04;
+  }
+
+  .ross-industries-copy {
+    margin-top: 21px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-industries-statement {
+    margin-top: 27px;
+    padding-left: 18px;
+  }
+
+  .ross-industries-statement p,
+  .ross-industries-statement strong {
+    font-size: 13px;
+  }
+
+  .ross-industries-list {
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .ross-industry-item {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 16px;
+
+    min-height: 0;
+    padding: 21px 18px;
+  }
+
+  .ross-industry-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .ross-industry-icon svg {
+    width: 32px;
+    height: 32px;
+
+    stroke-width: 2.6;
+  }
+
+  .ross-industry-title {
+    font-size: 16px;
+    line-height: 1.28;
+  }
+
+  .ross-industry-description {
+    margin-top: 6px;
+
+    font-size: 12px;
+    line-height: 1.58;
+  }
+
+  .ross-industry-accent {
+    display: none;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .ross-industries-container {
+    width: min(100% - 26px, 360px);
+    padding: 49px 0;
+  }
+
+  .ross-industries-introduction {
+    min-height: 660px;
+  }
+
+  .ross-industries-introduction::before {
+    left: -170px;
+    bottom: -25px;
+
+    width: 700px;
+    height: 460px;
+
+    opacity: 0.16;
+
+    transform: scale(1.08);
+  }
+
+  .ross-industries-title {
+    font-size: 32px;
+  }
+
+  .ross-industry-item {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 13px;
+
+    padding: 18px 15px;
+  }
+
+  .ross-industry-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .ross-industry-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .ross-industry-title {
+    font-size: 15px;
+  }
+
+  .ross-industry-description {
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ross-industry-item,
+  .ross-industry-icon,
+  .ross-industry-accent {
+    transition: none;
+  }
+}

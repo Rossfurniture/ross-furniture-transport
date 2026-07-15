@@ -1,0 +1,806 @@
+/* =========================
+   BRAND PROMISE
+========================= */
+
+.ross-brand-promise {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+  color: #09172b;
+}
+
+.ross-brand-promise-container {
+  display: grid;
+  grid-template-columns: 1.65fr 0.95fr;
+  gap: clamp(42px, 4vw, 70px);
+  align-items: start;
+
+  width: min(100% - 120px, 1380px);
+  margin: 0 auto;
+  padding: 78px 0;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.ross-brand-promise-content {
+  min-width: 0;
+}
+
+.ross-brand-promise-header {
+  max-width: 760px;
+}
+
+.ross-brand-promise-eyebrow {
+  position: relative;
+
+  display: inline-block;
+
+  margin: 0 0 22px;
+  padding: 0 0 14px;
+
+  color: #c62828;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ross-brand-promise-eyebrow::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 38px;
+  height: 2px;
+
+  background: #c62828;
+
+  content: "";
+}
+
+.ross-brand-promise-title {
+  max-width: 760px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: clamp(40px, 3.55vw, 58px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.ross-brand-promise-title span {
+  display: block;
+}
+
+.ross-brand-promise-title i {
+  color: #c62828;
+  font-style: normal;
+}
+
+.ross-brand-promise-intro {
+  max-width: 720px;
+  margin: 24px 0 0;
+
+  color: #596579;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.68;
+  letter-spacing: -0.008em;
+}
+
+/* =========================
+   PROMISE LIST
+========================= */
+
+.ross-brand-promise-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+
+  max-width: 820px;
+  margin-top: 34px;
+
+  border-top: 1px solid #d6dee8;
+  border-left: 1px solid #d6dee8;
+}
+
+.ross-brand-promise-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+
+  min-width: 0;
+  padding: 22px 24px;
+
+  border-right: 1px solid #d6dee8;
+  border-bottom: 1px solid #d6dee8;
+}
+
+.ross-brand-promise-number {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #c62828;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.ross-brand-promise-item-content {
+  min-width: 0;
+}
+
+.ross-brand-promise-item-title {
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+}
+
+.ross-brand-promise-item-description {
+  max-width: 320px;
+  margin: 7px 0 0;
+
+  color: #667286;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+/* =========================
+   CLOSING MESSAGE
+========================= */
+
+.ross-brand-promise-closing {
+  position: relative;
+
+  margin-top: 24px;
+  padding: 15px 18px 15px 20px;
+
+  border-left: 3px solid #c62828;
+
+  background: #f7f8fa;
+}
+
+.ross-brand-promise-closing-small {
+  margin: 0 0 3px;
+
+  color: #0f2d5c;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ross-brand-promise-closing-strong {
+  margin: 0;
+
+  color: #c62828;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+/* =========================
+   RIGHT VISUAL
+========================= */
+
+.ross-brand-promise-visual {
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  background: #0f2d5c;
+  box-shadow: 0 20px 52px rgba(9, 23, 43, 0.11);
+}
+
+.ross-brand-promise-image {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 420px;
+  overflow: hidden;
+
+background-image:
+linear-gradient(
+180deg,
+rgba(9,23,43,.02) 45%,
+rgba(9,23,43,.30) 100%
+),
+url("/images/brand-promises.webp");
+
+  background-color: #0d2748;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ross-brand-promise-image::after {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(15, 45, 92, 0.07),
+      transparent 48%
+    );
+
+  pointer-events: none;
+
+  content: "";
+}
+
+/* =========================
+   NAVY MESSAGE PANEL
+========================= */
+
+.ross-brand-promise-message {
+  padding: 28px 32px 26px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 255, 255, 0.06),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #0f2d5c 0%, #09172b 100%);
+}
+
+.ross-brand-promise-message-eyebrow {
+  margin: 0 0 12px;
+
+  color: #c62828;
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ross-brand-promise-quote {
+  max-width: 560px;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(22px, 1.65vw, 29px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.ross-brand-promise-message-text {
+  max-width: 540px;
+  margin: 14px 0 0;
+
+  color: rgba(255, 255, 255, 0.66);
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+.ross-brand-promise-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-top: 21px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ross-brand-promise-values span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 0 20px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+
+  white-space: normal;
+}
+
+.ross-brand-promise-values span:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.ross-brand-promise-values span:last-child {
+  padding-right: 0;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1600px) {
+  .ross-brand-promise-container {
+    width: min(100% - 160px, 1480px);
+    padding: 92px 0;
+  }
+
+  .ross-brand-promise-image {
+    min-height: 470px;
+  }
+}
+
+/* =========================
+   MACBOOK / LAPTOP
+========================= */
+
+@media (max-width: 1440px) {
+  .ross-brand-promise-container {
+    grid-template-columns: minmax(0, 0.92fr) minmax(440px, 1.08fr);
+    gap: 54px;
+
+    width: min(100% - 80px, 1260px);
+    padding: 64px 0;
+  }
+
+  .ross-brand-promise-title {
+    font-size: clamp(38px, 3.5vw, 52px);
+  }
+
+  .ross-brand-promise-intro {
+    margin-top: 20px;
+
+    font-size: 14px;
+  }
+
+  .ross-brand-promise-list {
+    margin-top: 28px;
+  }
+
+  .ross-brand-promise-item {
+    padding: 14px 0;
+  }
+
+  .ross-brand-promise-image {
+    min-height: 390px;
+  }
+
+  .ross-brand-promise-message {
+    padding: 24px 28px 23px;
+  }
+
+  .ross-brand-promise-quote {
+    font-size: clamp(21px, 1.8vw, 27px);
+  }
+
+  .ross-brand-promise-values {
+    margin-top: 18px;
+    padding-top: 15px;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE
+========================= */
+
+@media (max-width: 1180px) {
+.ross-brand-promise-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 42px;
+
+  width: min(100% - 64px, 1280px);
+  margin: 0 auto;
+  padding: 68px 0;
+}
+
+  .ross-brand-promise-title {
+    font-size: clamp(38px, 4.5vw, 50px);
+  }
+
+  .ross-brand-promise-intro {
+    max-width: 640px;
+  }
+
+  /* =========================
+     PROMISE GRID
+  ========================= */
+
+  .ross-brand-promise-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-top: 34px;
+
+    border-top: 1px solid #d6dee8;
+    border-left: 1px solid #d6dee8;
+  }
+
+  .ross-brand-promise-item {
+    position: relative;
+
+    display: block;
+
+    min-height: 185px;
+    padding: 26px 24px 24px;
+
+    border-right: 1px solid #d6dee8;
+    border-bottom: 1px solid #d6dee8;
+  }
+
+  .ross-brand-promise-number {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+
+    padding: 0;
+    margin: 0;
+
+    color: #c62828;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+
+  .ross-brand-promise-number::after {
+    display: none;
+  }
+
+  .ross-brand-promise-item-content {
+    min-width: 0;
+  }
+
+  .ross-brand-promise-item-title {
+    margin: 0 32px 12px 0;
+
+    color: #0f2d5c;
+
+    font-size: 18px;
+    line-height: 1.28;
+  }
+
+  .ross-brand-promise-item-description {
+    max-width: none;
+    margin: 0;
+
+    color: #667286;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-brand-promise-closing {
+    margin-top: 24px;
+  }
+
+  /* =========================
+     RIGHT PANEL
+  ========================= */
+
+  .ross-brand-promise-image {
+    min-height: 380px;
+  }
+
+  .ross-brand-promise-message {
+    padding: 24px 26px 22px;
+  }
+
+  .ross-brand-promise-quote {
+    font-size: clamp(24px, 2.2vw, 30px);
+  }
+
+  .ross-brand-promise-message-text {
+    font-size: 13px;
+  }
+
+  .ross-brand-promise-values span {
+    padding: 0 12px;
+
+    font-size: 9px;
+    line-height: 1.3;
+    text-align: center;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 620px) {
+  .ross-brand-promise-container {
+    grid-template-columns: 1fr;
+    gap: 34px;
+
+    width: min(100% - 32px, 560px);
+    padding: 52px 0;
+  }
+
+  .ross-brand-promise-content,
+  .ross-brand-promise-header,
+  .ross-brand-promise-title,
+  .ross-brand-promise-intro,
+  .ross-brand-promise-list,
+  .ross-brand-promise-closing,
+  .ross-brand-promise-visual {
+    width: 100%;
+    max-width: none;
+  }
+
+  .ross-brand-promise-eyebrow {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ross-brand-promise-eyebrow::after {
+    width: 34px;
+  }
+
+  .ross-brand-promise-title {
+    font-size: clamp(34px, 9vw, 42px);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+
+  .ross-brand-promise-intro {
+    margin-top: 20px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-brand-promise-list {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    margin-top: 28px;
+
+    border-top: 1px solid #d6dee8;
+    border-left: 1px solid #d6dee8;
+  }
+
+  .ross-brand-promise-item {
+    position: relative;
+
+    display: block;
+
+    min-height: 0;
+    padding: 22px 52px 22px 20px;
+
+    border-right: 1px solid #d6dee8;
+    border-bottom: 1px solid #d6dee8;
+  }
+
+  .ross-brand-promise-number {
+    position: absolute;
+    top: 22px;
+    right: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    color: #c62828;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+
+  .ross-brand-promise-number::after {
+    display: none;
+  }
+
+  .ross-brand-promise-item-content {
+    display: block;
+    min-width: 0;
+  }
+
+  .ross-brand-promise-item-title {
+    max-width: 250px;
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.28;
+  }
+
+  .ross-brand-promise-item-description {
+    max-width: 360px;
+    margin: 8px 0 0;
+
+    font-size: 13px;
+    line-height: 1.62;
+  }
+
+  .ross-brand-promise-closing {
+    margin-top: 22px;
+    padding: 16px 17px 16px 18px;
+  }
+
+  .ross-brand-promise-closing-small {
+    font-size: 12px;
+  }
+
+  .ross-brand-promise-closing-strong {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .ross-brand-promise-visual {
+    margin: 0;
+
+    border-radius: 3px;
+  }
+
+  .ross-brand-promise-image {
+    min-height: 290px;
+
+    background-position: center;
+  }
+
+  .ross-brand-promise-message {
+    padding: 27px 22px 25px;
+  }
+
+  .ross-brand-promise-message-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 9px;
+  }
+
+  .ross-brand-promise-quote {
+    font-size: 24px;
+    line-height: 1.18;
+  }
+
+  .ross-brand-promise-message-text {
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .ross-brand-promise-values {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .ross-brand-promise-values span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 0 8px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .ross-brand-promise-values span:first-child {
+    border-left: 0;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .ross-brand-promise-container {
+    width: min(100% - 26px, 360px);
+    padding: 46px 0;
+  }
+
+  .ross-brand-promise-title {
+    font-size: 32px;
+  }
+
+  .ross-brand-promise-intro {
+    font-size: 13px;
+  }
+
+  .ross-brand-promise-item {
+    padding: 20px 46px 20px 17px;
+  }
+
+  .ross-brand-promise-number {
+    top: 20px;
+    right: 15px;
+
+    font-size: 11px;
+  }
+
+  .ross-brand-promise-item-title {
+    max-width: 230px;
+
+    font-size: 16px;
+  }
+
+  .ross-brand-promise-item-description {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .ross-brand-promise-image {
+    min-height: 260px;
+  }
+
+  .ross-brand-promise-message {
+    padding: 24px 19px 22px;
+  }
+
+  .ross-brand-promise-quote {
+    font-size: 22px;
+  }
+
+  .ross-brand-promise-values span {
+    min-height: 44px;
+    padding: 0 5px;
+
+    font-size: 8px;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ross-brand-promise *,
+  .ross-brand-promise *::before,
+  .ross-brand-promise *::after {
+    transition: none;
+    animation: none;
+    scroll-behavior: auto;
+  }
+}
