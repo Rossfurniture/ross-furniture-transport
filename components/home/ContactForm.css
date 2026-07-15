@@ -1,0 +1,792 @@
+/* =========================
+   COMMERCIAL CONTACT FORM
+========================= */
+
+.ross-contact-form {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(35, 81, 140, 0.34),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #071a35 0%, #0f2d5c 58%, #091b37 100%);
+
+  color: #ffffff;
+}
+
+.ross-contact-form::before {
+  position: absolute;
+  right: -260px;
+  bottom: -360px;
+
+  width: 960px;
+  height: 960px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+
+  content: "";
+  pointer-events: none;
+}
+
+.ross-contact-form-container {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: minmax(420px, 0.82fr) minmax(620px, 1.18fr);
+  gap: clamp(70px, 8vw, 140px);
+  align-items: center;
+
+  width: min(100% - 120px, 1440px);
+  margin: 0 auto;
+  padding: 110px 0;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.ross-contact-form-content {
+  min-width: 0;
+}
+
+.ross-contact-form-eyebrow {
+  position: relative;
+
+  display: inline-block;
+
+  margin: 0 0 27px;
+  padding: 0 0 16px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ross-contact-form-eyebrow::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 42px;
+  height: 2px;
+
+  background: #c62828;
+
+  content: "";
+}
+
+.ross-contact-form-title {
+  max-width: 680px;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(48px, 4.2vw, 68px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.052em;
+}
+
+.ross-contact-form-title span {
+  display: block;
+}
+
+.ross-contact-form-title i {
+  color: #e13737;
+  font-style: normal;
+}
+
+.ross-contact-form-introduction {
+  max-width: 610px;
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.ross-contact-form-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+
+  margin-top: 42px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ross-contact-form-benefit {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 13px;
+
+  min-height: 102px;
+  padding: 21px 20px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ross-contact-form-benefit span {
+  padding-top: 3px;
+
+  color: #e13737;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.ross-contact-form-benefit p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.ross-contact-form-direct {
+  margin-top: 37px;
+}
+
+.ross-contact-form-direct p {
+  margin: 0 0 10px;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ross-contact-form-direct a {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #ffffff;
+
+  font-size: clamp(28px, 2.4vw, 38px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.ross-contact-form-direct svg {
+  width: 29px;
+  height: 29px;
+
+  fill: none;
+  stroke: #e13737;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================
+   FORM PANEL
+========================= */
+
+.ross-contact-form-panel {
+  padding: 44px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 7px;
+
+  background: #ffffff;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.27);
+
+  color: #09172b;
+}
+
+.ross-contact-form-panel-header {
+  margin-bottom: 31px;
+}
+
+.ross-contact-form-panel-header > p {
+  margin: 0 0 10px;
+
+  color: #c62828;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ross-contact-form-panel-header h3 {
+  max-width: 620px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+}
+
+.ross-contact-form-panel-header span {
+  display: block;
+
+  max-width: 600px;
+  margin-top: 13px;
+
+  color: #667286;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.ross-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ross-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.ross-form-field--full {
+  grid-column: 1 / -1;
+}
+
+.ross-form-field label {
+  color: #0f2d5c;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ross-form-field input,
+.ross-form-field select,
+.ross-form-field textarea {
+  width: 100%;
+
+  border: 1px solid #d6dee8;
+  border-radius: 3px;
+
+  outline: none;
+
+  background: #f7f8fa;
+  color: #0f2d5c;
+
+  font: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.ross-form-field input,
+.ross-form-field select {
+  height: 51px;
+  padding: 0 15px;
+}
+
+.ross-form-field textarea {
+  min-height: 128px;
+  padding: 14px 15px;
+
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.ross-form-field input::placeholder,
+.ross-form-field textarea::placeholder {
+  color: #8b94a3;
+}
+
+.ross-form-field select {
+  cursor: pointer;
+}
+
+.ross-form-field input:focus,
+.ross-form-field select:focus,
+.ross-form-field textarea:focus {
+  border-color: #0f2d5c;
+
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(15, 45, 92, 0.09);
+}
+
+.ross-contact-form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  width: 100%;
+  min-height: 57px;
+  margin-top: 23px;
+  padding: 0 24px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: #c62828;
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 220ms ease,
+    transform 220ms ease;
+}
+
+.ross-contact-form-submit:hover:not(:disabled) {
+  background: #a91f1f;
+  transform: translateY(-2px);
+}
+
+.ross-contact-form-submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.ross-contact-form-submit svg {
+  width: 19px;
+  height: 19px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ross-contact-form-note {
+  max-width: 570px;
+  margin: 14px auto 0;
+
+  color: #7a8494;
+
+  font-size: 10px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.ross-contact-form-status {
+  margin: 17px 0 0;
+  padding: 13px 15px;
+
+  border-radius: 3px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.ross-contact-form-status--success {
+  background: #edf8f0;
+  color: #246c39;
+}
+
+.ross-contact-form-status--error {
+  background: #fff0f0;
+  color: #a91f1f;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1601px) {
+  .ross-contact-form-container {
+    width: min(100% - 160px, 1540px);
+    padding: 124px 0;
+  }
+
+  .ross-contact-form-panel {
+    padding: 50px;
+  }
+}
+
+/* =========================
+   MACBOOK / LAPTOP
+========================= */
+
+@media (min-width: 1181px) and (max-width: 1600px) {
+  .ross-contact-form-container {
+    grid-template-columns: minmax(390px, 0.82fr) minmax(600px, 1.18fr);
+    gap: 54px;
+
+    width: min(100% - 80px, 1440px);
+    min-height: calc(100svh - 90px);
+
+    padding: 34px 0 38px;
+  }
+
+  /* =========================
+     LEFT CONTENT
+  ========================= */
+
+  .ross-contact-form-eyebrow {
+    margin-bottom: 17px;
+    padding-bottom: 11px;
+
+    font-size: 9px;
+  }
+
+  .ross-contact-form-eyebrow::after {
+    width: 36px;
+  }
+
+  .ross-contact-form-title {
+    max-width: 560px;
+
+    font-size: clamp(38px, 3.2vw, 50px);
+    line-height: 1.01;
+  }
+
+  .ross-contact-form-introduction {
+    max-width: 560px;
+    margin-top: 19px;
+
+    font-size: 13px;
+    line-height: 1.56;
+  }
+
+  .ross-contact-form-benefits {
+    margin-top: 25px;
+  }
+
+  .ross-contact-form-benefit {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+
+    min-height: 72px;
+    padding: 14px 15px;
+  }
+
+  .ross-contact-form-benefit span {
+    font-size: 9px;
+  }
+
+  .ross-contact-form-benefit p {
+    font-size: 11px;
+    line-height: 1.42;
+  }
+
+  .ross-contact-form-direct {
+    margin-top: 25px;
+  }
+
+  .ross-contact-form-direct p {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+  }
+
+  .ross-contact-form-direct a {
+    gap: 10px;
+
+    font-size: 29px;
+  }
+
+  .ross-contact-form-direct svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* =========================
+     FORM PANEL
+  ========================= */
+
+  .ross-contact-form-panel {
+    padding: 24px 30px 25px;
+  }
+
+  .ross-contact-form-panel-header {
+    margin-bottom: 18px;
+  }
+
+  .ross-contact-form-panel-header > p {
+    margin-bottom: 7px;
+
+    font-size: 9px;
+  }
+
+  .ross-contact-form-panel-header h3 {
+    font-size: 23px;
+    line-height: 1.12;
+  }
+
+  .ross-contact-form-panel-header span {
+    margin-top: 8px;
+
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* =========================
+     FORM FIELDS
+  ========================= */
+
+  .ross-form-grid {
+    gap: 11px 13px;
+  }
+
+  .ross-form-field {
+    gap: 5px;
+  }
+
+  .ross-form-field label {
+    font-size: 8px;
+  }
+
+  .ross-form-field input,
+  .ross-form-field select {
+    height: 40px;
+    padding: 0 13px;
+
+    font-size: 11px;
+  }
+
+  .ross-form-field textarea {
+    min-height: 86px;
+    max-height: 86px;
+    padding: 11px 13px;
+
+    font-size: 11px;
+    line-height: 1.5;
+    resize: none;
+  }
+
+  .ross-contact-form-submit {
+    min-height: 47px;
+    margin-top: 15px;
+
+    font-size: 9px;
+  }
+
+  .ross-contact-form-submit svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ross-contact-form-note {
+    margin-top: 9px;
+
+    font-size: 8px;
+    line-height: 1.4;
+  }
+
+  .ross-contact-form-status {
+    margin-top: 10px;
+    padding: 9px 12px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1180px) {
+  .ross-contact-form-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    width: min(100% - 48px, 920px);
+    padding: 78px 0;
+  }
+
+  .ross-contact-form-content {
+    max-width: 780px;
+  }
+
+  .ross-contact-form-title {
+    max-width: 760px;
+
+    font-size: clamp(42px, 6vw, 58px);
+  }
+
+  .ross-contact-form-introduction {
+    max-width: 700px;
+  }
+
+  .ross-contact-form-benefits {
+    max-width: 760px;
+  }
+
+  .ross-contact-form-direct a {
+    font-size: 34px;
+  }
+
+  .ross-contact-form-panel {
+    padding: 42px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 620px) {
+  .ross-contact-form-container {
+    gap: 38px;
+
+    width: min(100% - 32px, 560px);
+    padding: 60px 0;
+  }
+
+  .ross-contact-form-eyebrow {
+    margin-bottom: 19px;
+    padding-bottom: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ross-contact-form-eyebrow::after {
+    width: 34px;
+  }
+
+  .ross-contact-form-title {
+    font-size: clamp(34px, 9vw, 42px);
+    line-height: 1.04;
+  }
+
+  .ross-contact-form-introduction {
+    margin-top: 21px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ross-contact-form-benefits {
+    grid-template-columns: 1fr;
+
+    margin-top: 30px;
+  }
+
+  .ross-contact-form-benefit {
+    min-height: 0;
+    padding: 17px 16px;
+  }
+
+  .ross-contact-form-direct {
+    margin-top: 30px;
+  }
+
+  .ross-contact-form-direct a {
+    font-size: 28px;
+  }
+
+  .ross-contact-form-panel {
+    padding: 27px 20px;
+  }
+
+  .ross-contact-form-panel-header h3 {
+    font-size: 24px;
+  }
+
+  .ross-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .ross-form-field--full {
+    grid-column: auto;
+  }
+
+  .ross-form-field input,
+  .ross-form-field select {
+    height: 50px;
+
+    font-size: 13px;
+  }
+
+  .ross-form-field textarea {
+    min-height: 132px;
+
+    font-size: 13px;
+  }
+
+  .ross-contact-form-submit {
+    min-height: 55px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .ross-contact-form-container {
+    width: min(100% - 26px, 360px);
+    padding: 52px 0;
+  }
+
+  .ross-contact-form-title {
+    font-size: 32px;
+  }
+
+  .ross-contact-form-panel {
+    padding: 24px 16px;
+  }
+
+  .ross-contact-form-panel-header h3 {
+    font-size: 22px;
+  }
+
+  .ross-contact-form-direct a {
+    font-size: 25px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ross-contact-form-submit,
+  .ross-form-field input,
+  .ross-form-field select,
+  .ross-form-field textarea {
+    transition: none;
+  }
+}

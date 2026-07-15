@@ -6,6 +6,8 @@ import Industries from "@/components/home/Industries";
 import ServiceShowcase from "@/components/home/ServiceShowcase";
 import Reviews from "@/components/home/Reviews";
 import FAQs from "@/components/home/FAQs";
+import ContactForm from "@/components/home/ContactForm";
+import Footer from "@/components/layout/Footer";
 
 export default function ProductionHomePage() {
   return (
@@ -18,6 +20,8 @@ export default function ProductionHomePage() {
 <ServiceShowcase />
 <Reviews />
 <FAQs />
+<ContactForm />
+<Footer />
     </>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import ActionButton from "./ActionButton";
 
 type TalkToRossProps = {
@@ -7,9 +9,13 @@ type TalkToRossProps = {
 export default function TalkToRoss({
   className = "",
 }: TalkToRossProps) {
+  const openRossPopup = () => {
+    window.dispatchEvent(new Event("open-ross-popup"));
+  };
+
   return (
     <ActionButton
-      href="/production/contact"
+      onClick={openRossPopup}
       variant="primary"
       className={className}
       ariaLabel="Talk to Ross"
