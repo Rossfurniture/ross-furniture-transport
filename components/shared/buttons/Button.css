@@ -1,0 +1,146 @@
+/* =========================
+   GLOBAL ACTION BUTTON
+========================= */
+
+.ross-action-button {
+  min-height: 54px;
+  padding: 0 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease,
+    border-color 0.1s ease,
+    transform 0.1s ease;
+}
+
+/* =========================
+   PRIMARY
+========================= */
+
+.ross-action-button-primary {
+  color: #ffffff;
+  background: var(--ross-red, #c62828);
+  border-color: var(--ross-red, #c62828);
+}
+
+.ross-action-button-primary:hover {
+  background: #a91f23;
+  border-color: #a91f23;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   OUTLINE
+========================= */
+
+.ross-action-button-outline {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.58);
+}
+
+.ross-action-button-outline:hover {
+  color: var(--ross-navy, #0f2d5c);
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   DARK
+========================= */
+
+.ross-action-button-dark {
+  color: #ffffff;
+  background: var(--ross-navy, #0f2d5c);
+  border-color: var(--ross-navy, #0f2d5c);
+}
+
+.ross-action-button-dark:hover {
+  background: #081f42;
+  border-color: #081f42;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   LIGHT
+========================= */
+
+.ross-action-button-light {
+  color: var(--ross-navy, #0f2d5c);
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.ross-action-button-light:hover {
+  color: var(--ross-red, #c62828);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CALL ROSS LINK
+========================= */
+
+.ross-call-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--ross-navy, #0f2d5c);
+  text-decoration: none;
+  white-space: nowrap;
+
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  transition:
+    color 0.1s ease,
+    transform 0.1s ease;
+}
+
+.ross-call-link:hover {
+  color: var(--ross-red, #c62828);
+  transform: translateY(-1px);
+}
+
+.ross-call-link span {
+  position: relative;
+  top: -1px;
+}
+
+.ross-call-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 640px) {
+  .ross-action-button {
+    min-height: 52px;
+    padding: 0 16px;
+
+    font-size: 11px;
+  }
+}

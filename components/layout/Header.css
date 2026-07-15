@@ -1,0 +1,479 @@
+/* =========================
+   ROSS HEADER
+========================= */
+
+.ross-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 96px;
+
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid transparent;
+
+  transition:
+    height 0.1s ease,
+    background-color 0.1s ease,
+    border-color 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.ross-header-scrolled {
+  height: 82px;
+
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(15, 45, 92, 0.09);
+  box-shadow: 0 12px 34px rgba(15, 45, 92, 0.08);
+
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.ross-header-container {
+  width: min(100% - 80px, 1480px);
+  height: 100%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 36px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.ross-header-logo-link {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.ross-header-logo {
+  width: 210px;
+  height: 76px;
+
+  object-fit: contain;
+  object-position: left center;
+
+  transition:
+    width 0.1s ease,
+    height 0.1s ease,
+    transform 0.1s ease;
+}
+
+.ross-header-logo-link:hover .ross-header-logo {
+  transform: translateY(-1px);
+}
+
+.ross-header-scrolled .ross-header-logo {
+  width: 184px;
+  height: 66px;
+}
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
+
+.ross-header-navigation {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 2.2vw, 40px);
+}
+
+.ross-header-link {
+  position: relative;
+
+  height: 100%;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #172236;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+
+  transition: color 0.1s ease;
+}
+
+.ross-header-link::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+  margin: 0 auto;
+
+  background: var(--ross-red, #c62828);
+
+  transition: width 0.1s ease;
+}
+
+.ross-header-link:hover,
+.ross-header-link-active {
+  color: var(--ross-red, #c62828);
+}
+
+.ross-header-link:hover::after,
+.ross-header-link-active::after {
+  width: 100%;
+}
+
+.ross-header-scrolled .ross-header-link::after {
+  bottom: 16px;
+}
+
+.ross-header-chevron {
+  width: 16px;
+  height: 16px;
+
+  transition: transform 0.1s ease;
+}
+
+/* =========================
+   DROPDOWNS
+========================= */
+
+.ross-header-dropdown {
+  position: relative;
+  height: 100%;
+}
+
+.ross-header-dropdown-trigger {
+  cursor: pointer;
+}
+
+.ross-header-dropdown:hover .ross-header-chevron,
+.ross-header-dropdown:focus-within .ross-header-chevron {
+  transform: rotate(180deg);
+}
+
+.ross-header-dropdown-menu {
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 50%;
+
+  width: 370px;
+  padding-top: 18px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, 12px);
+
+  transition:
+    opacity 0.1s ease,
+    visibility 0.1s ease,
+    transform 0.1s ease;
+}
+
+.ross-header-dropdown-menu-wide {
+  width: 650px;
+}
+
+.ross-header-dropdown:hover .ross-header-dropdown-menu,
+.ross-header-dropdown:focus-within .ross-header-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translate(-50%, 0);
+}
+
+.ross-header-dropdown-inner {
+  padding: 26px;
+
+  background: #ffffff;
+  border: 1px solid rgba(15, 45, 92, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 28px 70px rgba(15, 45, 92, 0.16);
+}
+
+.ross-header-dropdown-eyebrow {
+  margin: 0 0 14px;
+
+  color: var(--ross-red, #c62828);
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ross-header-dropdown-links {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ross-header-dropdown-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
+}
+
+.ross-header-dropdown-link {
+  min-height: 48px;
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  color: var(--ross-text, #1d2430);
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.35;
+
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease,
+    transform 0.1s ease;
+}
+
+.ross-header-dropdown-link:hover {
+  color: var(--ross-red, #c62828);
+  background: var(--ross-light, #f7f8fa);
+
+  transform: translateX(2px);
+}
+
+.ross-header-dropdown-arrow {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+
+  opacity: 0;
+  transform: translateX(-4px);
+
+  transition:
+    opacity 0.1s ease,
+    transform 0.1s ease;
+}
+
+.ross-header-dropdown-link:hover .ross-header-dropdown-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================
+   HEADER ACTIONS
+========================= */
+
+.ross-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+
+.ross-header-desktop-cta {
+  display: inline-flex;
+}
+
+.ross-header-global-cta {
+  min-height: 52px;
+  padding: 0 24px;
+
+  border-radius: 8px;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.ross-header-menu-button {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+
+  background: transparent;
+  border: 1px solid rgba(15, 45, 92, 0.18);
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.1s ease,
+    background-color 0.1s ease;
+}
+
+.ross-header-menu-button:hover {
+  border-color: var(--ross-navy, #0f2d5c);
+  background: rgba(15, 45, 92, 0.03);
+}
+
+.ross-header-menu-button span {
+  width: 20px;
+  height: 2px;
+
+  display: block;
+
+  background: var(--ross-navy, #0f2d5c);
+
+  transition:
+    transform 0.1s ease,
+    opacity 0.1s ease;
+}
+
+.ross-header-menu-button-open span:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.ross-header-menu-button-open span:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* =========================
+   RESPONSIVE — LAPTOP
+========================= */
+
+@media (max-width: 1240px) {
+  .ross-header-container {
+    width: min(100% - 48px, 1480px);
+    grid-template-columns: 210px minmax(0, 1fr) auto;
+    gap: 24px;
+  }
+
+  .ross-header-logo {
+    width: 188px;
+  }
+
+  .ross-header-navigation {
+    gap: 22px;
+  }
+
+  .ross-header-link {
+    font-size: 12px;
+  }
+
+  .ross-header-actions {
+    gap: 24px;
+  }
+
+  .ross-header-global-cta {
+    padding: 0 20px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — TABLET
+========================= */
+
+@media (max-width: 1080px) {
+  .ross-header {
+    height: 82px;
+  }
+
+  .ross-header-container {
+    width: min(100% - 36px, 1480px);
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  .ross-header-logo,
+  .ross-header-scrolled .ross-header-logo {
+    width: 170px;
+    height: 64px;
+  }
+
+  .ross-header-navigation {
+    display: none;
+  }
+
+  .ross-header-actions {
+    gap: 22px;
+  }
+
+  .ross-header-desktop-cta {
+    display: none;
+  }
+
+  .ross-header-menu-button {
+    display: inline-flex;
+  }
+}
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  .ross-header,
+  .ross-header-scrolled {
+    height: 74px;
+  }
+
+  .ross-header-container {
+    width: calc(100% - 28px);
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .ross-header-logo,
+  .ross-header-scrolled .ross-header-logo {
+    width: 128px;
+    height: 56px;
+  }
+
+  .ross-header-actions {
+    gap: 26px;
+  }
+
+  .ross-header-menu-button {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 430px) {
+  .ross-header-container {
+    width: calc(100% - 22px);
+  }
+
+  .ross-header-logo,
+  .ross-header-scrolled .ross-header-logo {
+    width: 112px;
+    height: 52px;
+  }
+
+  .ross-header-actions {
+    gap: 10px;
+  }
+}

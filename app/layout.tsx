@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+
 import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   title: "Ross Furniture Transport",
-  description: "Premium Furniture Transport Australia",
+  description:
+    "Commercial furniture transport and delivery solutions across Australia.",
 };
 
 export default function RootLayout({
@@ -19,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        {children}
-      </body>
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }
