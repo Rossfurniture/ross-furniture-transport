@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const launchDate = new Date("2026-07-20T00:00:00+10:00").getTime();
+const launchDate = new Date("2026-07-23T00:00:00+10:00").getTime();
 
 type TimeLeft = {
   days: number;
