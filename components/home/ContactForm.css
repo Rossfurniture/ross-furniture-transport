@@ -130,8 +130,8 @@
 
 .ross-contact-form-benefit {
   display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 13px;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 18px;
 
   min-height: 102px;
   padding: 21px 20px;
@@ -141,13 +141,16 @@
 }
 
 .ross-contact-form-benefit span {
-  padding-top: 3px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   color: #e13737;
 
-  font-size: 10px;
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .ross-contact-form-benefit p {
@@ -281,10 +284,10 @@
 .ross-form-field label {
   color: #0f2d5c;
 
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -490,17 +493,15 @@
     margin-top: 25px;
   }
 
-  .ross-contact-form-benefit {
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 10px;
+.ross-contact-form-benefit {
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+}
 
-    min-height: 72px;
-    padding: 14px 15px;
-  }
-
-  .ross-contact-form-benefit span {
-    font-size: 9px;
-  }
+.ross-contact-form-benefit span {
+  font-size: 20px;
+  line-height: 1;
+}
 
   .ross-contact-form-benefit p {
     font-size: 11px;
@@ -570,33 +571,33 @@
     gap: 5px;
   }
 
-  .ross-form-field label {
-    font-size: 8px;
-  }
+.ross-form-field label {
+  font-size: 11px;
+}
 
-  .ross-form-field input,
-  .ross-form-field select {
-    height: 40px;
-    padding: 0 13px;
+.ross-form-field input,
+.ross-form-field select {
+  height: 42px;
+  padding: 0 15px;
 
-    font-size: 11px;
-  }
+  font-size: 12px;
+}
 
-  .ross-form-field textarea {
-    min-height: 86px;
-    max-height: 86px;
-    padding: 11px 13px;
+.ross-form-field textarea {
+  min-height: 90px;
+  max-height: 90px;
+  padding: 13px 15px;
 
-    font-size: 11px;
-    line-height: 1.5;
-    resize: none;
-  }
+  font-size: 12px;
+  line-height: 1.5;
+  resize: none;
+}
 
   .ross-contact-form-submit {
     min-height: 47px;
     margin-top: 15px;
 
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .ross-contact-form-submit svg {
@@ -607,7 +608,7 @@
   .ross-contact-form-note {
     margin-top: 9px;
 
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.4;
   }
 

@@ -85,14 +85,18 @@ const rightFAQs: FAQItem[] = [
   },
 ];
 
+type FAQColumnProps = {
+  items: FAQItem[];
+  column: "left" | "right";
+  startNumber: number;
+};
+
 function FAQColumn({
   items,
   column,
-}: {
-  items: FAQItem[];
-  column: "left" | "right";
-}) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  startNumber,
+}: FAQColumnProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
     setOpenIndex((currentIndex) =>
@@ -106,6 +110,7 @@ function FAQColumn({
         const isOpen = openIndex === index;
         const answerId = `ross-faq-${column}-answer-${index}`;
         const buttonId = `ross-faq-${column}-button-${index}`;
+        const displayNumber = startNumber + index;
 
         return (
           <article
@@ -124,7 +129,7 @@ function FAQColumn({
                 onClick={() => handleToggle(index)}
               >
                 <span className="ross-faq-question-number">
-                  {String(index + 1).padStart(2, "0")}
+                  {String(displayNumber).padStart(2, "0")}
                 </span>
 
                 <span className="ross-faq-question-text">
@@ -165,7 +170,9 @@ export default function FAQs() {
       <div className="ross-faqs-container">
         <header className="ross-faqs-header">
           <div className="ross-faqs-heading-column">
-            <p className="ross-faqs-eyebrow">Frequently Asked Questions</p>
+            <p className="ross-faqs-eyebrow">
+              Frequently Asked Questions
+            </p>
 
             <h2 id="ross-faqs-heading" className="ross-faqs-title">
               Everything Your Business
@@ -190,8 +197,17 @@ export default function FAQs() {
         </header>
 
         <div className="ross-faqs-grid">
-          <FAQColumn items={leftFAQs} column="left" />
-          <FAQColumn items={rightFAQs} column="right" />
+          <FAQColumn
+            items={leftFAQs}
+            column="left"
+            startNumber={1}
+          />
+
+          <FAQColumn
+            items={rightFAQs}
+            column="right"
+            startNumber={8}
+          />
         </div>
       </div>
     </section>

@@ -85,9 +85,7 @@
 }
 
 .ross-footer-brand-line {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  display: block;
 
   max-width: 450px;
   margin-top: 32px;
@@ -97,15 +95,6 @@
   font-size: 15px;
   font-weight: 600;
   line-height: 1.55;
-}
-
-.ross-footer-brand-line span {
-  flex: 0 0 auto;
-
-  width: 34px;
-  height: 2px;
-
-  background: #c62828;
 }
 
 /* =========================
