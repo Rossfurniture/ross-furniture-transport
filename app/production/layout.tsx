@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export default function ProductionLayout({
   children,
@@ -8,7 +9,10 @@ export default function ProductionLayout({
   return (
     <>
       <Header />
+
       <main>{children}</main>
+
+      <Footer />
     </>
   );
 }

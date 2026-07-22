@@ -1,0 +1,786 @@
+/* =========================
+   ROSS SERVICE CAROUSEL
+========================= */
+
+.ross-services-carousel-section {
+  position: relative;
+
+  width: 100%;
+  padding: 100px 0 46px;
+
+  overflow: hidden;
+
+  background: #f7f8fa;
+  color: #09172b;
+}
+
+.ross-services-carousel-container {
+  width: 100%;
+  max-width: 1600px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.ross-services-carousel-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.65fr);
+  gap: 56px;
+  align-items: end;
+
+  width: min(calc(100% - 96px), 1440px);
+  margin: 0 auto 28px;
+
+  text-align: left;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.ross-services-carousel-title {
+  grid-column: 1;
+
+  max-width: 680px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: clamp(38px, 3.4vw, 50px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.ross-services-carousel-title span {
+  display: block;
+}
+
+.ross-services-carousel-title i {
+  color: #c62828;
+  font-style: normal;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.ross-services-carousel-intro {
+  grid-column: 2;
+
+  max-width: 520px;
+  margin: 0 0 2px;
+
+  color: #536075;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   HORIZONTAL CAROUSEL
+========================= */
+
+.ross-services-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(300px, 25.5vw, 350px);
+  gap: 20px;
+
+  width: 100%;
+  padding: 0 48px 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-padding-left: 48px;
+  scroll-snap-type: x mandatory;
+
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+
+  cursor: grab;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ross-services-carousel:active {
+  cursor: grabbing;
+}
+
+.ross-services-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.ross-service-slide {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  color: inherit;
+  text-decoration: none;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.ross-service-slide-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+
+  overflow: hidden;
+
+  border: 1px solid #dce2e9;
+  background: #d6dee8;
+
+  isolation: isolate;
+}
+
+.ross-service-slide-photo {
+  z-index: 0;
+
+  object-fit: cover;
+
+  transition:
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 400ms ease;
+}
+
+.ross-service-slide-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(9, 23, 43, 0.02) 28%,
+      rgba(9, 23, 43, 0.14) 62%,
+      rgba(9, 23, 43, 0.5) 100%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================
+   CARD NUMBER
+========================= */
+
+.ross-service-slide-number {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+
+  pointer-events: none;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.ross-service-slide-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 15px 0 13px;
+}
+
+.ross-service-slide-content h3 {
+  max-width: 330px;
+  margin: 0;
+
+  color: #0f2d5c;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+
+  transition: color 260ms ease;
+}
+
+.ross-service-slide-content p {
+  max-width: 340px;
+  margin: 8px 0 0;
+
+  color: #596579;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* =========================
+   CARD ACCENT
+========================= */
+
+.ross-service-slide-line {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 1px;
+  margin-top: auto;
+
+  overflow: hidden;
+
+  background: #d6dee8;
+}
+
+.ross-service-slide-line::after {
+  position: absolute;
+  inset: 0;
+
+  background: #c62828;
+
+  content: "";
+  transform: scaleX(0.16);
+  transform-origin: left center;
+
+  transition: transform 320ms ease;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+@media (hover: hover) {
+  .ross-service-slide:hover .ross-service-slide-photo {
+    transform: scale(1.045);
+    filter: brightness(0.9);
+  }
+
+  .ross-service-slide:hover .ross-service-slide-content h3 {
+    color: #c62828;
+  }
+
+  .ross-service-slide:hover .ross-service-slide-line::after {
+    transform: scaleX(1);
+  }
+}
+
+.ross-service-slide:focus-visible {
+  outline: 2px solid #c62828;
+  outline-offset: 7px;
+}
+
+/* =========================
+   SWIPE NOTE
+========================= */
+
+.ross-services-swipe-note {
+  width: min(calc(100% - 96px), 1440px);
+  margin: 8px auto 0;
+
+  color: rgba(9, 23, 43, 0.44);
+
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1600px) {
+  .ross-services-carousel-section {
+    padding: 56px 0 58px;
+  }
+
+  .ross-services-carousel-header {
+    width: min(calc(100% - 160px), 1540px);
+    margin-bottom: 34px;
+  }
+
+  .ross-services-carousel-title {
+    max-width: 720px;
+
+    font-size: 54px;
+  }
+
+  .ross-services-carousel-intro {
+    max-width: 540px;
+
+    font-size: 15px;
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: 370px;
+    gap: 24px;
+
+    padding-right: 80px;
+    padding-left: 80px;
+
+    scroll-padding-left: 80px;
+  }
+
+  .ross-services-swipe-note {
+    width: min(calc(100% - 160px), 1540px);
+  }
+}
+
+/* =========================
+   MACBOOK / LAPTOP
+========================= */
+
+@media (max-width: 1440px) {
+  .ross-services-carousel-section {
+    padding: 38px 0 42px;
+  }
+
+  .ross-services-carousel-header {
+    grid-template-columns: minmax(0, 0.95fr) minmax(310px, 0.65fr);
+    gap: 46px;
+
+    width: min(calc(100% - 80px), 1280px);
+    margin-bottom: 24px;
+  }
+
+  .ross-services-carousel-eyebrow {
+    margin-bottom: 19px;
+    padding-bottom: 12px;
+
+    font-size: 11px;
+  }
+
+  .ross-services-carousel-title {
+    max-width: 620px;
+
+    font-size: clamp(35px, 3.2vw, 46px);
+  }
+
+  .ross-services-carousel-intro {
+    max-width: 470px;
+
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: clamp(290px, 25vw, 335px);
+    gap: 18px;
+
+    padding-right: 40px;
+    padding-left: 40px;
+
+    scroll-padding-left: 40px;
+  }
+
+  .ross-service-slide-image {
+    aspect-ratio: 16 / 8;
+  }
+
+  .ross-service-slide-number {
+    top: 13px;
+    right: 13px;
+
+    font-size: 25px;
+  }
+
+  .ross-service-slide-content {
+    padding: 13px 0 12px;
+  }
+
+  .ross-service-slide-content h3 {
+    font-size: 19px;
+  }
+
+  .ross-service-slide-content p {
+    margin-top: 7px;
+
+    font-size: 11px;
+    line-height: 1.48;
+  }
+
+  .ross-services-swipe-note {
+    width: min(calc(100% - 80px), 1280px);
+    margin-top: 7px;
+  }
+}
+
+/* =========================
+   SHORT MACBOOK HEIGHT
+========================= */
+
+@media (max-width: 1440px) and (max-height: 850px) {
+  .ross-services-carousel-section {
+    padding: 30px 0 34px;
+  }
+
+  .ross-services-carousel-header {
+    margin-bottom: 20px;
+  }
+
+  .ross-services-carousel-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .ross-services-carousel-title {
+    font-size: clamp(32px, 3vw, 42px);
+  }
+
+  .ross-services-carousel-intro {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: clamp(280px, 24vw, 320px);
+    gap: 17px;
+  }
+
+  .ross-service-slide-image {
+    aspect-ratio: 16 / 7.6;
+  }
+
+  .ross-service-slide-content {
+    padding: 11px 0 10px;
+  }
+
+  .ross-service-slide-content h3 {
+    font-size: 18px;
+  }
+
+  .ross-service-slide-content p {
+    margin-top: 6px;
+
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .ross-services-swipe-note {
+    margin-top: 6px;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE
+========================= */
+
+@media (max-width: 1180px) {
+  .ross-services-carousel-header {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+    gap: 38px;
+
+    width: min(calc(100% - 64px), 1080px);
+  }
+
+  .ross-services-carousel-title {
+    font-size: clamp(36px, 4.6vw, 48px);
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: minmax(290px, 42vw);
+    gap: 20px;
+
+    padding-right: 32px;
+    padding-left: 32px;
+
+    scroll-padding-left: 32px;
+  }
+
+  .ross-services-swipe-note {
+    width: min(calc(100% - 64px), 1080px);
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT
+========================= */
+
+@media (max-width: 900px) {
+  .ross-services-carousel-section {
+    padding: 58px 0 62px;
+  }
+
+  .ross-services-carousel-header {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    width: min(calc(100% - 48px), 820px);
+    margin-bottom: 32px;
+  }
+
+  .ross-services-carousel-eyebrow {
+    grid-column: 1;
+
+    margin-bottom: 24px;
+  }
+
+  .ross-services-carousel-title {
+    grid-column: 1;
+
+    max-width: 640px;
+
+    font-size: clamp(38px, 6vw, 50px);
+  }
+
+  .ross-services-carousel-intro {
+    grid-column: 1;
+
+    max-width: 620px;
+    margin-top: 20px;
+
+    font-size: 14px;
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: minmax(290px, 46vw);
+    gap: 18px;
+
+    padding-right: 24px;
+    padding-left: 24px;
+
+    scroll-padding-left: 24px;
+  }
+
+  .ross-service-slide-image {
+    aspect-ratio: 16 / 9.5;
+  }
+
+  .ross-service-slide-content h3 {
+    font-size: 21px;
+  }
+
+  .ross-service-slide-content p {
+    font-size: 12px;
+  }
+
+  .ross-services-swipe-note {
+    width: calc(100% - 48px);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 620px) {
+  .ross-services-carousel-section {
+    padding: 48px 0 52px;
+  }
+
+  .ross-services-carousel-header {
+    width: min(calc(100% - 32px), 560px);
+    margin-bottom: 28px;
+  }
+
+  .ross-services-carousel-eyebrow {
+    margin-bottom: 19px;
+    padding-bottom: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .ross-services-carousel-eyebrow::after {
+    width: 34px;
+  }
+
+  .ross-services-carousel-title {
+    max-width: 100%;
+
+    font-size: clamp(31px, 8.5vw, 38px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  .ross-services-carousel-intro {
+    max-width: 100%;
+    margin-top: 16px;
+
+    font-size: 13px;
+    line-height: 1.58;
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: 84vw;
+    gap: 16px;
+
+    padding-right: 16px;
+    padding-left: 16px;
+
+    scroll-padding-left: 16px;
+  }
+
+  .ross-service-slide-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .ross-service-slide-number {
+    top: 14px;
+    right: 14px;
+
+    font-size: 25px;
+  }
+
+  .ross-service-slide-content {
+    padding: 16px 0 14px;
+  }
+
+  .ross-service-slide-content h3 {
+    font-size: 21px;
+  }
+
+  .ross-service-slide-content p {
+    margin-top: 8px;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .ross-services-swipe-note {
+    width: calc(100% - 32px);
+    margin-top: 8px;
+
+    font-size: 8px;
+    text-align: left;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .ross-services-carousel-section {
+    padding: 43px 0 48px;
+  }
+
+  .ross-services-carousel-header {
+    width: min(calc(100% - 26px), 360px);
+  }
+
+  .ross-services-carousel-title {
+    font-size: 30px;
+  }
+
+  .ross-services-carousel-intro {
+    font-size: 12px;
+  }
+
+  .ross-services-carousel {
+    grid-auto-columns: 87vw;
+    gap: 14px;
+
+    padding-right: 13px;
+    padding-left: 13px;
+
+    scroll-padding-left: 13px;
+  }
+
+  .ross-service-slide-content h3 {
+    font-size: 20px;
+  }
+
+  .ross-services-swipe-note {
+    width: calc(100% - 26px);
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ross-service-slide-photo,
+  .ross-service-slide-content h3,
+  .ross-service-slide-line::after {
+    transition: none;
+  }
+
+  .ross-service-slide:hover .ross-service-slide-photo {
+    transform: none;
+  }
+}
+
+/* =========================
+   PARAGRAPH SIZE UPDATE
+========================= */
+
+/* Intro paragraph on the right side of the heading */
+
+.ross-services-carousel-intro {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Description underneath each service title */
+
+.ross-service-slide-content p {
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+/* Keep paragraphs readable on MacBook */
+
+@media (max-width: 1440px) {
+  .ross-services-carousel-intro {
+    font-size: 15px;
+    line-height: 1.62;
+  }
+
+  .ross-service-slide-content p {
+    font-size: 13px;
+    line-height: 1.58;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .ross-services-carousel-intro {
+    font-size: 15px;
+  }
+
+  .ross-service-slide-content p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 620px) {
+  .ross-services-carousel-intro {
+    font-size: 14px;
+    line-height: 1.62;
+  }
+
+  .ross-service-slide-content p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}

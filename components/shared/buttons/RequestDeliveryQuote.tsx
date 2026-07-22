@@ -1,3 +1,5 @@
+"use client";
+
 import ActionButton from "./ActionButton";
 
 type RequestDeliveryQuoteProps = {
@@ -7,9 +9,19 @@ type RequestDeliveryQuoteProps = {
 export default function RequestDeliveryQuote({
   className = "",
 }: RequestDeliveryQuoteProps) {
+  const openRossPopup = () => {
+    window.dispatchEvent(
+      new CustomEvent("open-ross-popup", {
+        detail: {
+          deliveryModel: "General Delivery Quote",
+        },
+      }),
+    );
+  };
+
   return (
     <ActionButton
-      href="/production/contact#delivery-quote"
+      onClick={openRossPopup}
       variant="primary"
       className={className}
       ariaLabel="Request a delivery quote"

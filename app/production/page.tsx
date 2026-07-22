@@ -21,7 +21,6 @@ export default function ProductionHomePage() {
 <Reviews />
 <FAQs />
 <ContactForm />
-<Footer />
     </>
   );
 }
