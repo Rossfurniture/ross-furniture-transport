@@ -1,12 +1,14 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import "./ContactForm.css";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<FormStatus>("idle");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -15,36 +17,38 @@ export default function ContactForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    formData.set(
+      "_subject",
+      "New Commercial Enquiry — Ross Furniture Transport",
+    );
+    formData.set("_template", "table");
+    formData.set("_captcha", "false");
+    formData.set("_formType", "Website Contact Form");
+
     setStatus("submitting");
 
     try {
-      /*
-        Connect this to your API route, Resend, Formspree,
-        CRM, or preferred form handler later.
-
-        Example:
-
-        const response = await fetch("/api/commercial-enquiry", {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/depasqualeross@gmail.com",
+        {
           method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
           body: formData,
-        });
-
-        if (!response.ok) {
-          throw new Error("Unable to submit form");
-        });
-      */
-
-      await new Promise((resolve) => setTimeout(resolve, 900));
-
-      console.log(
-        "Commercial enquiry:",
-        Object.fromEntries(formData.entries()),
+        },
       );
+
+      if (!response.ok) {
+        throw new Error("Unable to submit commercial enquiry.");
+      }
 
       form.reset();
       setStatus("success");
+
+      router.push("/production/thank-you");
     } catch (error) {
-      console.error(error);
+      console.error("Contact form submission error:", error);
       setStatus("error");
     }
   };
@@ -196,7 +200,7 @@ export default function ContactForm() {
                   </option>
 
                   <option value="bedding-supplier">
-                    Bedding & Mattress Supplier
+                    Bedding &amp; Mattress Supplier
                   </option>
 
                   <option value="appliance-retailer">
@@ -241,7 +245,7 @@ export default function ContactForm() {
                   </option>
 
                   <option value="bedding-delivery">
-                    Bedding & Mattress Delivery
+                    Bedding &amp; Mattress Delivery
                   </option>
 
                   <option value="appliance-delivery">
@@ -310,17 +314,17 @@ export default function ContactForm() {
                   <option value="one-off">One-Off Delivery</option>
                   <option value="daily">Daily Runs</option>
                   <option value="weekly">Weekly Runs</option>
+
                   <option value="multiple-weekly">
                     Multiple Runs Per Week
                   </option>
+
                   <option value="ongoing">Ongoing as Required</option>
                 </select>
               </div>
 
               <div className="ross-form-field ross-form-field--full">
-                <label htmlFor="message">
-                  Delivery Requirements
-                </label>
+                <label htmlFor="message">Delivery Requirements</label>
 
                 <textarea
                   id="message"
@@ -367,8 +371,8 @@ export default function ContactForm() {
                 className="ross-contact-form-status ross-contact-form-status--error"
                 role="alert"
               >
-                Something went wrong. Please call Ross directly on
-                0413 261 153.
+                Something went wrong. Please call Ross directly on 0413 261
+                153.
               </p>
             )}
           </form>

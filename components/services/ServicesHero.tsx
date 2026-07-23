@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import RequestDeliveryQuote from "@/components/shared/buttons/RequestDeliveryQuote";
-import ExploreDeliverySolutions from "@/components/shared/buttons/ExploreDeliverySolutions";
 import RossServiceCarousel from "@/components/shared/sections/RossServiceCarousel";
 import CommercialDeliveryProcess from "@/components/services/CommercialDeliveryProcess";
 import CommercialPricingGuide from "@/components/services/CommercialPricingGuide";
@@ -78,7 +77,6 @@ export default function ServicesHero() {
 
             <div className="ross-services-hero-actions">
               <RequestDeliveryQuote />
-              <ExploreDeliverySolutions />
             </div>
           </div>
 

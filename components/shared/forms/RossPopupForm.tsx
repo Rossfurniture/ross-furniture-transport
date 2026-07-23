@@ -1,12 +1,15 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import "./RossPopupForm.css";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function RossPopupForm() {
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState<FormStatus>("idle");
 
@@ -46,6 +49,10 @@ export default function RossPopupForm() {
   }, [isOpen]);
 
   const closePopup = () => {
+    if (status === "submitting") {
+      return;
+    }
+
     setIsOpen(false);
     setStatus("idle");
   };
@@ -56,35 +63,39 @@ export default function RossPopupForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    formData.set(
+      "_subject",
+      "New Popup Enquiry — Ross Furniture Transport",
+    );
+    formData.set("_template", "table");
+    formData.set("_captcha", "false");
+    formData.set("_formType", "Website Popup Form");
+
     setStatus("submitting");
 
     try {
-      /*
-        Connect this later to your real API route.
-
-        Example:
-
-        const response = await fetch("/api/commercial-enquiry", {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/depasqualeross@gmail.com",
+        {
           method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
           body: formData,
-        });
-
-        if (!response.ok) {
-          throw new Error("Unable to submit enquiry");
-        });
-      */
-
-      await new Promise((resolve) => setTimeout(resolve, 900));
-
-      console.log(
-        "Ross popup enquiry:",
-        Object.fromEntries(formData.entries()),
+        },
       );
+
+      if (!response.ok) {
+        throw new Error("Unable to submit popup enquiry.");
+      }
 
       form.reset();
       setStatus("success");
+      setIsOpen(false);
+
+      router.push("/production/thank-you");
     } catch (error) {
-      console.error(error);
+      console.error("Popup form submission error:", error);
       setStatus("error");
     }
   };
@@ -105,6 +116,7 @@ export default function RossPopupForm() {
         type="button"
         aria-label="Close enquiry form"
         onClick={closePopup}
+        disabled={status === "submitting"}
       />
 
       <div className="ross-popup-panel">
@@ -113,6 +125,7 @@ export default function RossPopupForm() {
           type="button"
           aria-label="Close enquiry form"
           onClick={closePopup}
+          disabled={status === "submitting"}
         >
           <span />
           <span />
@@ -212,7 +225,7 @@ export default function RossPopupForm() {
                 </option>
 
                 <option value="bedding-supplier">
-                  Bedding & Mattress Supplier
+                  Bedding &amp; Mattress Supplier
                 </option>
 
                 <option value="appliance-retailer">
@@ -257,7 +270,7 @@ export default function RossPopupForm() {
                 </option>
 
                 <option value="bedding-delivery">
-                  Bedding & Mattress Delivery
+                  Bedding &amp; Mattress Delivery
                 </option>
 
                 <option value="appliance-delivery">
@@ -312,13 +325,19 @@ export default function RossPopupForm() {
           </button>
 
           {status === "success" && (
-            <p className="ross-popup-status ross-popup-status--success">
+            <p
+              className="ross-popup-status ross-popup-status--success"
+              role="status"
+            >
               Thanks — your enquiry has been received.
             </p>
           )}
 
           {status === "error" && (
-            <p className="ross-popup-status ross-popup-status--error">
+            <p
+              className="ross-popup-status ross-popup-status--error"
+              role="alert"
+            >
               Something went wrong. Please call Ross on 0413 261 153.
             </p>
           )}
