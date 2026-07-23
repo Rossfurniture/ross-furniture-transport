@@ -100,7 +100,7 @@ export default function AboutPage() {
               <RequestDeliveryQuote />
 
               <Link
-                href="/production/services"
+                href="/services"
                 className="about-secondary-link"
               >
                 Explore Our Services
@@ -261,7 +261,7 @@ export default function AboutPage() {
             </div>
 
             <Link
-              href="/production/industries"
+              href="/industries"
               className="about-text-link"
             >
               View All Industries

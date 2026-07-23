@@ -68,7 +68,7 @@ export default function MobileMenu({
         <div className="ross-mobile-menu-content">
           <nav aria-label="Mobile navigation">
             <Link
-              href="/production"
+              href="/"
               className="ross-mobile-link"
               onClick={onClose}
             >
@@ -76,11 +76,11 @@ export default function MobileMenu({
             </Link>
 
             <Link
-              href="/production/about"
+              href="/why-ross"
               className="ross-mobile-link"
               onClick={onClose}
             >
-              About
+              Why Ross
             </Link>
 
             <div className="ross-mobile-accordion">
@@ -104,7 +104,7 @@ export default function MobileMenu({
                 }`}
               >
                 <Link
-                  href="/production/services"
+                  href="/services"
                   className="ross-mobile-submenu-parent"
                   onClick={onClose}
                 >
@@ -145,7 +145,7 @@ export default function MobileMenu({
                 }`}
               >
                 <Link
-                  href="/production/industries"
+                  href="/industries"
                   className="ross-mobile-submenu-parent"
                   onClick={onClose}
                 >
@@ -166,7 +166,7 @@ export default function MobileMenu({
             </div>
 
             <Link
-              href="/production/delivery-network"
+              href="/delivery-network"
               className="ross-mobile-link"
               onClick={onClose}
             >
@@ -174,15 +174,15 @@ export default function MobileMenu({
             </Link>
 
             <Link
-              href="/production/why-ross"
+              href="/about"
               className="ross-mobile-link"
               onClick={onClose}
             >
-              Why Ross
+              About
             </Link>
 
             <Link
-              href="/production/contact"
+              href="/contact"
               className="ross-mobile-link"
               onClick={onClose}
             >
@@ -194,8 +194,8 @@ export default function MobileMenu({
             <p>Commercial furniture transport across Australia.</p>
 
             <div onClick={onClose}>
-  <TalkToRoss className="ross-mobile-menu-global-cta" />
-</div>
+              <TalkToRoss className="ross-mobile-menu-global-cta" />
+            </div>
           </div>
         </div>
       </div>

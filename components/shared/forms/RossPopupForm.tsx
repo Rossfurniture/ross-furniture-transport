@@ -93,7 +93,7 @@ export default function RossPopupForm() {
       setStatus("success");
       setIsOpen(false);
 
-      router.push("/production/thank-you");
+      router.push("/thank-you");
     } catch (error) {
       console.error("Popup form submission error:", error);
       setStatus("error");

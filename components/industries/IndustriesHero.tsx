@@ -11,56 +11,56 @@ const industries = [
     title: "Furniture Retailers",
     description:
       "Store replenishment, customer deliveries and professional brand representation.",
-    href: "/production/services/retail-store-deliveries",
+    href: "/services/retail-store-deliveries",
   },
   {
     number: "02",
     title: "Furniture Manufacturers",
     description:
       "Factory collections, retail distribution and coordinated interstate transport.",
-    href: "/production/services/furniture-transport",
+    href: "/services/furniture-transport",
   },
   {
     number: "03",
     title: "Bedding & Mattress Stores",
     description:
       "Scheduled delivery runs, careful product handling and customer fulfilment.",
-    href: "/production/services/retail-store-deliveries",
+    href: "/services/retail-store-deliveries",
   },
   {
     number: "04",
     title: "Appliance Retailers",
     description:
       "Warehouse collections, appliance transport and customer-facing delivery support.",
-    href: "/production/services/commercial-delivery-solutions",
+    href: "/services/commercial-delivery-solutions",
   },
   {
     number: "05",
     title: "Interior Designers",
     description:
       "Supplier collections, premium handling and precise final placement.",
-    href: "/production/services/white-glove-delivery",
+    href: "/services/white-glove-delivery",
   },
   {
     number: "06",
     title: "Warehouses & Distributors",
     description:
       "Scheduled dispatch, multi-stop routes and flexible distribution capacity.",
-    href: "/production/services/warehouse-distribution",
+    href: "/services/warehouse-distribution",
   },
   {
     number: "07",
     title: "Hotels & Developers",
     description:
       "Staged project deliveries, commercial fit-outs and coordinated site access.",
-    href: "/production/services/commercial-delivery-solutions",
+    href: "/services/commercial-delivery-solutions",
   },
   {
     number: "08",
     title: "Government & Education",
     description:
       "Reliable institutional delivery, controlled access and scheduled transport.",
-    href: "/production/services/commercial-delivery-solutions",
+    href: "/services/commercial-delivery-solutions",
   },
 ];
 

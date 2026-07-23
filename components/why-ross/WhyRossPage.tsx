@@ -529,7 +529,7 @@ export default function WhyRossPage() {
               final delivery.
             </p>
 
-            <Link href="/production/about">Learn More About Ross</Link>
+            <Link href="/about">Learn More About Ross</Link>
           </div>
         </div>
       </section>

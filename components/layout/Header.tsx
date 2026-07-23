@@ -14,62 +14,62 @@ import "./Header.css";
 const serviceLinks = [
   {
     label: "Furniture Transport",
-    href: "/production/services/furniture-transport",
+    href: "/services/furniture-transport",
   },
   {
     label: "Retail Store Deliveries",
-    href: "/production/services/retail-store-deliveries",
+    href: "/services/retail-store-deliveries",
   },
   {
     label: "Warehouse Distribution",
-    href: "/production/services/warehouse-distribution",
+    href: "/services/warehouse-distribution",
   },
   {
     label: "Interstate Furniture Transport",
-    href: "/production/services/interstate-furniture-transport",
+    href: "/services/interstate-furniture-transport",
   },
   {
     label: "White Glove Delivery",
-    href: "/production/services/white-glove-delivery",
+    href: "/services/white-glove-delivery",
   },
   {
     label: "Commercial Delivery Solutions",
-    href: "/production/services/commercial-delivery-solutions",
+    href: "/services/commercial-delivery-solutions",
   },
 ];
 
 const industryLinks = [
   {
     label: "Furniture Retailers",
-    href: "/production/industries/furniture-retailers",
+    href: "/industries/furniture-retailers",
   },
   {
     label: "Furniture Manufacturers",
-    href: "/production/industries/furniture-manufacturers",
+    href: "/industries/furniture-manufacturers",
   },
   {
     label: "Bedding & Mattress Stores",
-    href: "/production/industries/bedding-mattress-stores",
+    href: "/industries/bedding-mattress-stores",
   },
   {
     label: "Appliance Retailers",
-    href: "/production/industries/appliance-retailers",
+    href: "/industries/appliance-retailers",
   },
   {
     label: "Interior Designers",
-    href: "/production/industries/interior-designers",
+    href: "/industries/interior-designers",
   },
   {
     label: "Warehouses & Distributors",
-    href: "/production/industries/warehouses-distributors",
+    href: "/industries/warehouses-distributors",
   },
   {
     label: "Hotels & Developers",
-    href: "/production/industries/hotels-developers",
+    href: "/industries/hotels-developers",
   },
   {
     label: "Government & Education",
-    href: "/production/industries/government-education",
+    href: "/industries/government-education",
   },
 ];
 
@@ -153,7 +153,7 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const openDesktopDropdown = (
-    dropdown: Exclude<DesktopDropdown, null>
+    dropdown: Exclude<DesktopDropdown, null>,
   ) => {
     if (!suppressDropdowns) {
       setOpenDropdown(dropdown);
@@ -165,7 +165,7 @@ export default function Header() {
   };
 
   const closeDropdownAfterNavigation = (
-    event: React.MouseEvent<HTMLElement>
+    event: React.MouseEvent<HTMLElement>,
   ) => {
     setSuppressDropdowns(true);
     setOpenDropdown(null);
@@ -179,8 +179,8 @@ export default function Header() {
   };
 
   const isActive = (href: string) => {
-    if (href === "/production") {
-      return pathname === "/production";
+    if (href === "") {
+      return pathname === "";
     }
 
     return pathname.startsWith(href);
@@ -196,7 +196,7 @@ export default function Header() {
       >
         <div className="ross-header-container">
           <Link
-            href="/production"
+            href=""
             className="ross-header-logo-link"
             aria-label="Ross Furniture Transport home"
             onClick={closeDropdownAfterNavigation}
@@ -216,10 +216,10 @@ export default function Header() {
             aria-label="Primary navigation"
           >
             <Link
-              href="/production"
+              href=""
               onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
-                isActive("/production")
+                isActive("")
                   ? "ross-header-link-active"
                   : ""
               }`}
@@ -228,15 +228,15 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/production/about"
+              href="/why-ross"
               onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
-                isActive("/production/about")
+                isActive("/why-ross")
                   ? "ross-header-link-active"
                   : ""
               }`}
             >
-              About
+              Why Ross
             </Link>
 
             <div
@@ -251,13 +251,13 @@ export default function Header() {
               onMouseLeave={closeDesktopDropdown}
             >
               <Link
-                href="/production/services"
+                href="/services"
                 onFocus={() =>
                   openDesktopDropdown("services")
                 }
                 onClick={closeDropdownAfterNavigation}
                 className={`ross-header-link ross-header-dropdown-trigger ${
-                  isActive("/production/services")
+                  isActive("/services")
                     ? "ross-header-link-active"
                     : ""
                 }`}
@@ -303,13 +303,13 @@ export default function Header() {
               onMouseLeave={closeDesktopDropdown}
             >
               <Link
-                href="/production/industries"
+                href="/industries"
                 onFocus={() =>
                   openDesktopDropdown("industries")
                 }
                 onClick={closeDropdownAfterNavigation}
                 className={`ross-header-link ross-header-dropdown-trigger ${
-                  isActive("/production/industries")
+                  isActive("/industries")
                     ? "ross-header-link-active"
                     : ""
                 }`}
@@ -344,10 +344,10 @@ export default function Header() {
             </div>
 
             <Link
-              href="/production/delivery-network"
+              href="/delivery-network"
               onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
-                isActive("/production/delivery-network")
+                isActive("/delivery-network")
                   ? "ross-header-link-active"
                   : ""
               }`}
@@ -356,22 +356,22 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/production/why-ross"
+              href="/about"
               onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
-                isActive("/production/why-ross")
+                isActive("/about")
                   ? "ross-header-link-active"
                   : ""
               }`}
             >
-              Why Ross
+              About
             </Link>
 
             <Link
-              href="/production/contact"
+              href="/contact"
               onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
-                isActive("/production/contact")
+                isActive("/contact")
                   ? "ross-header-link-active"
                   : ""
               }`}

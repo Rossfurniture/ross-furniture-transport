@@ -46,7 +46,7 @@ export default function ContactForm() {
       form.reset();
       setStatus("success");
 
-      router.push("/production/thank-you");
+      router.push("/thank-you");
     } catch (error) {
       console.error("Contact form submission error:", error);
       setStatus("error");

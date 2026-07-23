@@ -18,7 +18,7 @@ const deliverySolutions: DeliverySolution[] = [
     title: "Furniture Retail Deliveries",
     description:
       "Scheduled store deliveries, customer drop-offs and stock transfers designed to keep furniture retailers moving efficiently.",
-    href: "/production/services/furniture-retail-deliveries",
+    href: "/services/furniture-retail-deliveries",
     imageSrc: "/images/retail-delivery.webp",
     imageAlt:
       "Ross Furniture Transport white commercial truck outside a furniture retailer",
@@ -28,7 +28,7 @@ const deliverySolutions: DeliverySolution[] = [
     title: "Warehouse Distribution",
     description:
       "Reliable warehouse-to-warehouse transfers, bulk distribution and stock movements coordinated around your operations.",
-    href: "/production/services/warehouse-distribution",
+    href: "/services/warehouse-distribution",
     imageSrc: "/images/warehouse-distribution.webp",
     imageAlt:
       "Ross Furniture Transport truck being loaded inside a commercial warehouse",
@@ -38,7 +38,7 @@ const deliverySolutions: DeliverySolution[] = [
     title: "Interstate Furniture Transport",
     description:
       "Professional interstate furniture transport with careful handling, dependable scheduling and clear communication from collection to delivery.",
-    href: "/production/services/interstate-furniture-transport",
+    href: "/services/interstate-furniture-transport",
     imageSrc: "/images/interstate-furniture-transport.webp",
     imageAlt:
       "Ross Furniture Transport white commercial truck travelling interstate",
@@ -194,7 +194,7 @@ export default function DeliverySolutions() {
           </div>
 
           <Link
-            href="/production/services"
+            href="/services"
             className="ross-delivery-solutions-button"
           >
             View All Delivery Solutions

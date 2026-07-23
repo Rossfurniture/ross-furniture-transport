@@ -12,32 +12,32 @@ const services = [
   {
     number: "01",
     title: "Furniture Transport",
-    href: "/production/services/furniture-transport",
+    href: "/services/furniture-transport",
   },
   {
     number: "02",
     title: "Retail Store Deliveries",
-    href: "/production/services/retail-store-deliveries",
+    href: "/services/retail-store-deliveries",
   },
   {
     number: "03",
     title: "Warehouse Distribution",
-    href: "/production/services/warehouse-distribution",
+    href: "/services/warehouse-distribution",
   },
   {
     number: "04",
     title: "Interstate Furniture Transport",
-    href: "/production/services/interstate-furniture-transport",
+    href: "/services/interstate-furniture-transport",
   },
   {
     number: "05",
     title: "White Glove Delivery",
-    href: "/production/services/white-glove-delivery",
+    href: "/services/white-glove-delivery",
   },
   {
     number: "06",
     title: "Commercial Delivery Solutions",
-    href: "/production/services/commercial-delivery-solutions",
+    href: "/services/commercial-delivery-solutions",
   },
 ];
 

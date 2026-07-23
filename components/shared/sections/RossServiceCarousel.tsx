@@ -17,7 +17,7 @@ const rossServices: RossService[] = [
     description:
       "Professional furniture transport solutions for retailers, manufacturers, suppliers and commercial businesses across Australia.",
     image: "/services/furniture-retail-delivery.webp",
-    href: "/production/services/furniture-transport",
+    href: "/services/furniture-transport",
     alt: "Commercial furniture transport being completed for an Australian furniture retailer",
   },
   {
@@ -25,7 +25,7 @@ const rossServices: RossService[] = [
     description:
       "Reliable store and customer delivery services designed around furniture retailers, bedding stores and appliance businesses.",
     image: "/services/bedding-mattress-delivery.webp",
-    href: "/production/services/retail-store-deliveries",
+    href: "/services/retail-store-deliveries",
     alt: "Furniture delivery service supporting an Australian retail store",
   },
   {
@@ -33,7 +33,7 @@ const rossServices: RossService[] = [
     description:
       "Organised warehouse collection, distribution and scheduled delivery support for furniture suppliers and distribution centres.",
     image: "/services/warehouse-transport.webp",
-    href: "/production/services/warehouse-distribution",
+    href: "/services/warehouse-distribution",
     alt: "Commercial furniture distribution being organised inside a warehouse",
   },
   {
@@ -41,7 +41,7 @@ const rossServices: RossService[] = [
     description:
       "Planned interstate furniture transport connecting warehouses, retailers, suppliers and commercial destinations across Australia.",
     image: "/services/commercial-warehouse-logistics.webp",
-    href: "/production/services/interstate-furniture-transport",
+    href: "/services/interstate-furniture-transport",
     alt: "Commercial furniture logistics and interstate transport operations",
   },
   {
@@ -49,7 +49,7 @@ const rossServices: RossService[] = [
     description:
       "Premium handling and final-stage delivery for designer furniture, valuable pieces and customer-facing commercial installations.",
     image: "/services/white-glove-delivery.webp",
-    href: "/production/services/white-glove-delivery",
+    href: "/services/white-glove-delivery",
     alt: "Professional white glove furniture delivery and in-room placement",
   },
   {
@@ -57,7 +57,7 @@ const rossServices: RossService[] = [
     description:
       "Flexible commercial delivery support tailored to project schedules, recurring routes, fit-outs and complex furniture logistics.",
     image: "/services/commercial-warehouse-logistics.webp",
-    href: "/production/services/commercial-delivery-solutions",
+    href: "/services/commercial-delivery-solutions",
     alt: "Commercial warehouse logistics supporting Australian furniture businesses",
   },
 ];
