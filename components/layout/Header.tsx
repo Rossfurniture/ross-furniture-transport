@@ -178,13 +178,13 @@ export default function Header() {
     setSuppressDropdowns(false);
   };
 
-  const isActive = (href: string) => {
-    if (href === "") {
-      return pathname === "";
-    }
+const isActive = (href: string) => {
+  if (href === "/") {
+    return pathname === "/";
+  }
 
-    return pathname.startsWith(href);
-  };
+  return pathname.startsWith(href);
+};
 
   return (
     <>
@@ -195,8 +195,8 @@ export default function Header() {
         onMouseLeave={resetDesktopDropdowns}
       >
         <div className="ross-header-container">
-          <Link
-            href=""
+<Link
+  href="/"
             className="ross-header-logo-link"
             aria-label="Ross Furniture Transport home"
             onClick={closeDropdownAfterNavigation}
@@ -215,15 +215,15 @@ export default function Header() {
             className="ross-header-navigation"
             aria-label="Primary navigation"
           >
-            <Link
-              href=""
-              onClick={closeDropdownAfterNavigation}
-              className={`ross-header-link ${
-                isActive("")
-                  ? "ross-header-link-active"
-                  : ""
-              }`}
-            >
+<Link
+  href="/"
+  onClick={closeDropdownAfterNavigation}
+  className={`ross-header-link ${
+    isActive("/")
+      ? "ross-header-link-active"
+      : ""
+  }`}
+>
               Home
             </Link>
 
