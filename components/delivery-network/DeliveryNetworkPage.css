@@ -1,0 +1,1191 @@
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.network-page {
+  overflow: hidden;
+  background: #ffffff;
+  color: var(--ross-text, #1d2430);
+}
+
+.network-container {
+  width: min(100% - 80px, 1380px);
+  margin: 0 auto;
+}
+
+.network-eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--ross-red, #c62828);
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.network-hero {
+  position: relative;
+
+  min-height: calc(100svh - 96px);
+
+  display: flex;
+  align-items: flex-end;
+
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.network-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-image: url("/hero/ross-commercial-furniture-transport-hero.webp");
+  background-position: center;
+  background-size: cover;
+
+  transform: scale(1.015);
+}
+
+.network-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 18, 38, 0.96) 0%,
+      rgba(5, 18, 38, 0.86) 38%,
+      rgba(5, 18, 38, 0.44) 68%,
+      rgba(5, 18, 38, 0.18) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 18, 38, 0.08) 40%,
+      rgba(5, 18, 38, 0.72) 100%
+    );
+}
+
+.network-hero-container {
+  padding: 116px 0 78px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 76px;
+}
+
+.network-hero-content {
+  width: min(720px, 65%);
+}
+
+.network-hero .network-eyebrow {
+  color: #ffffff;
+}
+
+.network-hero h1 {
+  max-width: 760px;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(48px, 5.5vw, 82px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.network-hero-description {
+  max-width: 650px;
+  margin: 28px 0 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.network-hero-actions {
+  margin-top: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.network-secondary-link {
+  min-height: 54px;
+  padding: 0 6px;
+
+  display: inline-flex;
+  align-items: center;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.network-secondary-link:hover {
+  border-color: #ffffff;
+  opacity: 0.82;
+}
+
+.network-hero-summary {
+  width: 350px;
+  padding-top: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.network-hero-summary-number {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.network-hero-summary strong {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.network-hero-summary p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.network-introduction {
+  padding: 106px 0;
+}
+
+.network-introduction-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: 110px;
+}
+
+.network-section-heading h2 {
+  max-width: 590px;
+  margin: 0;
+
+  color: var(--ross-navy, #0f2d5c);
+
+  font-size: clamp(38px, 4.3vw, 62px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.network-introduction-content {
+  padding-top: 28px;
+}
+
+.network-introduction-content p {
+  max-width: 650px;
+  margin: 0 0 22px;
+
+  color: #5b6472;
+
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.network-introduction-content .network-introduction-lead {
+  color: var(--ross-text, #1d2430);
+
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.58;
+}
+
+/* =========================
+   PURPOSE
+========================= */
+
+.network-purpose {
+  padding: 0 0 106px;
+}
+
+.network-purpose-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 20px;
+}
+
+.network-purpose-card {
+  min-height: 350px;
+  padding: 54px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #f4f6f9;
+  border: 1px solid rgba(15, 45, 92, 0.08);
+  border-radius: 22px;
+}
+
+.network-purpose-card-primary {
+  background: var(--ross-navy, #0f2d5c);
+}
+
+.network-purpose-label {
+  margin: 0;
+
+  color: var(--ross-red, #c62828);
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.network-purpose-card-primary .network-purpose-label {
+  color: #ffffff;
+}
+
+.network-purpose-card h2 {
+  max-width: 780px;
+  margin: 70px 0 0;
+
+  color: #ffffff;
+
+  font-size: clamp(34px, 3.7vw, 54px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.network-purpose-card > p:last-child {
+  max-width: 520px;
+  margin: 70px 0 0;
+
+  color: #4f5a69;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* =========================
+   CAPABILITIES
+========================= */
+
+.network-capabilities {
+  padding: 106px 0;
+
+  background: #f7f8fa;
+}
+
+.network-capabilities-header {
+  margin-bottom: 60px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  align-items: end;
+  gap: 80px;
+}
+
+.network-capabilities-header h2 {
+  max-width: 770px;
+  margin: 0;
+
+  color: var(--ross-navy, #0f2d5c);
+
+  font-size: clamp(38px, 4.3vw, 62px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.network-capabilities-header > p {
+  margin: 0 0 6px;
+
+  color: #5b6472;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.network-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  border-top: 1px solid rgba(15, 45, 92, 0.14);
+  border-bottom: 1px solid rgba(15, 45, 92, 0.14);
+}
+
+.network-capability-card {
+  min-height: 340px;
+  padding: 38px 32px;
+
+  border-right: 1px solid rgba(15, 45, 92, 0.14);
+}
+
+.network-capability-card:first-child {
+  border-left: 1px solid rgba(15, 45, 92, 0.14);
+}
+
+.network-capability-card > span {
+  display: block;
+  margin-bottom: 72px;
+
+  color: var(--ross-red, #c62828);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.network-capability-card h3 {
+  margin: 0 0 18px;
+
+  color: var(--ross-navy, #0f2d5c);
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.network-capability-card p {
+  margin: 0;
+
+  color: #657080;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* =========================
+   STANDARDS
+========================= */
+
+.network-standards {
+  padding: 106px 0;
+}
+
+.network-standards-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: 110px;
+}
+
+.network-standards-content {
+  position: sticky;
+  top: 130px;
+  align-self: start;
+}
+
+.network-standards-content h2 {
+  max-width: 640px;
+  margin: 0 0 28px;
+
+  color: var(--ross-navy, #0f2d5c);
+
+  font-size: clamp(38px, 4.3vw, 60px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.network-standards-content > p:not(.network-eyebrow) {
+  max-width: 590px;
+  margin: 0 0 20px;
+
+  color: #5b6472;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.network-standards-list {
+  border-top: 1px solid rgba(15, 45, 92, 0.15);
+}
+
+.network-standard-item {
+  min-height: 92px;
+  padding: 0 8px;
+
+  display: grid;
+  grid-template-columns: 65px minmax(0, 1fr);
+  align-items: center;
+
+  border-bottom: 1px solid rgba(15, 45, 92, 0.15);
+}
+
+.network-standard-item span {
+  color: var(--ross-red, #c62828);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.network-standard-item p {
+  margin: 0;
+
+  color: var(--ross-navy, #0f2d5c);
+
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+/* =========================
+   INDUSTRIES
+========================= */
+
+.network-industries {
+  padding: 106px 0;
+
+  background: var(--ross-navy, #0f2d5c);
+}
+
+.network-industries-header {
+  margin-bottom: 54px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.network-industries .network-eyebrow {
+  color: #ffffff;
+}
+
+.network-industries-header h2 {
+  max-width: 740px;
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4.3vw, 60px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.network-text-link {
+  padding-bottom: 8px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.network-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.network-industry-item {
+  min-height: 90px;
+  padding: 0 24px 0 0;
+
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.network-industry-item:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.network-industry-item:nth-child(even) {
+  padding-left: 32px;
+}
+
+.network-industry-item span {
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.network-industry-item p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+/* =========================
+   CLOSING
+========================= */
+
+.network-closing {
+  padding: 112px 0;
+
+  background: #ffffff;
+}
+
+.network-closing-inner {
+  max-width: 960px;
+
+  text-align: center;
+}
+
+.network-closing h2 {
+  margin: 0;
+
+  color: var(--ross-navy, #0f2d5c);
+
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.network-closing-description {
+  max-width: 720px;
+  margin: 28px auto 36px;
+
+  color: #5b6472;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* =========================
+   RESPONSIVE — LAPTOP
+========================= */
+
+@media (max-width: 1240px) {
+  .network-container {
+    width: min(100% - 56px, 1380px);
+  }
+
+  .network-hero-container {
+    gap: 50px;
+  }
+
+  .network-hero-summary {
+    width: 310px;
+  }
+
+  .network-introduction-grid,
+  .network-standards-grid {
+    gap: 80px;
+  }
+
+  .network-purpose-card {
+    padding: 46px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — TABLET
+========================= */
+
+@media (max-width: 1080px) {
+  .network-container {
+    width: min(100% - 48px, 1380px);
+  }
+
+  /* HERO */
+
+.network-hero {
+  min-height: 680px;
+  align-items: stretch;
+}
+
+.network-hero-background {
+  background-position: 62% center;
+}
+
+.network-hero-container {
+  min-height: 680px;
+  padding: 70px 0 48px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 38px;
+}
+
+.network-hero-content {
+  width: min(630px, 68%);
+}
+
+  .network-hero h1 {
+    font-size: clamp(46px, 6vw, 68px);
+  }
+
+.network-hero-description {
+  max-width: 570px;
+  margin-top: 22px;
+
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.network-hero-actions {
+  margin-top: 27px;
+}
+
+.network-hero-summary {
+  width: 255px;
+  padding-top: 18px;
+  gap: 14px;
+}
+
+  .network-hero-summary-number {
+    font-size: 38px;
+  }
+
+  .network-hero-summary strong {
+    font-size: 13px;
+  }
+
+  .network-hero-summary p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* SECTIONS */
+
+  .network-introduction,
+  .network-capabilities,
+  .network-standards,
+  .network-industries,
+  .network-closing {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  .network-purpose {
+    padding-bottom: 76px;
+  }
+
+  .network-introduction-grid,
+  .network-standards-grid {
+    gap: 56px;
+  }
+
+  .network-section-heading h2,
+  .network-capabilities-header h2,
+  .network-standards-content h2,
+  .network-industries-header h2 {
+    font-size: clamp(38px, 5vw, 52px);
+  }
+
+  /* PURPOSE */
+
+  .network-purpose-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .network-purpose-card {
+    min-height: 300px;
+    padding: 36px;
+  }
+
+  .network-purpose-card h2 {
+    margin-top: 44px;
+
+    font-size: clamp(32px, 4vw, 44px);
+  }
+
+  .network-purpose-card > p:last-child {
+    margin-top: 44px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* CAPABILITIES */
+
+  .network-capabilities-header {
+    margin-bottom: 42px;
+    gap: 50px;
+  }
+
+  .network-capabilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .network-capability-card,
+  .network-capability-card:first-child,
+  .network-capability-card:nth-child(2),
+  .network-capability-card:nth-child(3),
+  .network-capability-card:nth-child(4) {
+    min-height: 235px;
+    padding: 26px 28px;
+
+    border-right: 1px solid rgba(15, 45, 92, 0.14);
+    border-bottom: 1px solid rgba(15, 45, 92, 0.14);
+  }
+
+  .network-capability-card:first-child,
+  .network-capability-card:nth-child(3) {
+    border-left: 1px solid rgba(15, 45, 92, 0.14);
+  }
+
+  .network-capability-card:nth-child(3),
+  .network-capability-card:nth-child(4) {
+    border-top: 1px solid rgba(15, 45, 92, 0.14);
+  }
+
+  .network-capability-card > span {
+    margin-bottom: 28px;
+  }
+
+  .network-capability-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+  }
+
+  .network-capability-card p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* STANDARDS */
+
+  .network-standards-content {
+    top: 110px;
+  }
+
+  .network-standards-content h2 {
+    margin-bottom: 22px;
+  }
+
+  .network-standards-content > p:not(.network-eyebrow) {
+    margin-bottom: 16px;
+
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .network-standard-item {
+    min-height: 76px;
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .network-standard-item p {
+    font-size: 16px;
+  }
+
+  /* INDUSTRIES */
+
+  .network-industries-header {
+    margin-bottom: 42px;
+  }
+
+  .network-industry-item {
+    min-height: 76px;
+  }
+
+  .network-industry-item p {
+    font-size: 16px;
+  }
+
+  /* CLOSING */
+
+  .network-closing h2 {
+    font-size: clamp(40px, 5.5vw, 58px);
+  }
+
+  .network-closing-description {
+    margin: 24px auto 32px;
+
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+@media (max-width: 720px) {
+  .network-container {
+    width: calc(100% - 32px);
+  }
+
+  .network-eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 11px;
+  }
+
+  /* HERO */
+
+.network-hero {
+  min-height: 690px;
+  align-items: stretch;
+}
+
+.network-hero-background {
+  background-position: 64% center;
+}
+
+.network-hero-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,18,38,.12) 0%,
+      rgba(5,18,38,.40) 28%,
+      rgba(5,18,38,.88) 63%,
+      rgba(5,18,38,.99) 100%
+    );
+}
+
+.network-hero-container {
+  min-height: 690px;
+  padding: 205px 0 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+  .network-hero-content {
+    width: 100%;
+  }
+
+  .network-hero h1 {
+    max-width: 590px;
+
+    font-size: clamp(40px, 11vw, 54px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .network-hero-description {
+    margin-top: 20px;
+
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .network-hero-actions {
+    margin-top: 26px;
+    gap: 14px;
+  }
+
+  .network-secondary-link {
+    min-height: 50px;
+
+    font-size: 12px;
+  }
+
+  .network-hero-summary {
+    width: 100%;
+    margin-top: 22px;
+    padding-top: 18px;
+    gap: 14px;
+  }
+
+  .network-hero-summary-number {
+    font-size: 36px;
+  }
+
+  .network-hero-summary strong {
+    margin-bottom: 5px;
+
+    font-size: 12px;
+  }
+
+  .network-hero-summary p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* SECTION SPACING */
+
+  .network-introduction,
+  .network-capabilities,
+  .network-standards,
+  .network-industries,
+  .network-closing {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .network-purpose {
+    padding-bottom: 60px;
+  }
+
+  .network-introduction-grid,
+  .network-purpose-grid,
+  .network-capabilities-header,
+  .network-standards-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .network-section-heading h2,
+  .network-capabilities-header h2,
+  .network-standards-content h2,
+  .network-industries-header h2 {
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  /* INTRODUCTION */
+
+  .network-introduction-content {
+    padding-top: 0;
+  }
+
+  .network-introduction-content p {
+    margin-bottom: 18px;
+
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .network-introduction-content .network-introduction-lead {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  /* PURPOSE */
+
+  .network-purpose-card {
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .network-purpose-card h2 {
+    margin-top: 42px;
+
+    font-size: 32px;
+    line-height: 1.08;
+  }
+
+  .network-purpose-card > p:last-child {
+    margin-top: 40px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* CAPABILITIES */
+
+  .network-capabilities-header {
+    margin-bottom: 32px;
+  }
+
+  .network-capabilities-header > p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .network-capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .network-capability-card,
+  .network-capability-card:first-child,
+  .network-capability-card:nth-child(2),
+  .network-capability-card:nth-child(3),
+  .network-capability-card:nth-child(4) {
+    min-height: auto;
+    padding: 24px 22px;
+
+    border-top: 0;
+    border-right: 1px solid rgba(15, 45, 92, 0.14);
+    border-bottom: 1px solid rgba(15, 45, 92, 0.14);
+    border-left: 1px solid rgba(15, 45, 92, 0.14);
+  }
+
+  .network-capability-card > span {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+  }
+
+  .network-capability-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .network-capability-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* STANDARDS */
+
+  .network-standards-content {
+    position: static;
+  }
+
+  .network-standards-content h2 {
+    margin-bottom: 20px;
+  }
+
+  .network-standards-content > p:not(.network-eyebrow) {
+    margin-bottom: 16px;
+
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  .network-standard-item {
+    min-height: 68px;
+    padding: 0;
+
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .network-standard-item p {
+    font-size: 15px;
+  }
+
+  /* INDUSTRIES */
+
+  .network-industries-header {
+    margin-bottom: 32px;
+
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .network-industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .network-industry-item,
+  .network-industry-item:nth-child(odd),
+  .network-industry-item:nth-child(even) {
+    min-height: 66px;
+    padding: 0;
+
+    grid-template-columns: 42px minmax(0, 1fr);
+
+    border-right: 0;
+  }
+
+  .network-industry-item p {
+    font-size: 15px;
+  }
+
+  /* CLOSING */
+
+  .network-closing h2 {
+    font-size: 38px;
+    line-height: 1.04;
+  }
+
+  .network-closing-description {
+    margin: 22px auto 28px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 430px) {
+  .network-container {
+    width: calc(100% - 26px);
+  }
+
+.network-hero {
+  min-height:650px;
+}
+
+.network-hero-container{
+  min-height:650px;
+  padding:175px 0 24px;
+}
+
+  .network-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .network-hero h1 {
+    font-size: 39px;
+  }
+
+  .network-hero-summary {
+    align-items: flex-start;
+  }
+
+  .network-section-heading h2,
+  .network-capabilities-header h2,
+  .network-standards-content h2,
+  .network-industries-header h2,
+  .network-closing h2 {
+    font-size: 34px;
+  }
+
+  .network-purpose-card {
+    padding: 26px 22px;
+  }
+
+  .network-purpose-card h2 {
+    font-size: 30px;
+  }
+
+  .network-capability-card,
+  .network-capability-card:first-child,
+  .network-capability-card:nth-child(2),
+  .network-capability-card:nth-child(3),
+  .network-capability-card:nth-child(4) {
+    padding: 22px 20px;
+  }
+
+  .network-capability-card h3 {
+    font-size: 18px;
+  }
+
+  .network-capability-card p {
+    font-size: 14px;
+  }
+}

@@ -1,16 +1,13 @@
-export default function WhyRossPage() {
-  return (
-    <main>
-      <section
-        style={{
-          minHeight: "100vh",
-          display: "grid",
-          placeItems: "center",
-          padding: "80px 24px",
-        }}
-      >
-        <h1>Why Ross Furniture Transport</h1>
-      </section>
-    </main>
-  );
+import type { Metadata } from "next";
+
+import WhyRossPage from "@/components/why-ross/WhyRossPage";
+
+export const metadata: Metadata = {
+  title: "Why Ross | Ross Furniture Transport",
+  description:
+    "Discover why businesses choose Ross Furniture Transport for dependable commercial furniture logistics.",
+};
+
+export default function Page() {
+  return <WhyRossPage />;
 }

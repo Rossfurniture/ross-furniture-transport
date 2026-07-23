@@ -1,16 +1,13 @@
-export default function ContactPage() {
-  return (
-    <main>
-      <section
-        style={{
-          minHeight: "100vh",
-          display: "grid",
-          placeItems: "center",
-          padding: "80px 24px",
-        }}
-      >
-        <h1>Contact Ross Furniture Transport</h1>
-      </section>
-    </main>
-  );
+import type { Metadata } from "next";
+
+import ContactPage from "@/components/contact/ContactPage";
+
+export const metadata: Metadata = {
+  title: "Contact | Ross Furniture Transport",
+  description:
+    "Contact Ross Furniture Transport for commercial furniture transport enquiries.",
+};
+
+export default function Page() {
+  return <ContactPage />;
 }

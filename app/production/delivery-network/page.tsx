@@ -1,16 +1,13 @@
-export default function DeliveryNetworkPage() {
-  return (
-    <main>
-      <section
-        style={{
-          minHeight: "100vh",
-          display: "grid",
-          placeItems: "center",
-          padding: "80px 24px",
-        }}
-      >
-        <h1>Ross Furniture Transport Delivery Network</h1>
-      </section>
-    </main>
-  );
+import type { Metadata } from "next";
+
+import DeliveryNetworkPage from "@/components/delivery-network/DeliveryNetworkPage";
+
+export const metadata: Metadata = {
+  title: "Delivery Network | Ross Furniture Transport",
+  description:
+    "Commercial furniture delivery network supporting metropolitan, regional and interstate transport across Australia.",
+};
+
+export default function Page() {
+  return <DeliveryNetworkPage />;
 }
