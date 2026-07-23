@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import RequestDeliveryQuote from "@/components/shared/buttons/RequestDeliveryQuote";
-import ExploreDeliverySolutions from "@/components/shared/buttons/ExploreDeliverySolutions";
+import ExploreDeliverySolutionsBlue from "@/components/shared/buttons/ExploreDeliverySolutionsBlue";
 
 import "./WhyRossPage.css";
 
@@ -240,7 +240,7 @@ export default function WhyRossPage() {
 
             <div className="why-ross-hero-buttons">
               <RequestDeliveryQuote />
-              <ExploreDeliverySolutions />
+              <ExploreDeliverySolutionsBlue />
             </div>
           </div>
         </div>
