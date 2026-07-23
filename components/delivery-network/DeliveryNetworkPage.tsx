@@ -1,305 +1,538 @@
-import Link from "next/link";
+"use client";
 
 import RequestDeliveryQuote from "@/components/shared/buttons/RequestDeliveryQuote";
+import ExploreDeliverySolutions from "@/components/shared/buttons/ExploreDeliverySolutions";
 
 import "./DeliveryNetworkPage.css";
 
-const capabilities = [
-  {
-    number: "01",
-    title: "Commercial Furniture Expertise",
-    description:
-      "Furniture transport is our core business. We understand the handling, timing and coordination required for commercial furniture deliveries.",
-  },
-  {
-    number: "02",
-    title: "Direct Communication",
-    description:
-      "Clients deal directly with an experienced transport professional who understands the delivery requirements from collection through to completion.",
-  },
-  {
-    number: "03",
-    title: "Flexible Delivery Support",
-    description:
-      "From scheduled retail deliveries to warehouse transfers and project-based transport, our service adapts around the needs of your operation.",
-  },
-  {
-    number: "04",
-    title: "Professional Handling",
-    description:
-      "Furniture is carefully loaded, secured, transported and delivered using suitable equipment and proven handling processes.",
-  },
-];
-
-const standards = [
-  "Careful furniture handling",
-  "Reliable delivery scheduling",
-  "Clear operational communication",
-  "Commercial site awareness",
-  "Flexible transport coordination",
-  "Professional presentation",
-];
-
-const industries = [
-  {
-    number: "01",
-    label: "Furniture Retailers",
-  },
-  {
-    number: "02",
-    label: "Furniture Manufacturers",
-  },
-  {
-    number: "03",
-    label: "Bedding & Mattress Stores",
-  },
-  {
-    number: "04",
-    label: "Appliance Retailers",
-  },
-  {
-    number: "05",
-    label: "Interior Designers",
-  },
-  {
-    number: "06",
-    label: "Warehouses & Distributors",
-  },
-  {
-    number: "07",
-    label: "Hotels & Developers",
-  },
-  {
-    number: "08",
-    label: "Government & Education",
-  },
-];
-
-export default function AboutPage() {
+export default function DeliveryNetworkPage() {
   return (
-    <main className="network-page">
+    <>
+      {/* ==========================================
+          HERO
+      ========================================== */}
+
       <section className="network-hero">
-        <div className="network-hero-background" />
         <div className="network-hero-overlay" />
 
-        <div className="network-container network-hero-container">
-          <div className="network-hero-content">
-            <p className="network-eyebrow">About Ross</p>
+        <div className="network-container">
+          <div className="network-hero-grid">
 
-            <h1>
-              Commercial furniture transport built around reliability.
-            </h1>
+            <div className="network-hero-content">
 
-            <p className="network-hero-description">
-              Ross Furniture Transport supports businesses with dependable,
-              professional furniture delivery solutions designed for demanding
-              commercial environments.
-            </p>
+              <span className="network-eyebrow">
+                DELIVERY NETWORK
+              </span>
 
-            <div className="network-hero-actions">
-              <RequestDeliveryQuote />
-
-              <Link
-                href="/production/services"
-                className="network-secondary-link"
-              >
-                Explore Our Services
-              </Link>
-            </div>
-          </div>
-
-          <div className="network-hero-summary">
-            <span className="network-hero-summary-number">10+</span>
-
-            <div>
-              <strong>Years of transport experience</strong>
+              <h1>
+                Commercial Furniture Delivery Network
+              </h1>
 
               <p>
-                Supporting furniture businesses, warehouses and commercial
-                delivery operations.
+                Coordinated metropolitan, regional and interstate furniture transport for
+  retailers, manufacturers, warehouses and commercial projects.
               </p>
+
+              <div className="network-hero-buttons">
+                <RequestDeliveryQuote />
+                <ExploreDeliverySolutions />
+              </div>
+
             </div>
+
+            <div className="network-hero-panel">
+
+              <span className="network-panel-label">
+                COMMERCIAL COVERAGE
+              </span>
+
+              <h3>
+                Supporting furniture businesses across every stage of the
+                delivery journey.
+              </h3>
+
+              <div className="network-panel-divider" />
+
+              <ul>
+
+                <li>
+                  <span>01</span>
+                  Metropolitan Delivery
+                </li>
+
+                <li>
+                  <span>02</span>
+                  Regional Distribution
+                </li>
+
+                <li>
+                  <span>03</span>
+                  Interstate Transport
+                </li>
+
+                <li>
+                  <span>04</span>
+                  Commercial Projects
+                </li>
+
+              </ul>
+
+            </div>
+
           </div>
         </div>
       </section>
 
-      <section className="network-introduction">
-        <div className="network-container network-introduction-grid">
-          <div className="network-section-heading">
-            <p className="network-eyebrow">Who We Are</p>
+      {/* ==========================================
+          NETWORK INTRODUCTION
+      ========================================== */}
+
+      <section className="network-intro">
+
+        <div className="network-container">
+
+          <div className="network-intro-grid">
+
+            <div className="network-intro-left">
+
+              <span className="network-section-label">
+                OUR DELIVERY NETWORK
+              </span>
+
+              <h2>
+                Built around the way commercial furniture businesses operate.
+              </h2>
+
+            </div>
+
+            <div className="network-intro-right">
+
+              <p>
+                Every delivery forms part of a larger commercial supply chain.
+                From supplier collections and warehouse transfers through to
+                retail replenishment, project deliveries and final-mile
+                distribution, Ross Furniture Transport helps businesses keep
+                furniture moving safely and efficiently.
+              </p>
+
+              <p>
+                Rather than simply transporting goods from one location to
+                another, we coordinate each stage with careful planning,
+                dependable scheduling and professional handling to support the
+                day-to-day operations of furniture retailers, manufacturers,
+                designers and commercial partners.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+            {/* ==========================================
+          COMMERCIAL COVERAGE
+      ========================================== */}
+
+      <section className="network-coverage">
+        <div className="network-container">
+
+          <div className="network-section-header network-section-header-centred">
+            <span className="network-section-label">
+              COMMERCIAL COVERAGE
+            </span>
 
             <h2>
-              A focused transport partner for the furniture industry.
+              Flexible delivery support across metropolitan, regional and
+              interstate routes.
             </h2>
+
+            <p>
+              Our network is structured around real commercial requirements,
+              helping businesses coordinate recurring deliveries, project
+              movements and longer-distance furniture transport.
+            </p>
           </div>
 
-          <div className="network-introduction-content">
-            <p className="network-introduction-lead">
-              Ross Furniture Transport was built to provide businesses with a
-              more dependable and professional approach to commercial
-              furniture delivery.
-            </p>
+          <div className="network-coverage-grid">
 
-            <p>
-              We work with furniture retailers, manufacturers, warehouses,
-              designers, developers and commercial organisations that need
-              their products collected, transported and delivered with care.
-            </p>
+            <article className="network-coverage-card network-coverage-card-primary">
+              <div className="network-coverage-card-top">
+                <span className="network-coverage-number">01</span>
 
-            <p>
-              Unlike a general removalist service, our operation is focused on
-              commercial furniture logistics. Every delivery is approached
-              with an understanding of product handling, site access, delivery
-              timing and the importance of representing our clients
-              professionally.
-            </p>
+                <span className="network-coverage-type">
+                  METROPOLITAN DELIVERY
+                </span>
+              </div>
+
+              <div className="network-coverage-card-content">
+                <h3>
+                  Reliable movement between suppliers, warehouses, stores and
+                  customer locations.
+                </h3>
+
+                <p>
+                  Ross Furniture Transport supports scheduled commercial
+                  furniture deliveries across metropolitan areas, helping
+                  businesses maintain consistent stock movement, store
+                  replenishment and final-mile delivery.
+                </p>
+              </div>
+
+              <div className="network-coverage-list">
+                <span>Warehouse collections</span>
+                <span>Retail replenishment</span>
+                <span>Customer deliveries</span>
+                <span>Commercial site access</span>
+              </div>
+            </article>
+
+            <article className="network-coverage-card network-coverage-card-secondary">
+              <div className="network-coverage-card-top">
+                <span className="network-coverage-number">02</span>
+
+                <span className="network-coverage-type">
+                  REGIONAL & INTERSTATE
+                </span>
+              </div>
+
+              <div className="network-coverage-card-content">
+                <h3>
+                  Planned transport solutions for longer routes and commercial
+                  furniture projects.
+                </h3>
+
+                <p>
+                  Longer-distance movements are coordinated around collection
+                  requirements, delivery windows and handling needs, giving
+                  businesses a dependable transport solution beyond local
+                  metropolitan routes.
+                </p>
+              </div>
+
+              <div className="network-coverage-list">
+                <span>Regional distribution</span>
+                <span>Interstate transport</span>
+                <span>Project deliveries</span>
+                <span>Warehouse transfers</span>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <section className="network-purpose">
-        <div className="network-container network-purpose-grid">
-          <article className="network-purpose-card network-purpose-card-primary">
-            <p className="network-purpose-label">Our Purpose</p>
-
-            <h2>
-              To make commercial furniture delivery more reliable, organised
-              and professional.
-            </h2>
-          </article>
-
-          <article className="network-purpose-card">
-            <p className="network-purpose-label">Our Approach</p>
-
-            <p>
-              We combine experienced handling, clear communication and
-              practical delivery coordination to help businesses move
-              furniture efficiently between suppliers, warehouses, stores,
-              project sites and customers.
-            </p>
-          </article>
-        </div>
-      </section>
+      {/* ==========================================
+          DELIVERY CAPABILITIES
+      ========================================== */}
 
       <section className="network-capabilities">
         <div className="network-container">
-          <div className="network-capabilities-header">
+
+          <div className="network-capabilities-heading">
+
             <div>
-              <p className="network-eyebrow">Why Ross</p>
+              <span className="network-section-label">
+                DELIVERY CAPABILITIES
+              </span>
 
               <h2>
-                Commercial delivery support businesses can depend on.
+                Connecting every stage of the commercial furniture supply
+                chain.
               </h2>
             </div>
 
             <p>
-              Our service is built around the standards commercial clients
-              expect: reliability, communication, careful handling and
-              flexibility.
+              From the first collection through to the final delivery, every
+              movement is planned to support the way furniture businesses
+              operate.
             </p>
+
           </div>
 
           <div className="network-capabilities-grid">
-            {capabilities.map((capability) => (
-              <article
-                key={capability.number}
-                className="network-capability-card"
-              >
-                <span>{capability.number}</span>
 
-                <h3>{capability.title}</h3>
-
-                <p>{capability.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="network-standards">
-        <div className="network-container network-standards-grid">
-          <div className="network-standards-content">
-            <p className="network-eyebrow">Our Delivery Standards</p>
-
-            <h2>
-              Every delivery reflects the business we represent.
-            </h2>
-
-            <p>
-              We understand that when we deliver on behalf of a retailer,
-              manufacturer or commercial supplier, our team becomes an
-              extension of their business.
-            </p>
-
-            <p>
-              That is why every job is managed with care, professionalism and
-              attention to the final delivery experience.
-            </p>
-          </div>
-
-          <div className="network-standards-list">
-            {standards.map((standard, index) => (
-              <div key={standard} className="network-standard-item">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-
-                <p>{standard}</p>
+            <article className="network-capability-card">
+              <div className="network-capability-top">
+                <span className="network-capability-number">01</span>
+                <span className="network-capability-line" />
               </div>
-            ))}
+
+              <h3>Supplier Collections</h3>
+
+              <p>
+                Coordinated pickup from furniture manufacturers, importers and
+                commercial suppliers for transfer to warehouses, stores or
+                project locations.
+              </p>
+            </article>
+
+            <article className="network-capability-card">
+              <div className="network-capability-top">
+                <span className="network-capability-number">02</span>
+                <span className="network-capability-line" />
+              </div>
+
+              <h3>Warehouse Transfers</h3>
+
+              <p>
+                Dependable movement of furniture between warehouses,
+                distribution centres and commercial storage facilities.
+              </p>
+            </article>
+
+            <article className="network-capability-card">
+              <div className="network-capability-top">
+                <span className="network-capability-number">03</span>
+                <span className="network-capability-line" />
+              </div>
+
+              <h3>Retail Distribution</h3>
+
+              <p>
+                Scheduled delivery support for retail stores, display
+                replenishment, stock transfers and ongoing furniture
+                distribution requirements.
+              </p>
+            </article>
+
+            <article className="network-capability-card">
+              <div className="network-capability-top">
+                <span className="network-capability-number">04</span>
+                <span className="network-capability-line" />
+              </div>
+
+              <h3>Final-Mile Delivery</h3>
+
+              <p>
+                Professional furniture delivery from stores and warehouses to
+                customers, offices, hospitality venues and commercial sites.
+              </p>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <section className="network-industries">
+            {/* ==========================================
+          COMMERCIAL DELIVERY PROCESS
+      ========================================== */}
+
+      <section className="network-process">
         <div className="network-container">
-          <div className="network-industries-header">
-            <div>
-              <p className="network-eyebrow">Who We Support</p>
+
+          <div className="network-process-grid">
+
+            <div className="network-process-heading">
+              <span className="network-section-label">
+                HOW THE NETWORK WORKS
+              </span>
 
               <h2>
-                Built for furniture businesses and commercial operations.
+                One coordinated process from collection through to final
+                delivery.
+              </h2>
+
+              <p>
+                Every movement is planned around access, timing, handling and
+                delivery requirements so businesses can rely on a clear and
+                consistent transport process.
+              </p>
+            </div>
+
+            <div className="network-process-list">
+
+              <article className="network-process-item">
+                <span className="network-process-number">01</span>
+
+                <div>
+                  <h3>Requirements Confirmed</h3>
+
+                  <p>
+                    We review collection details, delivery locations, furniture
+                    requirements and preferred timeframes before transport is
+                    scheduled.
+                  </p>
+                </div>
+              </article>
+
+              <article className="network-process-item">
+                <span className="network-process-number">02</span>
+
+                <div>
+                  <h3>Collection Coordinated</h3>
+
+                  <p>
+                    Pickup access, loading requirements and site contacts are
+                    confirmed to help the collection run efficiently.
+                  </p>
+                </div>
+              </article>
+
+              <article className="network-process-item">
+                <span className="network-process-number">03</span>
+
+                <div>
+                  <h3>Route & Schedule Planned</h3>
+
+                  <p>
+                    The delivery route and timing are organised around the
+                    practical requirements of the business and destination.
+                  </p>
+                </div>
+              </article>
+
+              <article className="network-process-item">
+                <span className="network-process-number">04</span>
+
+                <div>
+                  <h3>Furniture Loaded & Secured</h3>
+
+                  <p>
+                    Furniture is handled carefully and secured appropriately
+                    before the delivery journey begins.
+                  </p>
+                </div>
+              </article>
+
+              <article className="network-process-item">
+                <span className="network-process-number">05</span>
+
+                <div>
+                  <h3>Delivery Progress Communicated</h3>
+
+                  <p>
+                    Clear communication helps keep businesses and receiving
+                    locations informed throughout the delivery process.
+                  </p>
+                </div>
+              </article>
+
+              <article className="network-process-item">
+                <span className="network-process-number">06</span>
+
+                <div>
+                  <h3>Delivery Completed</h3>
+
+                  <p>
+                    Goods are delivered professionally to the agreed location,
+                    with completion handled clearly and efficiently.
+                  </p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          NETWORK MOVEMENTS
+      ========================================== */}
+
+      <section className="network-movements">
+        <div className="network-container">
+
+          <div className="network-movements-header">
+
+            <div>
+              <span className="network-section-label network-section-label-light">
+                COMMERCIAL MOVEMENTS
+              </span>
+
+              <h2>
+                Delivery routes designed around real commercial furniture
+                operations.
               </h2>
             </div>
 
-            <Link
-              href="/production/industries"
-              className="network-text-link"
-            >
-              View All Industries
-            </Link>
+            <p>
+              Our network supports the recurring, project-based and
+              longer-distance movements that keep commercial furniture supply
+              chains running.
+            </p>
+
           </div>
 
-          <div className="network-industries-grid">
-            {industries.map((industry) => (
-              <div
-                key={industry.number}
-                className="network-industry-item"
-              >
-                <span>{industry.number}</span>
+          <div className="network-movements-grid">
 
-                <p>{industry.label}</p>
-              </div>
-            ))}
+            <article className="network-movement-item">
+              <span>01</span>
+              <h3>Warehouse to Store</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>02</span>
+              <h3>Supplier to Warehouse</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>03</span>
+              <h3>Store to Customer</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>04</span>
+              <h3>Warehouse Transfers</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>05</span>
+              <h3>Project Site Deliveries</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>06</span>
+              <h3>Regional Distribution</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>07</span>
+              <h3>Interstate Transport</h3>
+            </article>
+
+            <article className="network-movement-item">
+              <span>08</span>
+              <h3>Scheduled Delivery Runs</h3>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <section className="network-closing">
-        <div className="network-container network-closing-inner">
-          <p className="network-eyebrow">The Ross Commitment</p>
+            {/* ==========================================
+          CLOSING CTA
+      ========================================== */}
 
-          <h2>
-            Reliable transport. Professional handling. Clear communication.
-          </h2>
+      <section className="network-cta">
+        <div className="network-container">
+          <div className="network-cta-inner">
 
-          <p className="network-closing-description">
-            Whether you require regular delivery support or transport for a
-            specific commercial project, Ross Furniture Transport provides a
-            service built around your operation.
-          </p>
+            <div className="network-cta-content">
+              <span className="network-section-label">
+                PLAN YOUR DELIVERY
+              </span>
 
-          <RequestDeliveryQuote />
+              <h2>
+                Need dependable delivery coverage for your furniture business?
+              </h2>
+
+              <p>
+                Tell us where your furniture needs to be collected and
+                delivered. Ross Furniture Transport will help coordinate a
+                practical commercial transport solution around your schedule,
+                access and handling requirements.
+              </p>
+            </div>
+
+            <div className="network-cta-action">
+              <RequestDeliveryQuote />
+            </div>
+
+          </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

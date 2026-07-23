@@ -1,1191 +1,873 @@
-/* =========================
-   ABOUT PAGE
-========================= */
-
-.network-page {
-  overflow: hidden;
-  background: #ffffff;
-  color: var(--ross-text, #1d2430);
-}
+/* =========================================================
+   DELIVERY NETWORK PAGE
+   PREMIUM / LUXURY / MINIMALIST
+========================================================= */
 
 .network-container {
-  width: min(100% - 80px, 1380px);
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+}
+
+.network-section-label,
+.network-eyebrow,
+.network-panel-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.network-section-label {
+  color: #c62828;
+}
+
+.network-section-label::before,
+.network-eyebrow::before {
+  width: 28px;
+  height: 2px;
+  flex: 0 0 auto;
+  background: currentColor;
+  content: "";
 }
 
 .network-eyebrow {
-  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.72);
+}
 
-  color: var(--ross-red, #c62828);
+.network-eyebrow::before {
+  background: #c62828;
+}
 
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.2;
+.network-section-label-light {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.network-section-header {
+  max-width: 780px;
+  margin-bottom: 34px;
+}
+
+.network-section-header-centred {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.network-section-header-centred .network-section-label {
+  justify-content: center;
+}
+
+.network-section-header h2,
+.network-intro-left h2,
+.network-capabilities-heading h2,
+.network-process-heading h2,
+.network-movements-header h2,
+.network-cta-content h2 {
+  margin: 16px 0 0;
+  color: #0f2d5c;
+  font-size: clamp(2rem, 3.3vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.043em;
+}
+
+.network-section-header p {
+  max-width: 660px;
+  margin: 18px auto 0;
+  color: #687180;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.network-hero {
+  position: relative;
+  display: flex;
+  min-height: calc(100svh - 88px);
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 18, 36, 0.98) 0%,
+      rgba(5, 18, 36, 0.94) 35%,
+      rgba(5, 18, 36, 0.68) 60%,
+      rgba(5, 18, 36, 0.24) 100%
+    ),
+    url("/hero/ross-commercial-furniture-transport.webp")
+      center center / cover no-repeat;
+}
+
+.network-hero::before {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 13, 27, 0.02) 0%,
+      rgba(3, 13, 27, 0.2) 100%
+    );
+  content: "";
+  pointer-events: none;
+}
+
+.network-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 76% 45%,
+      rgba(255, 255, 255, 0.07),
+      transparent 34%
+    );
+  pointer-events: none;
+}
+
+.network-hero-grid {
+  display: block;
+  padding-block: clamp(88px, 10vh, 125px);
+}
+
+.network-hero-content {
+  max-width: 700px;
+}
+
+.network-hero-content h1 {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: #ffffff;
+  font-size: clamp(3.2rem, 5vw, 5.7rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.057em;
+}
+
+.network-hero-content > p {
+  max-width: 620px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.network-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* The hero side panel is intentionally removed visually */
+.network-hero-panel {
+  display: none;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.network-intro {
+  padding: 76px 0;
+  background: #ffffff;
+}
+
+.network-intro-grid {
+  display: grid;
+  align-items: start;
+  gap: clamp(56px, 7vw, 105px);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+}
+
+.network-intro-left {
+  max-width: 560px;
+}
+
+.network-intro-left h2 {
+  max-width: 560px;
+  font-size: clamp(2.25rem, 3.55vw, 3.9rem);
+  line-height: 1.02;
+}
+
+.network-intro-right {
+  max-width: 650px;
+  padding-top: 18px;
+}
+
+.network-intro-right p {
+  margin: 0;
+  color: #66707e;
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.network-intro-right p + p {
+  margin-top: 20px;
+}
+
+/* =========================================================
+   COMMERCIAL COVERAGE
+========================================================= */
+
+.network-coverage {
+  padding: 70px 0 74px;
+  background: #f4f6f9;
+}
+
+.network-coverage-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.network-coverage-card {
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  padding: 34px 38px;
+}
+
+.network-coverage-card-primary {
+  color: #ffffff;
+  background: #0f2d5c;
+}
+
+.network-coverage-card-secondary {
+  border: 1px solid #dce2ea;
+  color: #17253a;
+  background: #ffffff;
+}
+
+.network-coverage-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.network-coverage-number {
+  color: #c62828;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.network-coverage-card-primary .network-coverage-number {
+  color: #ed7571;
+}
+
+.network-coverage-type {
+  font-size: 0.64rem;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.network-hero {
-  position: relative;
-
-  min-height: calc(100svh - 96px);
-
-  display: flex;
-  align-items: flex-end;
-
-  isolation: isolate;
-  overflow: hidden;
+.network-coverage-card-primary .network-coverage-type {
+  color: rgba(255, 255, 255, 0.58);
 }
 
-.network-hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-
-  background-image: url("/hero/ross-commercial-furniture-transport-hero.webp");
-  background-position: center;
-  background-size: cover;
-
-  transform: scale(1.015);
+.network-coverage-card-secondary .network-coverage-type {
+  color: #788294;
 }
 
-.network-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 18, 38, 0.96) 0%,
-      rgba(5, 18, 38, 0.86) 38%,
-      rgba(5, 18, 38, 0.44) 68%,
-      rgba(5, 18, 38, 0.18) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(5, 18, 38, 0.08) 40%,
-      rgba(5, 18, 38, 0.72) 100%
-    );
+.network-coverage-card-content {
+  margin-top: 52px;
 }
 
-.network-hero-container {
-  padding: 116px 0 78px;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 76px;
-}
-
-.network-hero-content {
-  width: min(720px, 65%);
-}
-
-.network-hero .network-eyebrow {
-  color: #ffffff;
-}
-
-.network-hero h1 {
-  max-width: 760px;
+.network-coverage-card-content h3 {
+  max-width: 560px;
   margin: 0;
-
-  color: #ffffff;
-
-  font-size: clamp(48px, 5.5vw, 82px);
-  font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  font-size: clamp(1.75rem, 2.35vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.11;
+  letter-spacing: -0.038em;
 }
 
-.network-hero-description {
-  max-width: 650px;
-  margin: 28px 0 0;
-
-  color: rgba(255, 255, 255, 0.82);
-
-  font-size: 18px;
+.network-coverage-card-content p {
+  max-width: 600px;
+  margin: 17px 0 0;
+  font-size: 0.91rem;
   line-height: 1.7;
 }
 
-.network-hero-actions {
-  margin-top: 38px;
-
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.network-secondary-link {
-  min-height: 54px;
-  padding: 0 6px;
-
-  display: inline-flex;
-  align-items: center;
-
-  color: #ffffff;
-  text-decoration: none;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-
-  transition:
-    border-color 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.network-secondary-link:hover {
-  border-color: #ffffff;
-  opacity: 0.82;
-}
-
-.network-hero-summary {
-  width: 350px;
-  padding-top: 24px;
-
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-
-  color: #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.32);
-}
-
-.network-hero-summary-number {
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
-}
-
-.network-hero-summary strong {
-  display: block;
-  margin-bottom: 8px;
-
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.network-hero-summary p {
-  margin: 0;
-
+.network-coverage-card-primary .network-coverage-card-content p {
   color: rgba(255, 255, 255, 0.68);
-
-  font-size: 13px;
-  line-height: 1.6;
 }
 
-/* =========================
-   INTRODUCTION
-========================= */
-
-.network-introduction {
-  padding: 106px 0;
+.network-coverage-card-secondary .network-coverage-card-content p {
+  color: #66707e;
 }
 
-.network-introduction-grid {
+.network-coverage-list {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-  gap: 110px;
+  gap: 0 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid;
 }
 
-.network-section-heading h2 {
-  max-width: 590px;
-  margin: 0;
-
-  color: var(--ross-navy, #0f2d5c);
-
-  font-size: clamp(38px, 4.3vw, 62px);
-  font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
+.network-coverage-card-primary .network-coverage-list {
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
-.network-introduction-content {
-  padding-top: 28px;
+.network-coverage-card-secondary .network-coverage-list {
+  border-color: #dfe4eb;
 }
 
-.network-introduction-content p {
-  max-width: 650px;
-  margin: 0 0 22px;
-
-  color: #5b6472;
-
-  font-size: 16px;
-  line-height: 1.82;
-}
-
-.network-introduction-content .network-introduction-lead {
-  color: var(--ross-text, #1d2430);
-
-  font-size: 21px;
+.network-coverage-list span {
+  padding: 11px 0;
+  border-bottom: 1px solid;
+  font-size: 0.76rem;
   font-weight: 600;
-  line-height: 1.58;
 }
 
-/* =========================
-   PURPOSE
-========================= */
-
-.network-purpose {
-  padding: 0 0 106px;
+.network-coverage-card-primary .network-coverage-list span {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.76);
 }
 
-.network-purpose-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  gap: 20px;
+.network-coverage-card-secondary .network-coverage-list span {
+  border-color: #e4e8ee;
+  color: #4c5667;
 }
 
-.network-purpose-card {
-  min-height: 350px;
-  padding: 54px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  background: #f4f6f9;
-  border: 1px solid rgba(15, 45, 92, 0.08);
-  border-radius: 22px;
-}
-
-.network-purpose-card-primary {
-  background: var(--ross-navy, #0f2d5c);
-}
-
-.network-purpose-label {
-  margin: 0;
-
-  color: var(--ross-red, #c62828);
-
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.network-purpose-card-primary .network-purpose-label {
-  color: #ffffff;
-}
-
-.network-purpose-card h2 {
-  max-width: 780px;
-  margin: 70px 0 0;
-
-  color: #ffffff;
-
-  font-size: clamp(34px, 3.7vw, 54px);
-  font-weight: 650;
-  line-height: 1.08;
-  letter-spacing: -0.045em;
-}
-
-.network-purpose-card > p:last-child {
-  max-width: 520px;
-  margin: 70px 0 0;
-
-  color: #4f5a69;
-
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-/* =========================
-   CAPABILITIES
-========================= */
+/* =========================================================
+   DELIVERY CAPABILITIES
+========================================================= */
 
 .network-capabilities {
-  padding: 106px 0;
-
-  background: #f7f8fa;
+  padding: 72px 0 74px;
+  background: #ffffff;
 }
 
-.network-capabilities-header {
-  margin-bottom: 60px;
-
+.network-capabilities-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
   align-items: end;
-  gap: 80px;
+  gap: 54px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  margin-bottom: 34px;
 }
 
-.network-capabilities-header h2 {
-  max-width: 770px;
-  margin: 0;
-
-  color: var(--ross-navy, #0f2d5c);
-
-  font-size: clamp(38px, 4.3vw, 62px);
-  font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
+.network-capabilities-heading h2 {
+  max-width: 720px;
 }
 
-.network-capabilities-header > p {
-  margin: 0 0 6px;
-
-  color: #5b6472;
-
-  font-size: 16px;
-  line-height: 1.75;
+.network-capabilities-heading > p {
+  max-width: 420px;
+  margin: 0 0 4px;
+  color: #66707e;
+  font-size: 0.94rem;
+  line-height: 1.72;
 }
 
 .network-capabilities-grid {
   display: grid;
+  border-top: 1px solid #dce2e9;
+  border-left: 1px solid #dce2e9;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  border-top: 1px solid rgba(15, 45, 92, 0.14);
-  border-bottom: 1px solid rgba(15, 45, 92, 0.14);
 }
 
 .network-capability-card {
-  min-height: 340px;
-  padding: 38px 32px;
-
-  border-right: 1px solid rgba(15, 45, 92, 0.14);
+  min-height: 245px;
+  padding: 24px 24px 26px;
+  border-right: 1px solid #dce2e9;
+  border-bottom: 1px solid #dce2e9;
+  background: #ffffff;
+  transition:
+    background-color 220ms ease,
+    transform 220ms ease;
 }
 
-.network-capability-card:first-child {
-  border-left: 1px solid rgba(15, 45, 92, 0.14);
+.network-capability-card:hover {
+  background: #f7f8fa;
+  transform: translateY(-2px);
 }
 
-.network-capability-card > span {
-  display: block;
-  margin-bottom: 72px;
+.network-capability-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
 
-  color: var(--ross-red, #c62828);
+.network-capability-number {
+  color: #c62828;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
 
-  font-size: 13px;
-  font-weight: 800;
+.network-capability-line {
+  width: 30px;
+  height: 1px;
+  background: #cfd6df;
 }
 
 .network-capability-card h3 {
-  margin: 0 0 18px;
-
-  color: var(--ross-navy, #0f2d5c);
-
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.25;
+  margin: 46px 0 0;
+  color: #0f2d5c;
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.24;
   letter-spacing: -0.025em;
 }
 
 .network-capability-card p {
-  margin: 0;
-
-  color: #657080;
-
-  font-size: 14px;
-  line-height: 1.75;
-}
-
-/* =========================
-   STANDARDS
-========================= */
-
-.network-standards {
-  padding: 106px 0;
-}
-
-.network-standards-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
-  gap: 110px;
-}
-
-.network-standards-content {
-  position: sticky;
-  top: 130px;
-  align-self: start;
-}
-
-.network-standards-content h2 {
-  max-width: 640px;
-  margin: 0 0 28px;
-
-  color: var(--ross-navy, #0f2d5c);
-
-  font-size: clamp(38px, 4.3vw, 60px);
-  font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
-}
-
-.network-standards-content > p:not(.network-eyebrow) {
-  max-width: 590px;
-  margin: 0 0 20px;
-
-  color: #5b6472;
-
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.network-standards-list {
-  border-top: 1px solid rgba(15, 45, 92, 0.15);
-}
-
-.network-standard-item {
-  min-height: 92px;
-  padding: 0 8px;
-
-  display: grid;
-  grid-template-columns: 65px minmax(0, 1fr);
-  align-items: center;
-
-  border-bottom: 1px solid rgba(15, 45, 92, 0.15);
-}
-
-.network-standard-item span {
-  color: var(--ross-red, #c62828);
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.network-standard-item p {
-  margin: 0;
-
-  color: var(--ross-navy, #0f2d5c);
-
-  font-size: 18px;
-  font-weight: 650;
-  line-height: 1.3;
-}
-
-/* =========================
-   INDUSTRIES
-========================= */
-
-.network-industries {
-  padding: 106px 0;
-
-  background: var(--ross-navy, #0f2d5c);
-}
-
-.network-industries-header {
-  margin-bottom: 54px;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.network-industries .network-eyebrow {
-  color: #ffffff;
-}
-
-.network-industries-header h2 {
-  max-width: 740px;
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: clamp(38px, 4.3vw, 60px);
-  font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
-}
-
-.network-text-link {
-  padding-bottom: 8px;
-
-  color: #ffffff;
-  text-decoration: none;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.network-industries-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.network-industry-item {
-  min-height: 90px;
-  padding: 0 24px 0 0;
-
-  display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
-  align-items: center;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.network-industry-item:nth-child(odd) {
-  border-right: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.network-industry-item:nth-child(even) {
-  padding-left: 32px;
-}
-
-.network-industry-item span {
-  color: rgba(255, 255, 255, 0.48);
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.network-industry-item p {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 17px;
-  font-weight: 650;
-  line-height: 1.3;
-}
-
-/* =========================
-   CLOSING
-========================= */
-
-.network-closing {
-  padding: 112px 0;
-
-  background: #ffffff;
-}
-
-.network-closing-inner {
-  max-width: 960px;
-
-  text-align: center;
-}
-
-.network-closing h2 {
-  margin: 0;
-
-  color: var(--ross-navy, #0f2d5c);
-
-  font-size: clamp(42px, 5vw, 68px);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.05em;
-}
-
-.network-closing-description {
-  max-width: 720px;
-  margin: 28px auto 36px;
-
-  color: #5b6472;
-
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-/* =========================
-   RESPONSIVE — LAPTOP
-========================= */
-
-@media (max-width: 1240px) {
-  .network-container {
-    width: min(100% - 56px, 1380px);
-  }
-
-  .network-hero-container {
-    gap: 50px;
-  }
-
-  .network-hero-summary {
-    width: 310px;
-  }
-
-  .network-introduction-grid,
-  .network-standards-grid {
-    gap: 80px;
-  }
-
-  .network-purpose-card {
-    padding: 46px;
-  }
-}
-
-/* =========================
-   RESPONSIVE — TABLET
-========================= */
-
-@media (max-width: 1080px) {
-  .network-container {
-    width: min(100% - 48px, 1380px);
-  }
-
-  /* HERO */
-
-.network-hero {
-  min-height: 680px;
-  align-items: stretch;
-}
-
-.network-hero-background {
-  background-position: 62% center;
-}
-
-.network-hero-container {
-  min-height: 680px;
-  padding: 70px 0 48px;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 38px;
-}
-
-.network-hero-content {
-  width: min(630px, 68%);
-}
-
-  .network-hero h1 {
-    font-size: clamp(46px, 6vw, 68px);
-  }
-
-.network-hero-description {
-  max-width: 570px;
-  margin-top: 22px;
-
-  font-size: 16px;
+  margin: 13px 0 0;
+  color: #687180;
+  font-size: 0.82rem;
   line-height: 1.62;
 }
 
-.network-hero-actions {
-  margin-top: 27px;
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.network-process {
+  padding: 72px 0 74px;
+  background: #f4f6f9;
 }
 
-.network-hero-summary {
-  width: 255px;
-  padding-top: 18px;
-  gap: 14px;
+.network-process-grid {
+  display: grid;
+  align-items: start;
+  gap: clamp(58px, 7vw, 105px);
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
 }
 
-  .network-hero-summary-number {
-    font-size: 38px;
+.network-process-heading {
+  position: sticky;
+  top: 112px;
+}
+
+.network-process-heading h2 {
+  max-width: 500px;
+  font-size: clamp(2.25rem, 3.5vw, 3.9rem);
+  line-height: 1.02;
+}
+
+.network-process-heading > p {
+  max-width: 460px;
+  margin: 19px 0 0;
+  color: #66707e;
+  font-size: 0.93rem;
+  line-height: 1.72;
+}
+
+.network-process-list {
+  border-top: 1px solid #ccd4de;
+}
+
+.network-process-item {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  padding: 19px 0 21px;
+  border-bottom: 1px solid #ccd4de;
+}
+
+.network-process-number {
+  padding-top: 4px;
+  color: #c62828;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.network-process-item h3 {
+  margin: 0;
+  color: #0f2d5c;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+}
+
+.network-process-item p {
+  max-width: 640px;
+  margin: 7px 0 0;
+  color: #66707e;
+  font-size: 0.84rem;
+  line-height: 1.62;
+}
+
+/* =========================================================
+   NETWORK MOVEMENTS
+========================================================= */
+
+.network-movements {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0;
+  background:
+    radial-gradient(
+      circle at 84% 16%,
+      rgba(45, 80, 132, 0.28),
+      transparent 32%
+    ),
+    #09172b;
+}
+
+.network-movements::after {
+  position: absolute;
+  top: -320px;
+  right: -250px;
+  width: 630px;
+  height: 630px;
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 50%;
+  content: "";
+}
+
+.network-movements-header {
+  display: grid;
+  grid-template-columns: minmax(0,1.35fr) minmax(280px,.65fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+
+.network-movements-header h2{
+  max-width:700px;
+  color:#fff;
+}
+
+.network-movements-header>p{
+  max-width:420px;
+  margin:0;
+  color:rgba(255,255,255,.60);
+  font-size:.92rem;
+  line-height:1.7;
+}
+
+.network-movements-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.14);
+  border-left:1px solid rgba(255,255,255,.14);
+}
+
+.network-movement-item{
+  padding:30px 32px;
+  min-height:145px;
+
+  border-right:1px solid rgba(255,255,255,.14);
+  border-bottom:1px solid rgba(255,255,255,.14);
+
+  transition:.28s ease;
+}
+
+.network-movement-item:hover{
+  background:rgba(255,255,255,.03);
+}
+
+.network-movement-item span{
+  display:block;
+  color:#e66965;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+
+.network-movement-item h3{
+  margin-top:20px;
+
+  color:#fff;
+  font-size:1.15rem;
+  font-weight:600;
+  line-height:1.3;
+
+  max-width:220px;
+}
+
+/* =========================================================
+   CLOSING CTA
+========================================================= */
+
+.network-cta {
+  padding: 72px 0;
+  background: #ffffff;
+}
+
+.network-cta-inner {
+  display: grid;
+  align-items: center;
+  gap: 55px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.network-cta-content {
+  max-width: 760px;
+}
+
+.network-cta-content h2 {
+  max-width: 740px;
+  font-size: clamp(2.15rem, 3.35vw, 3.75rem);
+}
+
+.network-cta-content p {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: #66707e;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.network-cta-action {
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MACBOOK / LAPTOP
+========================================================= */
+
+@media (max-width: 1440px) {
+  .network-container {
+    width: min(100% - 44px, 1180px);
   }
 
-  .network-hero-summary strong {
-    font-size: 13px;
+  .network-hero {
+    min-height: calc(100svh - 82px);
   }
 
-  .network-hero-summary p {
-    font-size: 12px;
-    line-height: 1.55;
+  .network-hero-content {
+    max-width: 650px;
   }
 
-  /* SECTIONS */
+  .network-hero-content h1 {
+    max-width: 640px;
+    font-size: clamp(3.15rem, 4.8vw, 5rem);
+  }
 
-  .network-introduction,
+  .network-intro,
+  .network-coverage,
   .network-capabilities,
-  .network-standards,
-  .network-industries,
-  .network-closing {
-    padding-top: 76px;
-    padding-bottom: 76px;
+  .network-process,
+  .network-movements,
+  .network-cta {
+    padding-top: 64px;
+    padding-bottom: 66px;
   }
 
-  .network-purpose {
-    padding-bottom: 76px;
+  .network-coverage-card {
+    min-height: 370px;
+    padding: 32px 34px;
   }
 
-  .network-introduction-grid,
-  .network-standards-grid {
-    gap: 56px;
-  }
-
-  .network-section-heading h2,
-  .network-capabilities-header h2,
-  .network-standards-content h2,
-  .network-industries-header h2 {
-    font-size: clamp(38px, 5vw, 52px);
-  }
-
-  /* PURPOSE */
-
-  .network-purpose-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-
-  .network-purpose-card {
-    min-height: 300px;
-    padding: 36px;
-  }
-
-  .network-purpose-card h2 {
+  .network-coverage-card-content {
     margin-top: 44px;
-
-    font-size: clamp(32px, 4vw, 44px);
   }
 
-  .network-purpose-card > p:last-child {
-    margin-top: 44px;
-
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  /* CAPABILITIES */
-
-  .network-capabilities-header {
-    margin-bottom: 42px;
-    gap: 50px;
-  }
-
-  .network-capabilities-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .network-capability-card,
-  .network-capability-card:first-child,
-  .network-capability-card:nth-child(2),
-  .network-capability-card:nth-child(3),
-  .network-capability-card:nth-child(4) {
-    min-height: 235px;
-    padding: 26px 28px;
-
-    border-right: 1px solid rgba(15, 45, 92, 0.14);
-    border-bottom: 1px solid rgba(15, 45, 92, 0.14);
-  }
-
-  .network-capability-card:first-child,
-  .network-capability-card:nth-child(3) {
-    border-left: 1px solid rgba(15, 45, 92, 0.14);
-  }
-
-  .network-capability-card:nth-child(3),
-  .network-capability-card:nth-child(4) {
-    border-top: 1px solid rgba(15, 45, 92, 0.14);
-  }
-
-  .network-capability-card > span {
-    margin-bottom: 28px;
+  .network-capability-card {
+    min-height: 230px;
   }
 
   .network-capability-card h3 {
-    margin-bottom: 12px;
-
-    font-size: 20px;
+    margin-top: 39px;
   }
 
-  .network-capability-card p {
-    font-size: 14px;
-    line-height: 1.65;
+  .network-process-item {
+    padding-block: 17px 19px;
   }
 
-  /* STANDARDS */
-
-  .network-standards-content {
-    top: 110px;
-  }
-
-  .network-standards-content h2 {
-    margin-bottom: 22px;
-  }
-
-  .network-standards-content > p:not(.network-eyebrow) {
-    margin-bottom: 16px;
-
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .network-standard-item {
-    min-height: 76px;
-    grid-template-columns: 56px minmax(0, 1fr);
-  }
-
-  .network-standard-item p {
-    font-size: 16px;
-  }
-
-  /* INDUSTRIES */
-
-  .network-industries-header {
-    margin-bottom: 42px;
-  }
-
-  .network-industry-item {
-    min-height: 76px;
-  }
-
-  .network-industry-item p {
-    font-size: 16px;
-  }
-
-  /* CLOSING */
-
-  .network-closing h2 {
-    font-size: clamp(40px, 5.5vw, 58px);
-  }
-
-  .network-closing-description {
-    margin: 24px auto 32px;
-
-    font-size: 16px;
-  }
+.network-movement-item {
+  min-height: 145px;
+  padding: 32px 34px;
 }
 
-/* =========================
-   RESPONSIVE — MOBILE
-========================= */
+.network-movement-item span {
+  font-size: 0.72rem;
+}
 
-@media (max-width: 720px) {
+.network-movement-item h3 {
+  max-width: 250px;
+  margin-top: 22px;
+  font-size: 1.18rem;
+  line-height: 1.28;
+}
+}
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1180px) {
   .network-container {
-    width: calc(100% - 32px);
+    width: min(100% - 40px, 1060px);
   }
 
-  .network-eyebrow {
-    margin-bottom: 14px;
-
-    font-size: 11px;
+  .network-intro-grid,
+  .network-process-grid {
+    gap: 58px;
   }
 
-  /* HERO */
+  .network-capabilities-heading,
+  .network-movements-header {
+    gap: 40px;
+  }
 
-.network-hero {
-  min-height: 690px;
-  align-items: stretch;
+  .network-coverage-card {
+    min-height: 390px;
+    padding: 30px;
+  }
+
+  .network-coverage-card-content h3 {
+    font-size: clamp(1.65rem, 2.2vw, 2.35rem);
+  }
+
+  .network-capability-card {
+    min-height: 245px;
+    padding-inline: 21px;
+  }
+
+  .network-capability-card h3 {
+    font-size: 1.08rem;
+  }
 }
 
-.network-hero-background {
-  background-position: 64% center;
-}
+/* =========================================================
+   TABLET
+========================================================= */
 
-.network-hero-overlay {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5,18,38,.12) 0%,
-      rgba(5,18,38,.40) 28%,
-      rgba(5,18,38,.88) 63%,
-      rgba(5,18,38,.99) 100%
-    );
-}
+@media (max-width: 1024px) {
+  .network-container {
+    width: min(100% - 40px, 920px);
+  }
 
-.network-hero-container {
-  min-height: 690px;
-  padding: 205px 0 28px;
+  .network-hero {
+    min-height: 680px;
+    background-position: 64% center;
+  }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+  .network-hero-grid {
+    padding-block: 100px 86px;
+  }
 
   .network-hero-content {
-    width: 100%;
+    max-width: 670px;
   }
 
-  .network-hero h1 {
-    max-width: 590px;
-
-    font-size: clamp(40px, 11vw, 54px);
-    line-height: 1;
-    letter-spacing: -0.05em;
+  .network-hero-content h1 {
+    font-size: clamp(3.1rem, 7vw, 4.8rem);
   }
 
-  .network-hero-description {
-    margin-top: 20px;
-
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .network-hero-actions {
-    margin-top: 26px;
-    gap: 14px;
-  }
-
-  .network-secondary-link {
-    min-height: 50px;
-
-    font-size: 12px;
-  }
-
-  .network-hero-summary {
-    width: 100%;
-    margin-top: 22px;
-    padding-top: 18px;
-    gap: 14px;
-  }
-
-  .network-hero-summary-number {
-    font-size: 36px;
-  }
-
-  .network-hero-summary strong {
-    margin-bottom: 5px;
-
-    font-size: 12px;
-  }
-
-  .network-hero-summary p {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  /* SECTION SPACING */
-
-  .network-introduction,
-  .network-capabilities,
-  .network-standards,
-  .network-industries,
-  .network-closing {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .network-purpose {
-    padding-bottom: 60px;
-  }
-
-  .network-introduction-grid,
-  .network-purpose-grid,
-  .network-capabilities-header,
-  .network-standards-grid {
+  .network-intro-grid,
+  .network-process-grid {
+    gap: 38px;
     grid-template-columns: 1fr;
-    gap: 30px;
   }
 
-  .network-section-heading h2,
-  .network-capabilities-header h2,
-  .network-standards-content h2,
-  .network-industries-header h2 {
-    font-size: 36px;
-    line-height: 1.05;
+  .network-intro-left,
+  .network-intro-right {
+    max-width: 760px;
   }
 
-  /* INTRODUCTION */
-
-  .network-introduction-content {
+  .network-intro-right {
     padding-top: 0;
   }
 
-  .network-introduction-content p {
-    margin-bottom: 18px;
-
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .network-introduction-content .network-introduction-lead {
-    font-size: 18px;
-    line-height: 1.55;
-  }
-
-  /* PURPOSE */
-
-  .network-purpose-card {
-    min-height: auto;
-    padding: 28px 24px;
-  }
-
-  .network-purpose-card h2 {
-    margin-top: 42px;
-
-    font-size: 32px;
-    line-height: 1.08;
-  }
-
-  .network-purpose-card > p:last-child {
-    margin-top: 40px;
-
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  /* CAPABILITIES */
-
-  .network-capabilities-header {
-    margin-bottom: 32px;
-  }
-
-  .network-capabilities-header > p {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .network-capabilities-grid {
+  .network-capabilities-heading,
+  .network-movements-header {
+    align-items: start;
+    gap: 22px;
     grid-template-columns: 1fr;
   }
 
-  .network-capability-card,
-  .network-capability-card:first-child,
-  .network-capability-card:nth-child(2),
-  .network-capability-card:nth-child(3),
-  .network-capability-card:nth-child(4) {
-    min-height: auto;
-    padding: 24px 22px;
-
-    border-top: 0;
-    border-right: 1px solid rgba(15, 45, 92, 0.14);
-    border-bottom: 1px solid rgba(15, 45, 92, 0.14);
-    border-left: 1px solid rgba(15, 45, 92, 0.14);
+  .network-capabilities-heading > p,
+  .network-movements-header > p {
+    max-width: 640px;
   }
 
-  .network-capability-card > span {
-    margin-bottom: 18px;
-
-    font-size: 12px;
+  .network-coverage-card {
+    min-height: 410px;
   }
 
-  .network-capability-card h3 {
-    margin-bottom: 10px;
-
-    font-size: 19px;
-    line-height: 1.25;
+  .network-capabilities-grid,
+  .network-movements-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .network-capability-card p {
-    font-size: 15px;
-    line-height: 1.6;
+  .network-capability-card {
+    min-height: 220px;
   }
 
-  /* STANDARDS */
-
-  .network-standards-content {
+  .network-process-heading {
     position: static;
   }
 
-  .network-standards-content h2 {
-    margin-bottom: 20px;
+  .network-process-heading h2,
+  .network-process-heading > p {
+    max-width: 690px;
   }
 
-  .network-standards-content > p:not(.network-eyebrow) {
-    margin-bottom: 16px;
-
-    font-size: 15px;
-    line-height: 1.68;
-  }
-
-  .network-standard-item {
-    min-height: 68px;
-    padding: 0;
-
-    grid-template-columns: 44px minmax(0, 1fr);
-  }
-
-  .network-standard-item p {
-    font-size: 15px;
-  }
-
-  /* INDUSTRIES */
-
-  .network-industries-header {
-    margin-bottom: 32px;
-
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .network-industries-grid {
+  .network-cta-inner {
+    align-items: start;
+    gap: 26px;
     grid-template-columns: 1fr;
-  }
-
-  .network-industry-item,
-  .network-industry-item:nth-child(odd),
-  .network-industry-item:nth-child(even) {
-    min-height: 66px;
-    padding: 0;
-
-    grid-template-columns: 42px minmax(0, 1fr);
-
-    border-right: 0;
-  }
-
-  .network-industry-item p {
-    font-size: 15px;
-  }
-
-  /* CLOSING */
-
-  .network-closing h2 {
-    font-size: 38px;
-    line-height: 1.04;
-  }
-
-  .network-closing-description {
-    margin: 22px auto 28px;
-
-    font-size: 15px;
-    line-height: 1.65;
   }
 }
 
 /* =========================
-   VERY SMALL MOBILE
+   MOBILE
 ========================= */
 
-@media (max-width: 430px) {
-  .network-container {
-    width: calc(100% - 26px);
+@media (max-width: 820px) {
+
+  .network-coverage-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-.network-hero {
-  min-height:650px;
-}
-
-.network-hero-container{
-  min-height:650px;
-  padding:175px 0 24px;
-}
-
-  .network-hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
+  .network-coverage-card {
+    padding: 28px 24px;
+    min-height: auto;
   }
 
-  .network-hero h1 {
-    font-size: 39px;
+  .network-coverage-card h3 {
+    margin: 18px 0 14px;
+    font-size: 2rem;
+    line-height: 1.1;
   }
 
-  .network-hero-summary {
-    align-items: flex-start;
+  .network-coverage-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
-  .network-section-heading h2,
-  .network-capabilities-header h2,
-  .network-standards-content h2,
-  .network-industries-header h2,
-  .network-closing h2 {
-    font-size: 34px;
+  .network-coverage-footer {
+    margin-top: 24px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
-  .network-purpose-card {
-    padding: 26px 22px;
+  .network-movements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
   }
 
-  .network-purpose-card h2 {
-    font-size: 30px;
+  .network-movement-item {
+    padding: 20px 18px;
+    min-height: 130px;
   }
 
-  .network-capability-card,
-  .network-capability-card:first-child,
-  .network-capability-card:nth-child(2),
-  .network-capability-card:nth-child(3),
-  .network-capability-card:nth-child(4) {
-    padding: 22px 20px;
+  .network-movement-item span {
+    font-size: 1rem;
   }
 
-  .network-capability-card h3 {
-    font-size: 18px;
+  .network-movement-item h3 {
+    margin-top: 18px;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    max-width: 170px;
   }
 
-  .network-capability-card p {
-    font-size: 14px;
-  }
 }
