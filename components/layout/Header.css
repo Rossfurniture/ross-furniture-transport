@@ -162,8 +162,7 @@
   cursor: pointer;
 }
 
-.ross-header-dropdown:hover .ross-header-chevron,
-.ross-header-dropdown:focus-within .ross-header-chevron {
+.ross-header-dropdown-open .ross-header-chevron {
   transform: rotate(180deg);
 }
 
@@ -191,8 +190,7 @@
   width: 650px;
 }
 
-.ross-header-dropdown:hover .ross-header-dropdown-menu,
-.ross-header-dropdown:focus-within .ross-header-dropdown-menu {
+.ross-header-dropdown-open .ross-header-dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;

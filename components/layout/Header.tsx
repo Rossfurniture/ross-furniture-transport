@@ -73,6 +73,8 @@ const industryLinks = [
   },
 ];
 
+type DesktopDropdown = "services" | "industries" | null;
+
 function ChevronDown() {
   return (
     <svg
@@ -116,6 +118,10 @@ export default function Header() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] =
+    useState<DesktopDropdown>(null);
+  const [suppressDropdowns, setSuppressDropdowns] =
+    useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -135,6 +141,7 @@ export default function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -144,6 +151,32 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
+
+  const openDesktopDropdown = (
+    dropdown: Exclude<DesktopDropdown, null>
+  ) => {
+    if (!suppressDropdowns) {
+      setOpenDropdown(dropdown);
+    }
+  };
+
+  const closeDesktopDropdown = () => {
+    setOpenDropdown(null);
+  };
+
+  const closeDropdownAfterNavigation = (
+    event: React.MouseEvent<HTMLElement>
+  ) => {
+    setSuppressDropdowns(true);
+    setOpenDropdown(null);
+
+    event.currentTarget.blur();
+  };
+
+  const resetDesktopDropdowns = () => {
+    setOpenDropdown(null);
+    setSuppressDropdowns(false);
+  };
 
   const isActive = (href: string) => {
     if (href === "/production") {
@@ -159,12 +192,14 @@ export default function Header() {
         className={`ross-header ${
           isScrolled ? "ross-header-scrolled" : ""
         }`}
+        onMouseLeave={resetDesktopDropdowns}
       >
         <div className="ross-header-container">
           <Link
             href="/production"
             className="ross-header-logo-link"
             aria-label="Ross Furniture Transport home"
+            onClick={closeDropdownAfterNavigation}
           >
             <Image
               src="/logo/ross-furniture-transport-whtebg.webp"
@@ -182,6 +217,7 @@ export default function Header() {
           >
             <Link
               href="/production"
+              onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
                 isActive("/production")
                   ? "ross-header-link-active"
@@ -193,6 +229,7 @@ export default function Header() {
 
             <Link
               href="/production/about"
+              onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
                 isActive("/production/about")
                   ? "ross-header-link-active"
@@ -202,14 +239,30 @@ export default function Header() {
               About
             </Link>
 
-            <div className="ross-header-dropdown">
+            <div
+              className={`ross-header-dropdown ${
+                openDropdown === "services"
+                  ? "ross-header-dropdown-open"
+                  : ""
+              }`}
+              onMouseEnter={() =>
+                openDesktopDropdown("services")
+              }
+              onMouseLeave={closeDesktopDropdown}
+            >
               <Link
                 href="/production/services"
+                onFocus={() =>
+                  openDesktopDropdown("services")
+                }
+                onClick={closeDropdownAfterNavigation}
                 className={`ross-header-link ross-header-dropdown-trigger ${
                   isActive("/production/services")
                     ? "ross-header-link-active"
                     : ""
                 }`}
+                aria-haspopup="true"
+                aria-expanded={openDropdown === "services"}
               >
                 <span>Services</span>
                 <ChevronDown />
@@ -227,6 +280,7 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         className="ross-header-dropdown-link"
+                        onClick={closeDropdownAfterNavigation}
                       >
                         <span>{item.label}</span>
                         <DropdownArrow />
@@ -237,14 +291,30 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="ross-header-dropdown">
+            <div
+              className={`ross-header-dropdown ${
+                openDropdown === "industries"
+                  ? "ross-header-dropdown-open"
+                  : ""
+              }`}
+              onMouseEnter={() =>
+                openDesktopDropdown("industries")
+              }
+              onMouseLeave={closeDesktopDropdown}
+            >
               <Link
                 href="/production/industries"
+                onFocus={() =>
+                  openDesktopDropdown("industries")
+                }
+                onClick={closeDropdownAfterNavigation}
                 className={`ross-header-link ross-header-dropdown-trigger ${
                   isActive("/production/industries")
                     ? "ross-header-link-active"
                     : ""
                 }`}
+                aria-haspopup="true"
+                aria-expanded={openDropdown === "industries"}
               >
                 <span>Industries</span>
                 <ChevronDown />
@@ -262,6 +332,7 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         className="ross-header-dropdown-link"
+                        onClick={closeDropdownAfterNavigation}
                       >
                         <span>{item.label}</span>
                         <DropdownArrow />
@@ -274,6 +345,7 @@ export default function Header() {
 
             <Link
               href="/production/delivery-network"
+              onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
                 isActive("/production/delivery-network")
                   ? "ross-header-link-active"
@@ -285,6 +357,7 @@ export default function Header() {
 
             <Link
               href="/production/why-ross"
+              onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
                 isActive("/production/why-ross")
                   ? "ross-header-link-active"
@@ -296,6 +369,7 @@ export default function Header() {
 
             <Link
               href="/production/contact"
+              onClick={closeDropdownAfterNavigation}
               className={`ross-header-link ${
                 isActive("/production/contact")
                   ? "ross-header-link-active"
@@ -327,9 +401,10 @@ export default function Header() {
               }
               aria-expanded={isMobileMenuOpen}
               aria-controls="ross-mobile-menu"
-              onClick={() =>
-                setIsMobileMenuOpen((current) => !current)
-              }
+              onClick={() => {
+                setOpenDropdown(null);
+                setIsMobileMenuOpen((current) => !current);
+              }}
             >
               <span />
               <span />

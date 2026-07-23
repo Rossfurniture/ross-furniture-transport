@@ -1,0 +1,625 @@
+/* =========================================================
+   ROSS FURNITURE TRANSPORT
+   INDUSTRIES HERO
+========================================================= */
+
+.ross-industries-hero {
+  position: relative;
+  min-height: calc(100svh - 96px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(24, 71, 116, 0.42),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #071426 0%,
+      #091a31 48%,
+      #071426 100%
+    );
+  isolation: isolate;
+}
+
+.ross-industries-hero i {
+  color: #d13232;
+  font-style: normal;
+}
+
+/* =========================================================
+   BACKGROUND DETAIL
+========================================================= */
+
+.ross-industries-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ross-industries-hero-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 50%;
+}
+
+.ross-industries-hero-orbit-one {
+  width: 760px;
+  height: 760px;
+  top: -300px;
+  right: -190px;
+}
+
+.ross-industries-hero-orbit-two {
+  width: 560px;
+  height: 560px;
+  top: -200px;
+  right: -90px;
+}
+
+.ross-industries-hero-orbit-three {
+  width: 360px;
+  height: 360px;
+  top: -100px;
+  right: 10px;
+}
+
+.ross-industries-hero-grid-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.055) 25%,
+    rgba(255, 255, 255, 0.055) 75%,
+    transparent 100%
+  );
+}
+
+.ross-industries-grid-line-one {
+  left: 25%;
+}
+
+.ross-industries-grid-line-two {
+  left: 50%;
+}
+
+.ross-industries-grid-line-three {
+  left: 75%;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.ross-industries-hero-container {
+  display: grid;
+  width: min(100%, 1560px);
+  min-height: calc(100svh - 154px);
+  margin: 0 auto;
+  padding: 72px 70px 58px;
+  grid-template-columns: minmax(0, 0.82fr) minmax(560px, 1fr);
+  align-items: center;
+  gap: 86px;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ross-industries-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.ross-industries-hero-eyebrow {
+  margin: 0 0 20px;
+  color: #ef3d3d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ross-industries-hero-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3.2rem, 4.8vw, 5.85rem);
+  font-weight: 600;
+  line-height: 0.91;
+  letter-spacing: -0.068em;
+}
+
+.ross-industries-hero-title span {
+  display: block;
+}
+
+.ross-industries-hero-description {
+  max-width: 590px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(0.94rem, 1.05vw, 1.04rem);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.ross-industries-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 31px;
+}
+
+/* =========================================================
+   PROOF POINTS
+========================================================= */
+
+.ross-industries-hero-proof {
+  display: grid;
+  max-width: 560px;
+  margin-top: 38px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ross-industries-hero-proof div {
+  padding-right: 20px;
+}
+
+.ross-industries-hero-proof div + div {
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.ross-industries-hero-proof strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #ffffff;
+  font-size: clamp(1.25rem, 1.7vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.ross-industries-hero-proof span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.61rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   INDUSTRY DIRECTORY
+========================================================= */
+
+.ross-industries-hero-directory {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.ross-industries-hero-directory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 17px;
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ross-industries-hero-directory-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.ross-industries-hero-industry {
+  position: relative;
+  display: grid;
+  min-height: 69px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  grid-template-columns: 48px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    min-height 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    padding 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 240ms ease;
+}
+
+.ross-industries-hero-industry::before {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  background: #d13232;
+  content: "";
+  transition: width 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ross-industries-hero-industry:hover {
+  min-height: 92px;
+  padding: 19px 16px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.ross-industries-hero-industry:hover::before {
+  width: 100%;
+}
+
+.ross-industries-hero-industry-number {
+  align-self: start;
+  padding-top: 3px;
+  color: #ef3d3d;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.13em;
+}
+
+.ross-industries-hero-industry-content strong {
+  display: block;
+  color: #ffffff;
+  font-size: clamp(0.91rem, 1.05vw, 1.05rem);
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: -0.022em;
+  transition: color 220ms ease;
+}
+
+.ross-industries-hero-industry-content p {
+  max-width: 520px;
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  transform: translateY(5px);
+  transition:
+    max-height 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ross-industries-hero-industry:hover
+  .ross-industries-hero-industry-content p {
+  max-height: 44px;
+  margin-top: 6px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ross-industries-hero-industry-marker {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 50%;
+  place-items: center;
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    transform 300ms ease;
+}
+
+.ross-industries-hero-industry-marker span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.42);
+  transition:
+    width 220ms ease,
+    height 220ms ease,
+    background-color 220ms ease;
+}
+
+.ross-industries-hero-industry:hover
+  .ross-industries-hero-industry-marker {
+  border-color: #d13232;
+  background: rgba(209, 50, 50, 0.1);
+  transform: scale(1.05);
+}
+
+.ross-industries-hero-industry:hover
+  .ross-industries-hero-industry-marker span {
+  width: 10px;
+  height: 2px;
+  border-radius: 0;
+  background: #ef3d3d;
+}
+
+/* =========================================================
+   FOOTER STRIP
+========================================================= */
+
+.ross-industries-hero-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.ross-industries-hero-footer-inner {
+  display: grid;
+  width: min(100%, 1560px);
+  margin: 0 auto;
+  padding: 18px 70px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ross-industries-hero-footer-inner span {
+  color: rgba(255, 255, 255, 0.37);
+  font-size: 0.58rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ross-industries-hero-footer-inner span:first-child {
+  text-align: left;
+}
+
+.ross-industries-hero-footer-inner span:last-child {
+  text-align: right;
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1180px) {
+  .ross-industries-hero-container {
+    padding-right: 42px;
+    padding-left: 42px;
+    grid-template-columns: minmax(0, 0.76fr) minmax(500px, 1fr);
+    gap: 52px;
+  }
+
+  .ross-industries-hero-title {
+    font-size: clamp(3rem, 5vw, 4.7rem);
+  }
+
+  .ross-industries-hero-footer-inner {
+    padding-right: 42px;
+    padding-left: 42px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 981px) and (max-width: 1180px) {
+  .ross-industries-hero {
+    min-height: auto;
+  }
+
+  .ross-industries-hero-container {
+    min-height: auto;
+    padding: 74px 42px 64px;
+    grid-template-columns: minmax(0, 0.76fr) minmax(470px, 1fr);
+    align-items: start;
+    gap: 50px;
+  }
+
+  .ross-industries-hero-content {
+    max-width: 460px;
+  }
+
+  .ross-industries-hero-title {
+    font-size: clamp(3rem, 5vw, 4.7rem);
+  }
+
+  .ross-industries-hero-description {
+    font-size: 0.9rem;
+  }
+
+  .ross-industries-hero-actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ross-industries-hero-actions > * {
+    width: 100%;
+  }
+
+  .ross-industries-hero-actions a,
+  .ross-industries-hero-actions button {
+    display: flex;
+    min-height: 54px;
+    padding: 12px 9px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    line-height: 1.22;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .ross-industries-hero-directory {
+    margin-top: 6px;
+  }
+
+  .ross-industries-hero-industry {
+    min-height: 66px;
+    padding: 14px 0;
+  }
+
+  .ross-industries-hero-footer-inner {
+    padding-right: 42px;
+    padding-left: 42px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 980px) {
+  .ross-industries-hero {
+    min-height: auto;
+  }
+
+  .ross-industries-hero-container {
+    min-height: auto;
+    padding: 78px 22px 52px;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 48px;
+  }
+
+  .ross-industries-hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .ross-industries-hero-eyebrow {
+    margin-bottom: 16px;
+    font-size: 0.64rem;
+  }
+
+  .ross-industries-hero-title {
+    font-size: clamp(2.65rem, 12vw, 4rem);
+    line-height: 0.92;
+  }
+
+  .ross-industries-hero-description {
+    max-width: 620px;
+    margin-top: 22px;
+    font-size: 0.88rem;
+    line-height: 1.64;
+  }
+
+  .ross-industries-hero-actions {
+    display: grid;
+    width: 100%;
+    margin-top: 26px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ross-industries-hero-actions > * {
+    width: 100%;
+  }
+
+  .ross-industries-hero-actions a,
+  .ross-industries-hero-actions button {
+    display: flex;
+    min-width: 0;
+    min-height: 54px;
+    padding: 12px 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .ross-industries-hero-proof {
+    margin-top: 31px;
+    padding-top: 20px;
+  }
+
+  .ross-industries-hero-proof div {
+    padding-right: 11px;
+  }
+
+  .ross-industries-hero-proof div + div {
+    padding-left: 11px;
+  }
+
+  .ross-industries-hero-proof strong {
+    font-size: 1.2rem;
+  }
+
+  .ross-industries-hero-proof span {
+    font-size: 0.52rem;
+  }
+
+  .ross-industries-hero-directory {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .ross-industries-hero-directory-header {
+    font-size: 0.54rem;
+  }
+
+  .ross-industries-hero-industry {
+    min-height: 70px;
+    grid-template-columns: 37px minmax(0, 1fr) 30px;
+    gap: 10px;
+  }
+
+  .ross-industries-hero-industry:hover {
+    min-height: 70px;
+    padding: 15px 0;
+    background: transparent;
+  }
+
+  .ross-industries-hero-industry-content strong {
+    font-size: 0.91rem;
+  }
+
+  .ross-industries-hero-industry-content p {
+    display: none;
+  }
+
+  .ross-industries-hero-industry-marker {
+    width: 28px;
+    height: 28px;
+  }
+
+  .ross-industries-hero-footer {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+  .ross-industries-hero-title {
+    font-size: clamp(2.45rem, 11.7vw, 3.45rem);
+  }
+
+  .ross-industries-hero-proof {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ross-industries-hero-proof strong {
+    font-size: 1.05rem;
+  }
+
+  .ross-industries-hero-industry-number {
+    font-size: 0.6rem;
+  }
+
+  .ross-industries-hero-industry-content strong {
+    font-size: 0.84rem;
+  }
+}

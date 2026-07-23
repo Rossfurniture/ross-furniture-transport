@@ -1,0 +1,409 @@
+/* =========================================================
+   ROSS FURNITURE TRANSPORT
+   INDUSTRY DIFFERENCE
+========================================================= */
+
+.ross-industry-difference {
+  padding: 82px 56px 88px;
+  background: #f4f6f8;
+}
+
+.ross-industry-difference-container {
+  width: min(100%, 1420px);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ross-industry-difference-header {
+  display: grid;
+  margin-bottom: 42px;
+  grid-template-columns: minmax(0, 1fr) 410px;
+  align-items: end;
+  gap: 72px;
+}
+
+.ross-industry-difference-label {
+  margin: 0 0 15px;
+  color: #c62828;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.ross-industry-difference-heading h2 {
+  margin: 0;
+  color: #0f2d5c;
+  font-size: clamp(2.75rem, 4vw, 4.55rem);
+  font-weight: 600;
+  line-height: 0.97;
+  letter-spacing: -0.058em;
+}
+
+.ross-industry-difference-heading h2 span {
+  display: block;
+}
+
+.ross-industry-difference-heading h2 i {
+  color: #c62828;
+  font-style: normal;
+}
+
+.ross-industry-difference-intro {
+  max-width: 410px;
+  margin: 0 0 3px;
+  color: #586577;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.ross-industry-difference-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  align-items: stretch;
+  gap: 54px;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.ross-industry-difference-visual {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  background: #0f2d5c;
+}
+
+.ross-industry-difference-image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ross-industry-difference-visual:hover
+  .ross-industry-difference-image {
+  transform: scale(1.025);
+}
+
+.ross-industry-difference-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 20, 42, 0.04) 30%,
+      rgba(6, 20, 42, 0.82) 100%
+    );
+  pointer-events: none;
+}
+
+.ross-industry-difference-caption {
+  position: absolute;
+  right: 34px;
+  bottom: 30px;
+  left: 34px;
+  z-index: 2;
+}
+
+.ross-industry-difference-caption span {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ross-industry-difference-caption strong {
+  display: block;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 1.9vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+/* =========================================================
+   CAPABILITY LIST
+========================================================= */
+
+.ross-industry-difference-list {
+  border-top: 1px solid #cfd7e0;
+}
+
+.ross-industry-difference-item {
+  display: grid;
+  min-height: 103px;
+  padding: 22px 4px;
+  border-bottom: 1px solid #cfd7e0;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.ross-industry-difference-index {
+  padding-top: 4px;
+  color: #c62828;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.ross-industry-difference-content h3 {
+  margin: 0 0 8px;
+  color: #152238;
+  font-size: clamp(1.18rem, 1.42vw, 1.48rem);
+  font-weight: 650;
+  line-height: 1.22;
+  letter-spacing: -0.032em;
+}
+
+.ross-industry-difference-content p {
+  max-width: 690px;
+  margin: 0;
+  color: #5e6b7c;
+  font-size: 0.96rem;
+  line-height: 1.62;
+}
+
+/* =========================================================
+   MACBOOK / LAPTOP
+========================================================= */
+
+@media (min-width: 1181px) and (max-width: 1500px) {
+  .ross-industry-difference {
+    padding: 46px 40px 52px;
+  }
+
+  .ross-industry-difference-container {
+    width: min(100%, 1280px);
+  }
+
+  .ross-industry-difference-header {
+    margin-bottom: 22px;
+    grid-template-columns: minmax(0, 1fr) 370px;
+    align-items: end;
+    gap: 40px;
+  }
+
+  .ross-industry-difference-label {
+    margin-bottom: 10px;
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+  }
+
+  .ross-industry-difference-heading h2 {
+    font-size: clamp(2.7rem, 3.75vw, 3.8rem);
+    line-height: 0.94;
+    letter-spacing: -0.058em;
+  }
+
+  .ross-industry-difference-intro {
+    max-width: 370px;
+    margin-bottom: 1px;
+    font-size: 0.9rem;
+    line-height: 1.52;
+  }
+
+  .ross-industry-difference-layout {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 30px;
+  }
+
+  .ross-industry-difference-visual {
+    min-height: 470px;
+  }
+
+  .ross-industry-difference-caption {
+    right: 28px;
+    bottom: 24px;
+    left: 28px;
+  }
+
+  .ross-industry-difference-caption span {
+    margin-bottom: 6px;
+    font-size: 0.62rem;
+  }
+
+  .ross-industry-difference-caption strong {
+    font-size: 1.55rem;
+  }
+
+  .ross-industry-difference-item {
+    min-height: 0;
+    padding: 11px 0;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .ross-industry-difference-index {
+    padding-top: 3px;
+    font-size: 0.67rem;
+  }
+
+  .ross-industry-difference-content h3 {
+    margin-bottom: 3px;
+    font-size: 1.04rem;
+    line-height: 1.18;
+  }
+
+  .ross-industry-difference-content p {
+    max-width: 650px;
+    font-size: 0.87rem;
+    line-height: 1.42;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 821px) and (max-width: 1180px) {
+  .ross-industry-difference {
+    padding: 68px 42px 76px;
+  }
+
+  .ross-industry-difference-header {
+    margin-bottom: 34px;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 44px;
+  }
+
+  .ross-industry-difference-heading h2 {
+    font-size: clamp(2.5rem, 4.7vw, 3.8rem);
+  }
+
+  .ross-industry-difference-intro {
+    font-size: 0.95rem;
+  }
+
+  .ross-industry-difference-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .ross-industry-difference-visual {
+    min-height: 500px;
+  }
+
+  .ross-industry-difference-item {
+    min-height: auto;
+    padding: 21px 3px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 820px) {
+  .ross-industry-difference {
+    padding: 62px 22px 68px;
+  }
+
+  .ross-industry-difference-header {
+    margin-bottom: 30px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ross-industry-difference-label {
+    margin-bottom: 13px;
+    font-size: 0.64rem;
+  }
+
+  .ross-industry-difference-heading h2 {
+    font-size: clamp(2.2rem, 9.7vw, 3.45rem);
+    line-height: 0.98;
+  }
+
+  .ross-industry-difference-intro {
+    max-width: 650px;
+    font-size: 0.95rem;
+    line-height: 1.64;
+  }
+
+  .ross-industry-difference-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ross-industry-difference-visual {
+    min-height: 440px;
+  }
+
+  .ross-industry-difference-caption {
+    right: 24px;
+    bottom: 23px;
+    left: 24px;
+  }
+
+  .ross-industry-difference-caption strong {
+    font-size: 1.45rem;
+  }
+
+  .ross-industry-difference-item {
+    min-height: auto;
+    padding: 20px 0;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .ross-industry-difference-content h3 {
+    margin-bottom: 7px;
+    font-size: 1.15rem;
+  }
+
+  .ross-industry-difference-content p {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+  .ross-industry-difference {
+    padding: 56px 18px 62px;
+  }
+
+  .ross-industry-difference-visual {
+    min-height: 390px;
+  }
+
+  .ross-industry-difference-caption {
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .ross-industry-difference-item {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .ross-industry-difference-index {
+    font-size: 0.7rem;
+  }
+
+  .ross-industry-difference-content h3 {
+    font-size: 1.08rem;
+  }
+
+  .ross-industry-difference-content p {
+    font-size: 0.92rem;
+  }
+}
