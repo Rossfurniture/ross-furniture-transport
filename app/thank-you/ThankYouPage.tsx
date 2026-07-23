@@ -26,7 +26,7 @@ export default function ThankYouPage() {
           </p>
 
           <div className="thank-you-actions">
-            <Link href="" className="thank-you-primary-button">
+            <Link href="/" className="thank-you-primary-button">
               Back To Homepage
             </Link>
 
