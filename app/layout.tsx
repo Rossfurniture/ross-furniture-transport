@@ -30,13 +30,13 @@ export default function RootLayout({
 
         <RossPopupForm />
 
-        {/* Google Ads global tag */}
+        {/* Google tag for Google Ads and GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18356986395"
           strategy="afterInteractive"
         />
 
-        <Script id="google-ads-global-tag" strategy="afterInteractive">
+        <Script id="google-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
 
@@ -45,7 +45,12 @@ export default function RootLayout({
             }
 
             gtag("js", new Date());
+
+            // Google Ads
             gtag("config", "AW-18356986395");
+
+            // Google Analytics 4
+            gtag("config", "G-MJ09T7YH9M");
           `}
         </Script>
       </body>
