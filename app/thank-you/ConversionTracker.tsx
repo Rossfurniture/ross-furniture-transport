@@ -15,12 +15,18 @@ export default function ConversionTracker() {
       return;
     }
 
+    // GA4 lead event
     window.gtag("event", "generate_lead", {
       form_name: "Ross Furniture Transport Enquiry",
+      value: 1,
+      currency: "AUD",
     });
 
+    // Google Ads conversion
     window.gtag("event", "conversion", {
       send_to: "AW-18356986395/0699CLq-j9gcEJvEpbFE",
+      value: 1,
+      currency: "AUD",
     });
   }, []);
 
