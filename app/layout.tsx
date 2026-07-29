@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 
 import PageLayout from "@/components/layout/PageLayout";
 import RossPopupForm from "@/components/shared/forms/RossPopupForm";
@@ -26,7 +27,27 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <PageLayout>{children}</PageLayout>
+
         <RossPopupForm />
+
+        {/* Google Ads global tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18356986395"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-global-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+              window.dataLayer.push(arguments);
+            }
+
+            gtag("js", new Date());
+            gtag("config", "AW-18356986395");
+          `}
+        </Script>
       </body>
     </html>
   );
