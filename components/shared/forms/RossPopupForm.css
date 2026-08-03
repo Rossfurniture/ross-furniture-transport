@@ -216,6 +216,7 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
+  min-width: 0;
 }
 
 .ross-popup-field--full {
@@ -267,6 +268,14 @@
   resize: vertical;
 }
 
+.ross-popup-field input::placeholder,
+.ross-popup-field textarea::placeholder {
+  color: #747d8c;
+  font: inherit;
+  font-size: 12px;
+  opacity: 1;
+}
+
 .ross-popup-field input:focus,
 .ross-popup-field select:focus,
 .ross-popup-field textarea:focus {
@@ -275,6 +284,178 @@
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(15, 45, 92, 0.08);
 }
+
+/* =========================
+   ADDRESS AUTOCOMPLETE
+========================= */
+
+.ross-address-field {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.ross-address-input-wrap {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.ross-address-input-wrap input {
+  width: 100%;
+  padding-right: 44px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.ross-address-input-wrap input::placeholder {
+  color: #747d8c;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+
+  opacity: 1;
+}
+
+.ross-address-loading {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+
+  width: 17px;
+  height: 17px;
+  margin-top: -8.5px;
+
+  border: 2px solid rgba(15, 45, 92, 0.16);
+  border-top-color: #0f2d5c;
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation: ross-address-spin 0.7s linear infinite;
+}
+
+.ross-address-suggestions {
+  position: absolute;
+  z-index: 999999;
+  top: calc(100% + 8px);
+  left: 0;
+
+  width: 100%;
+  max-height: 320px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 1px solid rgba(15, 45, 92, 0.14);
+  border-radius: 8px;
+
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(9, 23, 43, 0.16);
+}
+
+.ross-address-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 13px 15px;
+
+  border: 0;
+  border-bottom: 1px solid rgba(15, 45, 92, 0.08);
+
+  background: transparent;
+  color: #0f2d5c;
+
+  font: inherit;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.ross-address-suggestion:last-child {
+  border-bottom: 0;
+}
+
+.ross-address-suggestion:hover,
+.ross-address-suggestion--active {
+  background: #f7f8fa;
+}
+
+.ross-address-pin {
+  display: grid;
+  flex: 0 0 34px;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: #f1f3f6;
+}
+
+.ross-address-pin svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+  stroke: #0f2d5c;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ross-address-result {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.ross-address-result strong {
+  overflow: hidden;
+
+  color: #0f2d5c;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ross-address-result span {
+  overflow: hidden;
+
+  color: #697386;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes ross-address-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
 
 .ross-popup-submit {
   display: flex;
@@ -433,6 +614,30 @@
     height: 49px;
   }
 
+  .ross-address-suggestions {
+    max-height: 255px;
+  }
+
+  .ross-address-suggestion {
+    gap: 11px;
+    padding: 12px 13px;
+  }
+
+  .ross-address-pin {
+    flex-basis: 32px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  .ross-address-result strong {
+    font-size: 12px;
+  }
+
+  .ross-address-result span {
+    font-size: 10px;
+  }
+
   .ross-popup-submit {
     min-height: 54px;
   }
@@ -443,7 +648,8 @@
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .ross-popup-panel {
+  .ross-popup-panel,
+  .ross-address-loading {
     animation: none;
   }
 
