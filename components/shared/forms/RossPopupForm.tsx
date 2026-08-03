@@ -325,25 +325,25 @@ export default function RossPopupForm() {
               </select>
             </div>
 
-            <div className="ross-popup-field ross-popup-field--full">
-              <AddressAutocomplete
-                id="popup-pickup-address"
-                name="pickupAddress"
-                label="Pickup Address"
-                placeholder="Start typing the pickup address"
-                required
-              />
-            </div>
+<div className="ross-popup-field">
+  <AddressAutocomplete
+    id="popup-pickup-address"
+    name="pickupAddress"
+    label="Pickup Address"
+    placeholder="Start typing pickup address"
+    required
+  />
+</div>
 
-            <div className="ross-popup-field ross-popup-field--full">
-              <AddressAutocomplete
-                id="popup-delivery-address"
-                name="deliveryAddress"
-                label="Delivery Address"
-                placeholder="Start typing the delivery address"
-                required
-              />
-            </div>
+<div className="ross-popup-field">
+  <AddressAutocomplete
+    id="popup-delivery-address"
+    name="deliveryAddress"
+    label="Delivery Address"
+    placeholder="Start typing delivery address"
+    required
+  />
+</div>
 
             <div className="ross-popup-field ross-popup-field--full">
               <label htmlFor="popup-message">
