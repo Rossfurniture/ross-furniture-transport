@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import PageLayout from "@/components/layout/PageLayout";
 import RossPopupForm from "@/components/shared/forms/RossPopupForm";
+import PhoneClickTracker from "./PhoneClickTracker";
 
 import "./globals.css";
 
@@ -29,6 +30,8 @@ export default function RootLayout({
         <PageLayout>{children}</PageLayout>
 
         <RossPopupForm />
+
+        <PhoneClickTracker />
 
         {/* Google tag for Google Ads and GA4 */}
         <Script
