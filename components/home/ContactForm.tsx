@@ -3,6 +3,8 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import AddressAutocomplete from "@/components/shared/forms/AddressAutocomplete";
+
 import "./ContactForm.css";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -21,6 +23,7 @@ export default function ContactForm() {
       "_subject",
       "New Commercial Enquiry — Ross Furniture Transport",
     );
+
     formData.set("_template", "table");
     formData.set("_captcha", "false");
     formData.set("_formType", "Website Contact Form");
@@ -139,6 +142,7 @@ export default function ContactForm() {
                   id="business-name"
                   name="businessName"
                   type="text"
+                  autoComplete="organization"
                   placeholder="Your business name"
                   required
                 />
@@ -151,6 +155,7 @@ export default function ContactForm() {
                   id="contact-name"
                   name="contactName"
                   type="text"
+                  autoComplete="name"
                   placeholder="Your full name"
                   required
                 />
@@ -164,6 +169,7 @@ export default function ContactForm() {
                   name="phone"
                   type="tel"
                   inputMode="tel"
+                  autoComplete="tel"
                   placeholder="Your phone number"
                   required
                 />
@@ -177,6 +183,7 @@ export default function ContactForm() {
                   name="email"
                   type="email"
                   inputMode="email"
+                  autoComplete="email"
                   placeholder="Your email address"
                   required
                 />
@@ -271,27 +278,21 @@ export default function ContactForm() {
               </div>
 
               <div className="ross-form-field">
-                <label htmlFor="collection-suburb">
-                  Collection Suburb
-                </label>
-
-                <input
+                <AddressAutocomplete
                   id="collection-suburb"
                   name="collectionSuburb"
-                  type="text"
-                  placeholder="Collection location"
+                  label="Collection Suburb"
+                  placeholder="Start typing collection suburb"
                   required
                 />
               </div>
 
               <div className="ross-form-field">
-                <label htmlFor="delivery-area">Delivery Area</label>
-
-                <input
+                <AddressAutocomplete
                   id="delivery-area"
                   name="deliveryArea"
-                  type="text"
-                  placeholder="Delivery suburbs or region"
+                  label="Delivery Area"
+                  placeholder="Start typing delivery area"
                   required
                 />
               </div>
