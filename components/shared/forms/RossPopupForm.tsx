@@ -3,6 +3,8 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import AddressAutocomplete from "./AddressAutocomplete";
+
 import "./RossPopupForm.css";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -67,6 +69,7 @@ export default function RossPopupForm() {
       "_subject",
       "New Popup Enquiry — Ross Furniture Transport",
     );
+
     formData.set("_template", "table");
     formData.set("_captcha", "false");
     formData.set("_formType", "Website Popup Form");
@@ -134,7 +137,10 @@ export default function RossPopupForm() {
         <div className="ross-popup-introduction">
           <p className="ross-popup-eyebrow">Talk to Ross</p>
 
-          <h2 id="ross-popup-heading" className="ross-popup-title">
+          <h2
+            id="ross-popup-heading"
+            className="ross-popup-title"
+          >
             Let’s Discuss Your
             <span>
               Delivery Requirements<i>.</i>
@@ -146,7 +152,10 @@ export default function RossPopupForm() {
             discuss the right furniture transport solution.
           </p>
 
-          <a className="ross-popup-phone" href="tel:0413261153">
+          <a
+            className="ross-popup-phone"
+            href="tel:0413261153"
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6.6 2.8 9.3 8l-2.2 2.2a15.4 15.4 0 0 0 6.7 6.7l2.2-2.2 5.2 2.7v3.1c0 .9-.7 1.6-1.6 1.6C10 22.1 1.9 14 1.9 4.4c0-.9.7-1.6 1.6-1.6Z" />
             </svg>
@@ -155,60 +164,77 @@ export default function RossPopupForm() {
           </a>
         </div>
 
-        <form className="ross-popup-form" onSubmit={handleSubmit}>
+        <form
+          className="ross-popup-form"
+          onSubmit={handleSubmit}
+        >
           <div className="ross-popup-form-grid">
             <div className="ross-popup-field">
-              <label htmlFor="popup-business-name">Business Name</label>
+              <label htmlFor="popup-business-name">
+                Business Name
+              </label>
 
               <input
                 id="popup-business-name"
                 name="businessName"
                 type="text"
+                autoComplete="organization"
                 placeholder="Your business name"
                 required
               />
             </div>
 
             <div className="ross-popup-field">
-              <label htmlFor="popup-contact-name">Contact Name</label>
+              <label htmlFor="popup-contact-name">
+                Contact Name
+              </label>
 
               <input
                 id="popup-contact-name"
                 name="contactName"
                 type="text"
+                autoComplete="name"
                 placeholder="Your full name"
                 required
               />
             </div>
 
             <div className="ross-popup-field">
-              <label htmlFor="popup-phone">Phone Number</label>
+              <label htmlFor="popup-phone">
+                Phone Number
+              </label>
 
               <input
                 id="popup-phone"
                 name="phone"
                 type="tel"
                 inputMode="tel"
+                autoComplete="tel"
                 placeholder="Your phone number"
                 required
               />
             </div>
 
             <div className="ross-popup-field">
-              <label htmlFor="popup-email">Email Address</label>
+              <label htmlFor="popup-email">
+                Email Address
+              </label>
 
               <input
                 id="popup-email"
                 name="email"
                 type="email"
                 inputMode="email"
+                autoComplete="email"
                 placeholder="Your email address"
                 required
               />
             </div>
 
             <div className="ross-popup-field">
-              <label htmlFor="popup-business-type">Business Type</label>
+              <label htmlFor="popup-business-type">
+                Business Type
+              </label>
 
               <select
                 id="popup-business-type"
@@ -248,12 +274,16 @@ export default function RossPopupForm() {
                   Commercial Fit-Out Company
                 </option>
 
-                <option value="other">Other Business</option>
+                <option value="other">
+                  Other Business
+                </option>
               </select>
             </div>
 
             <div className="ross-popup-field">
-              <label htmlFor="popup-service">Service Required</label>
+              <label htmlFor="popup-service">
+                Service Required
+              </label>
 
               <select
                 id="popup-service"
@@ -296,6 +326,26 @@ export default function RossPopupForm() {
             </div>
 
             <div className="ross-popup-field ross-popup-field--full">
+              <AddressAutocomplete
+                id="popup-pickup-address"
+                name="pickupAddress"
+                label="Pickup Address"
+                placeholder="Start typing the pickup address"
+                required
+              />
+            </div>
+
+            <div className="ross-popup-field ross-popup-field--full">
+              <AddressAutocomplete
+                id="popup-delivery-address"
+                name="deliveryAddress"
+                label="Delivery Address"
+                placeholder="Start typing the delivery address"
+                required
+              />
+            </div>
+
+            <div className="ross-popup-field ross-popup-field--full">
               <label htmlFor="popup-message">
                 Delivery Requirements
               </label>
@@ -304,7 +354,7 @@ export default function RossPopupForm() {
                 id="popup-message"
                 name="message"
                 rows={5}
-                placeholder="Tell us about your products, locations, schedule and delivery requirements."
+                placeholder="Tell us about your products, schedule and delivery requirements."
                 required
               />
             </div>
