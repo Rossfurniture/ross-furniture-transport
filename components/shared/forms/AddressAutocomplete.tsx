@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { importLibrary, setOptions } from "@googlemaps/js-api-loader";
+import {
+  importLibrary,
+  setOptions,
+} from "@googlemaps/js-api-loader";
 
 type AddressAutocompleteProps = {
   id: string;
@@ -20,11 +23,9 @@ export default function AddressAutocomplete({
   label,
   placeholder,
   required = false,
-  className,
+  className = "",
 }: AddressAutocompleteProps) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const autocompleteRef =
-    useRef<google.maps.places.Autocomplete | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const apiKey =
@@ -38,6 +39,9 @@ export default function AddressAutocomplete({
     }
 
     let isCancelled = false;
+    let autocompleteElement:
+      | google.maps.places.PlaceAutocompleteElement
+      | null = null;
 
     const initialiseAutocomplete = async () => {
       try {
@@ -50,49 +54,91 @@ export default function AddressAutocomplete({
           googleMapsConfigured = true;
         }
 
-        const placesLibrary =
+        const { PlaceAutocompleteElement } =
           await importLibrary("places");
 
-        if (isCancelled || !inputRef.current) {
+        if (
+          isCancelled ||
+          !containerRef.current
+        ) {
           return;
         }
 
-        autocompleteRef.current =
-          new placesLibrary.Autocomplete(
-            inputRef.current,
-            {
-              componentRestrictions: {
-                country: "au",
-              },
-              fields: [
-                "formatted_address",
-                "place_id",
-              ],
-              types: ["address"],
-            },
+        containerRef.current.innerHTML = "";
+
+        autocompleteElement =
+          new PlaceAutocompleteElement({
+            includedRegionCodes: ["au"],
+          });
+
+        autocompleteElement.id = id;
+        autocompleteElement.name = name;
+        autocompleteElement.placeholder =
+          placeholder;
+        autocompleteElement.description = label;
+
+        autocompleteElement.className = [
+          "ross-address-autocomplete",
+          className,
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+        autocompleteElement.setAttribute(
+          "aria-label",
+          label,
+        );
+
+        if (required) {
+          autocompleteElement.setAttribute(
+            "required",
+            "",
           );
+        }
 
-        autocompleteRef.current.addListener(
-          "place_changed",
-          () => {
+        autocompleteElement.addEventListener(
+          "gmp-select",
+          async (event: Event) => {
+            const selectEvent =
+              event as google.maps.places.PlacePredictionSelectEvent;
+
             const place =
-              autocompleteRef.current?.getPlace();
+              selectEvent.placePrediction.toPlace();
 
-            if (
-              place?.formatted_address &&
-              inputRef.current
-            ) {
-              inputRef.current.value =
-                place.formatted_address;
+            await place.fetchFields({
+              fields: [
+                "formattedAddress",
+                "id",
+              ],
+            });
 
-              inputRef.current.dataset.placeId =
-                place.place_id ?? "";
-            }
+            autocompleteElement?.setAttribute(
+              "data-formatted-address",
+              place.formattedAddress ?? "",
+            );
+
+            autocompleteElement?.setAttribute(
+              "data-place-id",
+              place.id ?? "",
+            );
           },
+        );
+
+        autocompleteElement.addEventListener(
+          "gmp-error",
+          () => {
+            console.error(
+              `Google autocomplete error: ${label}`,
+            );
+          },
+        );
+
+        containerRef.current.appendChild(
+          autocompleteElement,
         );
       } catch (error) {
         console.error(
-          "Google address autocomplete failed:",
+          "Google address autocomplete failed to initialise:",
           error,
         );
       }
@@ -103,37 +149,28 @@ export default function AddressAutocomplete({
     return () => {
       isCancelled = true;
 
-      if (
-        autocompleteRef.current &&
-        window.google?.maps?.event
-      ) {
-        window.google.maps.event.clearInstanceListeners(
-          autocompleteRef.current,
-        );
+      if (autocompleteElement) {
+        autocompleteElement.remove();
       }
-
-      autocompleteRef.current = null;
     };
-  }, []);
+  }, [
+    className,
+    id,
+    label,
+    name,
+    placeholder,
+    required,
+  ]);
 
   return (
     <>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label}
+      </label>
 
-      <input
-        ref={inputRef}
-        id={id}
-        name={name}
-        type="text"
-        autoComplete="off"
-        placeholder={placeholder}
-        required={required}
-        className={className}
-        onChange={() => {
-          if (inputRef.current) {
-            inputRef.current.dataset.placeId = "";
-          }
-        }}
+      <div
+        ref={containerRef}
+        className="ross-address-autocomplete-wrapper"
       />
     </>
   );
