@@ -32,7 +32,7 @@ export default function ContactForm() {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/depasqualeross@gmail.com",
+        "https://formsubmit.co/ajax/info@rossfurnituretransport.com.au",
         {
           method: "POST",
           headers: {
